@@ -1,0 +1,15 @@
+[project]
+name = "grail"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "hypothesis>=6.136.6",
+    "numpy>=2.2.6",
+    "psutil>=7.0.0",
+    "pytest>=8.4.1",
+    "pytest-benchmark>=5.1.0",
+    "torch>=2.7.1",
+    "transformers>=4.54.0",
+]
