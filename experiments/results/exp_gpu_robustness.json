@@ -1,0 +1,1687 @@
+{
+  "experiment": "gpu_robustness",
+  "description": "Test robustness across GPU configurations, tensor parallelism, and attention kernels",
+  "timestamp": "20250728_233003",
+  "hardware_info": {
+    "cuda_available": true,
+    "device_count": 8,
+    "devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H100 PCIe",
+        "memory": 84942979072,
+        "compute_capability": "9.0"
+      }
+    ],
+    "compute_capability": "9.0",
+    "total_memory": 679543832576
+  },
+  "configuration_tests": [
+    {
+      "configuration_name": "1xA100_TP1_Flash",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.6027867794036865,
+        "commit_time": 1.6027867794036865,
+        "validation_time": 0.3671541213989258,
+        "verify_time": 0.3671541213989258,
+        "total_time": 1.9700818061828613
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_SDPA",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.6216835975646973,
+        "commit_time": 0.6216835975646973,
+        "validation_time": 0.43726110458374023,
+        "verify_time": 0.43726110458374023,
+        "total_time": 1.0589699745178223
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_Flex",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5351912975311279,
+        "commit_time": 0.5351912975311279,
+        "validation_time": 0.4170973300933838,
+        "verify_time": 0.4170973300933838,
+        "total_time": 0.9523217678070068
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_Default",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5258750915527344,
+        "commit_time": 0.5258750915527344,
+        "validation_time": 0.399569034576416,
+        "verify_time": 0.399569034576416,
+        "total_time": 0.9254727363586426
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Flash",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5524520874023438,
+        "commit_time": 0.5524520874023438,
+        "validation_time": 0.33279943466186523,
+        "verify_time": 0.33279943466186523,
+        "total_time": 0.8854646682739258
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_SDPA",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5373475551605225,
+        "commit_time": 0.5373475551605225,
+        "validation_time": 0.29134654998779297,
+        "verify_time": 0.29134654998779297,
+        "total_time": 0.828732967376709
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Flex",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4808351993560791,
+        "commit_time": 0.4808351993560791,
+        "validation_time": 0.3082008361816406,
+        "verify_time": 0.3082008361816406,
+        "total_time": 0.7890610694885254
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Default",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5296065807342529,
+        "commit_time": 0.5296065807342529,
+        "validation_time": 0.38112425804138184,
+        "verify_time": 0.38112425804138184,
+        "total_time": 0.9107580184936523
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Flash",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4827272891998291,
+        "commit_time": 0.4827272891998291,
+        "validation_time": 0.2727181911468506,
+        "verify_time": 0.2727181911468506,
+        "total_time": 0.7556126117706299
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_SDPA",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.49340319633483887,
+        "commit_time": 0.49340319633483887,
+        "validation_time": 0.34444141387939453,
+        "verify_time": 0.34444141387939453,
+        "total_time": 0.8378689289093018
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Flex",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5111043453216553,
+        "commit_time": 0.5111043453216553,
+        "validation_time": 0.28958845138549805,
+        "verify_time": 0.28958845138549805,
+        "total_time": 0.8007171154022217
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Default",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.522606372833252,
+        "commit_time": 0.522606372833252,
+        "validation_time": 0.2865118980407715,
+        "verify_time": 0.2865118980407715,
+        "total_time": 0.8091437816619873
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Flash",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4743349552154541,
+        "commit_time": 0.4743349552154541,
+        "validation_time": 0.33077454566955566,
+        "verify_time": 0.33077454566955566,
+        "total_time": 0.8052797317504883
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_SDPA",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4945695400238037,
+        "commit_time": 0.4945695400238037,
+        "validation_time": 0.3309745788574219,
+        "verify_time": 0.3309745788574219,
+        "total_time": 0.8255743980407715
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Flex",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5252640247344971,
+        "commit_time": 0.5252640247344971,
+        "validation_time": 0.2988548278808594,
+        "verify_time": 0.2988548278808594,
+        "total_time": 0.8241500854492188
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Default",
+      "model": "sshleifer/tiny-gpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5149750709533691,
+        "commit_time": 0.5149750709533691,
+        "validation_time": 0.366391658782959,
+        "verify_time": 0.366391658782959,
+        "total_time": 0.8813920021057129
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_Flash",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2978811264038086,
+        "commit_time": 1.2978811264038086,
+        "validation_time": 1.045034646987915,
+        "verify_time": 1.045034646987915,
+        "total_time": 2.343076467514038
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_SDPA",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.4569354057312012,
+        "commit_time": 1.4569354057312012,
+        "validation_time": 0.3713667392730713,
+        "verify_time": 0.3713667392730713,
+        "total_time": 1.828331708908081
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_Flex",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.274498701095581,
+        "commit_time": 1.274498701095581,
+        "validation_time": 0.3997156620025635,
+        "verify_time": 0.3997156620025635,
+        "total_time": 1.6742422580718994
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1xA100_TP1_Default",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1xA100",
+        "device_count": 1,
+        "device_type": "A100",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2652270793914795,
+        "commit_time": 1.2652270793914795,
+        "validation_time": 0.4076976776123047,
+        "verify_time": 0.4076976776123047,
+        "total_time": 1.6729540824890137
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Flash",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2419991493225098,
+        "commit_time": 1.2419991493225098,
+        "validation_time": 0.8781721591949463,
+        "verify_time": 0.8781721591949463,
+        "total_time": 2.120338201522827
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_SDPA",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 2.507356643676758,
+        "commit_time": 2.507356643676758,
+        "validation_time": 61.71629071235657,
+        "verify_time": 61.71629071235657,
+        "total_time": 64.22367739677429
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Flex",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2476904392242432,
+        "commit_time": 1.2476904392242432,
+        "validation_time": 0.412761926651001,
+        "verify_time": 0.412761926651001,
+        "total_time": 1.6604821681976318
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "1x4090_TP1_Default",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "1x4090",
+        "device_count": 1,
+        "device_type": "RTX4090",
+        "tensor_parallel": 1
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.283243179321289,
+        "commit_time": 1.283243179321289,
+        "validation_time": 0.33014941215515137,
+        "verify_time": 0.33014941215515137,
+        "total_time": 1.6134328842163086
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Flash",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2145915031433105,
+        "commit_time": 1.2145915031433105,
+        "validation_time": 0.35431814193725586,
+        "verify_time": 0.35431814193725586,
+        "total_time": 1.5690815448760986
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_SDPA",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2299020290374756,
+        "commit_time": 1.2299020290374756,
+        "validation_time": 0.42619776725769043,
+        "verify_time": 0.42619776725769043,
+        "total_time": 1.6561307907104492
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Flex",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2617764472961426,
+        "commit_time": 1.2617764472961426,
+        "validation_time": 0.39043712615966797,
+        "verify_time": 0.39043712615966797,
+        "total_time": 1.6522417068481445
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP1_Default",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 1,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2165851593017578,
+        "commit_time": 1.2165851593017578,
+        "validation_time": 0.3403315544128418,
+        "verify_time": 0.3403315544128418,
+        "total_time": 1.5569450855255127
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Flash",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Flash",
+        "implementation": "flash_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flash Attention not available, using default"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.1953482627868652,
+        "commit_time": 1.1953482627868652,
+        "validation_time": 0.34639739990234375,
+        "verify_time": 0.34639739990234375,
+        "total_time": 1.541916847229004
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_SDPA",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "SDPA",
+        "implementation": "scaled_dot_product_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "SDPA available"
+        ],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2056174278259277,
+        "commit_time": 1.2056174278259277,
+        "validation_time": 0.3224821090698242,
+        "verify_time": 0.3224821090698242,
+        "total_time": 1.5281293392181396
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Flex",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Flex",
+        "implementation": "flex_attention"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [
+          "Flex Attention simulated (not widely available)"
+        ],
+        "simulation_mode": true
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.2141051292419434,
+        "commit_time": 1.2141051292419434,
+        "validation_time": 0.3745243549346924,
+        "verify_time": 0.3745243549346924,
+        "total_time": 1.5886588096618652
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    },
+    {
+      "configuration_name": "2x4090_TP2_Default",
+      "model": "distilgpt2",
+      "gpu_config": {
+        "name": "2x4090",
+        "device_count": 2,
+        "device_type": "RTX4090",
+        "tensor_parallel": 2
+      },
+      "tensor_parallel_size": 2,
+      "attention_kernel": {
+        "name": "Default",
+        "implementation": "default"
+      },
+      "feasibility": {
+        "feasible": true,
+        "reasons": [],
+        "simulation_mode": false
+      },
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.206754207611084,
+        "commit_time": 1.206754207611084,
+        "validation_time": 0.43010592460632324,
+        "verify_time": 0.43010592460632324,
+        "total_time": 1.6368882656097412
+      },
+      "error_message": null,
+      "within_thresholds": true,
+      "threshold_checks": {
+        "validation_pass": {
+          "value": 1.0,
+          "threshold": 0.95,
+          "within_threshold": true
+        }
+      }
+    }
+  ],
+  "summary_statistics": {
+    "total_tests": 32,
+    "successful_tests": 32,
+    "within_threshold_tests": 32,
+    "configuration_stats": {
+      "1xA100_TP1_Flash": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1xA100_TP1_SDPA": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1xA100_TP1_Flex": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1xA100_TP1_Default": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1x4090_TP1_Flash": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1x4090_TP1_SDPA": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1x4090_TP1_Flex": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "1x4090_TP1_Default": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP1_Flash": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP1_SDPA": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP1_Flex": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP1_Default": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP2_Flash": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP2_SDPA": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP2_Flex": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "2x4090_TP2_Default": {
+        "total_tests": 2,
+        "successful_tests": 2,
+        "within_threshold_tests": 2,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      }
+    },
+    "model_stats": {
+      "sshleifer/tiny-gpt2": {
+        "total_tests": 16,
+        "successful_tests": 16,
+        "within_threshold_tests": 16,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      },
+      "distilgpt2": {
+        "total_tests": 16,
+        "successful_tests": 16,
+        "within_threshold_tests": 16,
+        "success_rate": 100.0,
+        "threshold_compliance_rate": 100.0
+      }
+    },
+    "threshold_analysis": {
+      "exponent_mismatch": {
+        "values": [],
+        "violations": 0
+      },
+      "mantissa_mse": {
+        "values": [],
+        "violations": 0
+      },
+      "validation_pass": {
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "violations": 0
+      }
+    },
+    "timing_stats": {
+      "min_time": 0.7556126117706299,
+      "max_time": 64.22367739677429,
+      "avg_time": 3.272722788155079,
+      "total_time": 104.72712922096252
+    },
+    "overall_success_rate": 100.0,
+    "overall_threshold_compliance": 100.0
+  },
+  "table_2_data": {
+    "title": "GPU / Tensor Parallel / Attention Kernel Robustness Results",
+    "description": "Validation error stats across hardware configurations",
+    "headers": [
+      "Configuration",
+      "GPU",
+      "TP",
+      "Attention",
+      "Success Rate",
+      "Threshold Compliance",
+      "Avg Time (s)"
+    ],
+    "rows": [
+      {
+        "configuration": "1xA100_TP1_Flash",
+        "gpu": "1xA100",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flash",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "2.16"
+      },
+      {
+        "configuration": "1xA100_TP1_SDPA",
+        "gpu": "1xA100",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "SDPA",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.44"
+      },
+      {
+        "configuration": "1xA100_TP1_Flex",
+        "gpu": "1xA100",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flex",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.31"
+      },
+      {
+        "configuration": "1xA100_TP1_Default",
+        "gpu": "1xA100",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Default",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.30"
+      },
+      {
+        "configuration": "1x4090_TP1_Flash",
+        "gpu": "1x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flash",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.50"
+      },
+      {
+        "configuration": "1x4090_TP1_SDPA",
+        "gpu": "1x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "SDPA",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "32.53"
+      },
+      {
+        "configuration": "1x4090_TP1_Flex",
+        "gpu": "1x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flex",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.22"
+      },
+      {
+        "configuration": "1x4090_TP1_Default",
+        "gpu": "1x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Default",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.26"
+      },
+      {
+        "configuration": "2x4090_TP1_Flash",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flash",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.16"
+      },
+      {
+        "configuration": "2x4090_TP1_SDPA",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "SDPA",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.25"
+      },
+      {
+        "configuration": "2x4090_TP1_Flex",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Flex",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.23"
+      },
+      {
+        "configuration": "2x4090_TP1_Default",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP1",
+        "attention_kernel": "Default",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.18"
+      },
+      {
+        "configuration": "2x4090_TP2_Flash",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP2",
+        "attention_kernel": "Flash",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.17"
+      },
+      {
+        "configuration": "2x4090_TP2_SDPA",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP2",
+        "attention_kernel": "SDPA",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.18"
+      },
+      {
+        "configuration": "2x4090_TP2_Flex",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP2",
+        "attention_kernel": "Flex",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.21"
+      },
+      {
+        "configuration": "2x4090_TP2_Default",
+        "gpu": "2x4090",
+        "tensor_parallel": "TP2",
+        "attention_kernel": "Default",
+        "success_rate": "100.0%",
+        "threshold_compliance": "100.0%",
+        "avg_time": "1.26"
+      }
+    ],
+    "summary": {
+      "overall_success_rate": 100.0,
+      "overall_threshold_compliance": 100.0,
+      "total_configurations": 16
+    }
+  },
+  "conclusions": [
+    "\u2705 High validation success rate across configurations",
+    "\u2705 Error values remain within thresholds across configurations",
+    "\u2705 GPU robustness experiment PASSED"
+  ],
+  "total_duration": 106.3684298992157
+}

@@ -1,12 +1,12 @@
 {
   "experiment": "correctness_detection",
-  "timestamp": 1753739322.888012,
+  "timestamp": 1753743643.1638653,
   "total_tests": 6,
   "passed_tests": 6,
   "failed_tests": 0,
   "success_rate": 100.0,
-  "total_duration": 19.732481718063354,
-  "avg_test_duration": 3.278482993443807,
+  "total_duration": 5.258262395858765,
+  "avg_test_duration": 0.8660681247711182,
   "results": [
     {
       "model": "sshleifer/tiny-gpt2",
@@ -15,7 +15,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 5.3335511684417725,
+      "duration": 2.552971601486206,
       "tokens_generated": 22,
       "error": null
     },
@@ -26,7 +26,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 2.4433140754699707,
+      "duration": 0.21036863327026367,
       "tokens_generated": 25,
       "error": null
     },
@@ -37,7 +37,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 2.606187105178833,
+      "duration": 0.23274636268615723,
       "tokens_generated": 23,
       "error": null
     },
@@ -48,7 +48,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 2.4759109020233154,
+      "duration": 0.23556923866271973,
       "tokens_generated": 24,
       "error": null
     },
@@ -59,7 +59,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 3.1779167652130127,
+      "duration": 0.9766430854797363,
       "tokens_generated": 22,
       "error": null
     },
@@ -70,7 +70,7 @@
       "expected": true,
       "actual": true,
       "passed": true,
-      "duration": 3.6340179443359375,
+      "duration": 0.988109827041626,
       "tokens_generated": 25,
       "error": null
     }

@@ -1,18 +1,18 @@
 {
   "experiment": "precision_comparison",
-  "timestamp": 1753739389.279019,
-  "total_duration": 6.033706903457642,
+  "timestamp": 1753743673.8131406,
+  "total_duration": 1.8394837379455566,
   "model_tested": "sshleifer/tiny-gpt2",
   "test_prompt": "The quick brown fox jumps over the lazy dog",
   "system_info": {
-    "cuda_available": false,
-    "torch_version": "2.7.1"
+    "cuda_available": true,
+    "torch_version": "2.7.1+cu126"
   },
   "results_summary": {
     "total_precisions_tested": 3,
-    "available_precisions": 2,
-    "successful_verifications": 2,
-    "cross_tests_performed": 1
+    "available_precisions": 3,
+    "successful_verifications": 3,
+    "cross_tests_performed": 3
   },
   "precision_results": [
     {
@@ -20,53 +20,98 @@
       "available": true,
       "torch_dtype": "torch.float32",
       "verification_passed": true,
-      "duration": 0.04391908645629883,
+      "duration": 0.5334854125976562,
       "tokens_generated": 25,
       "s_vals_sample": [
-        1955179870,
-        165427195,
-        1008481741
+        249525487,
+        1152699232,
+        1053395452
       ],
-      "model_hash": "2df41a876064d17a...",
+      "model_hash": "8d17add4e024a645...",
       "error": null
     },
     {
       "precision": "fp16",
-      "available": false,
-      "reason": "Hardware/software not supported",
-      "error": "fp16 not available on this system"
+      "available": true,
+      "torch_dtype": "torch.float16",
+      "verification_passed": true,
+      "duration": 0.031763315200805664,
+      "tokens_generated": 25,
+      "s_vals_sample": [
+        1575455175,
+        640635387,
+        258321083
+      ],
+      "model_hash": "8d17add4e024a645...",
+      "error": null
     },
     {
       "precision": "bf16",
       "available": true,
       "torch_dtype": "torch.bfloat16",
       "verification_passed": true,
-      "duration": 0.03770875930786133,
+      "duration": 0.031743526458740234,
       "tokens_generated": 25,
       "s_vals_sample": [
-        607067554,
-        2056322774,
-        296960222
+        311878050,
+        218957493,
+        1233721555
       ],
-      "model_hash": "2df41a876064d17a...",
+      "model_hash": "8d17add4e024a645...",
       "error": null
     }
   ],
   "cross_precision_tests": [
     {
       "precision1": "fp32",
+      "precision2": "fp16",
+      "s_vals_different": true,
+      "model_hash_different": false,
+      "s_vals_sample_1": [
+        249525487,
+        1152699232,
+        1053395452
+      ],
+      "s_vals_sample_2": [
+        1575455175,
+        640635387,
+        258321083
+      ],
+      "expected_behavior": "Different precisions may produce different s_vals",
+      "tolerance": 3
+    },
+    {
+      "precision1": "fp32",
       "precision2": "bf16",
       "s_vals_different": true,
       "model_hash_different": false,
       "s_vals_sample_1": [
-        1955179870,
-        165427195,
-        1008481741
+        249525487,
+        1152699232,
+        1053395452
       ],
       "s_vals_sample_2": [
-        607067554,
-        2056322774,
-        296960222
+        311878050,
+        218957493,
+        1233721555
+      ],
+      "expected_behavior": "Different precisions may produce different s_vals",
+      "tolerance": 3
+    },
+    {
+      "precision1": "fp16",
+      "precision2": "bf16",
+      "s_vals_different": true,
+      "model_hash_different": false,
+      "s_vals_sample_1": [
+        1575455175,
+        640635387,
+        258321083
+      ],
+      "s_vals_sample_2": [
+        311878050,
+        218957493,
+        1233721555
       ],
       "expected_behavior": "Different precisions may produce different s_vals",
       "tolerance": 3
@@ -75,36 +120,50 @@
   "analysis": {
     "available_precisions": [
       "fp32",
+      "fp16",
       "bf16"
     ],
     "verification_success_rate": {
       "fp32": true,
+      "fp16": true,
       "bf16": true
     },
     "performance_comparison": {
       "fp32": {
-        "duration": 0.04391908645629883,
-        "tokens_per_second": 569.2285977959937
+        "duration": 0.5334854125976562,
+        "tokens_per_second": 46.86163746871648
+      },
+      "fp16": {
+        "duration": 0.031763315200805664,
+        "tokens_per_second": 787.071495590167
       },
       "bf16": {
-        "duration": 0.03770875930786133,
-        "tokens_per_second": 662.975936065553
+        "duration": 0.031743526458740234,
+        "tokens_per_second": 787.5621516876718
       }
     },
     "s_vals_variance": {
       "fp32": {
         "sample_values": [
-          1955179870,
-          165427195,
-          1008481741
+          249525487,
+          1152699232,
+          1053395452
+        ],
+        "sample_size": 3
+      },
+      "fp16": {
+        "sample_values": [
+          1575455175,
+          640635387,
+          258321083
         ],
         "sample_size": 3
       },
       "bf16": {
         "sample_values": [
-          607067554,
-          2056322774,
-          296960222
+          311878050,
+          218957493,
+          1233721555
         ],
         "sample_size": 3
       }

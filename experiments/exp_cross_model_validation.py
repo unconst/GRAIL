@@ -21,7 +21,7 @@ from itertools import combinations, product
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from grail import GrailProtocol
+from grail import Prover, Verifier
 
 class CrossModelValidationExperiment:
     """Cross-Model Validation Experiment for Table 4"""
@@ -42,7 +42,7 @@ class CrossModelValidationExperiment:
         # Test configuration
         self.test_prompt = "The quick brown fox jumps over the lazy dog."
         self.token_count = 32
-        self.challenge_size = 512
+        self.challenge_size = 16  # Must be less than token_count
         
         # Model sets for testing
         self.development_models = [
@@ -88,49 +88,40 @@ class CrossModelValidationExperiment:
         try:
             # Generate with first model
             gen_start = time.time()
-            gen_protocol = GrailProtocol(
-                model_name=gen_model,
-                max_new_tokens=self.token_count,
-                challenge_size=self.challenge_size
-            )
+            prover = Prover(gen_model)
             
             # Commit phase
-            commit_result = gen_protocol.commit(self.test_prompt)
+            commit = prover.commit(self.test_prompt, max_new_tokens=self.token_count)
+            
+            # Open phase
+            proof_pkg = prover.open(k=self.challenge_size)
+            
             gen_time = time.time() - gen_start
             
             test_result["timing"]["generation_time"] = gen_time
-            test_result["timing"]["commit_time"] = commit_result.get("timing", {}).get("commit_time", 0)
+            test_result["timing"]["commit_time"] = gen_time
             
             # Validate with second model  
             val_start = time.time()
-            val_protocol = GrailProtocol(
-                model_name=val_model,
-                max_new_tokens=self.token_count,
-                challenge_size=self.challenge_size
-            )
+            verifier = Verifier(val_model)
             
             # Verify with validation model
-            verify_result = val_protocol.verify(
-                prompt=self.test_prompt,
-                response=commit_result["response"],
-                proof=commit_result["proof"]
-            )
+            verification_result = verifier.verify(commit, proof_pkg, prover.secret_key)
             
             val_time = time.time() - val_start
             test_result["timing"]["validation_time"] = val_time
-            test_result["timing"]["verify_time"] = verify_result.get("timing", {}).get("verify_time", 0)
+            test_result["timing"]["verify_time"] = val_time
             
             # Extract validation results
-            test_result["validation_success"] = verify_result["valid"]
-            test_result["actual_result"] = "pass" if verify_result["valid"] else "fail"
+            test_result["validation_success"] = verification_result
+            test_result["actual_result"] = "pass" if verification_result else "fail"
             
-            # Extract error statistics
-            if "error_stats" in verify_result:
-                test_result["error_stats"] = verify_result["error_stats"]
+            # Extract error statistics (if needed in future)
+            # Currently verification returns boolean only
             
             # Check if result matches expectation
             expected_pass = (gen_model == val_model)
-            actual_pass = verify_result["valid"]
+            actual_pass = verification_result
             test_result["result_correct"] = (expected_pass == actual_pass)
             
             if not test_result["result_correct"]:

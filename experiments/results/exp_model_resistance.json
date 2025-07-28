@@ -1,12 +1,12 @@
 {
   "experiment": "model_resistance",
-  "timestamp": 1753739344.265494,
+  "timestamp": 1753743653.6606295,
   "total_tests": 6,
   "passed_tests": 6,
   "failed_tests": 0,
   "detection_rate": 100.0,
-  "total_duration": 19.737282752990723,
-  "avg_test_duration": 3.2804047664006553,
+  "total_duration": 7.294328212738037,
+  "avg_test_duration": 1.2053128480911255,
   "test_prompt": "The quick brown fox jumps over the lazy dog",
   "results": [
     {
@@ -16,7 +16,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 3.2275378704071045,
+      "duration": 2.6266555786132812,
       "tokens_generated": 25,
       "error": null
     },
@@ -27,7 +27,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 3.6348931789398193,
+      "duration": 0.873039960861206,
       "tokens_generated": 25,
       "error": null
     },
@@ -38,7 +38,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 2.7132060527801514,
+      "duration": 0.3132336139678955,
       "tokens_generated": 25,
       "error": null
     },
@@ -49,7 +49,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 3.435398817062378,
+      "duration": 1.2883262634277344,
       "tokens_generated": 25,
       "error": null
     },
@@ -60,7 +60,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 3.240598678588867,
+      "duration": 0.928227424621582,
       "tokens_generated": 25,
       "error": null
     },
@@ -71,7 +71,7 @@
       "expected": false,
       "actual": false,
       "passed": true,
-      "duration": 3.4307940006256104,
+      "duration": 1.2023942470550537,
       "tokens_generated": 25,
       "error": null
     }
