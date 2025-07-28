@@ -1,0 +1,467 @@
+{
+  "experiment": "cross_model_validation",
+  "description": "Generate with one model, validate with another",
+  "timestamp": "20250728_233211",
+  "models_tested": [
+    "sshleifer/tiny-gpt2",
+    "distilgpt2",
+    "gpt2"
+  ],
+  "test_results": {
+    "same_model_tests": [
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 2.4820375442504883,
+          "commit_time": 2.4820375442504883,
+          "validation_time": 0.09854269027709961,
+          "verify_time": 0.09854269027709961,
+          "total_time": 2.5805840492248535
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.8069131374359131,
+          "commit_time": 0.8069131374359131,
+          "validation_time": 0.14506864547729492,
+          "verify_time": 0.14506864547729492,
+          "total_time": 0.9519860744476318
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "gpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1171412467956543,
+          "commit_time": 1.1171412467956543,
+          "validation_time": 0.19155240058898926,
+          "verify_time": 0.19155240058898926,
+          "total_time": 1.3086986541748047
+        },
+        "error_message": null,
+        "result_correct": true
+      }
+    ],
+    "cross_model_tests": [
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.16410017013549805,
+          "commit_time": 0.16410017013549805,
+          "validation_time": 0.1651594638824463,
+          "verify_time": 0.1651594638824463,
+          "total_time": 0.32926487922668457
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.1378800868988037,
+          "commit_time": 0.1378800868988037,
+          "validation_time": 0.29363393783569336,
+          "verify_time": 0.29363393783569336,
+          "total_time": 0.4315187931060791
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.8037574291229248,
+          "commit_time": 0.8037574291229248,
+          "validation_time": 0.11533594131469727,
+          "verify_time": 0.11533594131469727,
+          "total_time": 0.9190976619720459
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.7794897556304932,
+          "commit_time": 0.7794897556304932,
+          "validation_time": 0.18688249588012695,
+          "verify_time": 0.18688249588012695,
+          "total_time": 0.9663772583007812
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1240873336791992,
+          "commit_time": 1.1240873336791992,
+          "validation_time": 0.1823902130126953,
+          "verify_time": 0.1823902130126953,
+          "total_time": 1.3064825534820557
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1117537021636963,
+          "commit_time": 1.1117537021636963,
+          "validation_time": 0.14507222175598145,
+          "verify_time": 0.14507222175598145,
+          "total_time": 1.2568297386169434
+        },
+        "error_message": null,
+        "result_correct": true
+      }
+    ],
+    "all_tests": [
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 2.4820375442504883,
+          "commit_time": 2.4820375442504883,
+          "validation_time": 0.09854269027709961,
+          "verify_time": 0.09854269027709961,
+          "total_time": 2.5805840492248535
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.16410017013549805,
+          "commit_time": 0.16410017013549805,
+          "validation_time": 0.1651594638824463,
+          "verify_time": 0.1651594638824463,
+          "total_time": 0.32926487922668457
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "sshleifer/tiny-gpt2",
+        "validation_model": "gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.1378800868988037,
+          "commit_time": 0.1378800868988037,
+          "validation_time": 0.29363393783569336,
+          "verify_time": 0.29363393783569336,
+          "total_time": 0.4315187931060791
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.8037574291229248,
+          "commit_time": 0.8037574291229248,
+          "validation_time": 0.11533594131469727,
+          "verify_time": 0.11533594131469727,
+          "total_time": 0.9190976619720459
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.8069131374359131,
+          "commit_time": 0.8069131374359131,
+          "validation_time": 0.14506864547729492,
+          "verify_time": 0.14506864547729492,
+          "total_time": 0.9519860744476318
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 0.7794897556304932,
+          "commit_time": 0.7794897556304932,
+          "validation_time": 0.18688249588012695,
+          "verify_time": 0.18688249588012695,
+          "total_time": 0.9663772583007812
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "sshleifer/tiny-gpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1240873336791992,
+          "commit_time": 1.1240873336791992,
+          "validation_time": 0.1823902130126953,
+          "verify_time": 0.1823902130126953,
+          "total_time": 1.3064825534820557
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "distilgpt2",
+        "is_same_model": false,
+        "expected_result": "fail",
+        "actual_result": "fail",
+        "validation_success": false,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1117537021636963,
+          "commit_time": 1.1117537021636963,
+          "validation_time": 0.14507222175598145,
+          "verify_time": 0.14507222175598145,
+          "total_time": 1.2568297386169434
+        },
+        "error_message": null,
+        "result_correct": true
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "gpt2",
+        "is_same_model": true,
+        "expected_result": "pass",
+        "actual_result": "pass",
+        "validation_success": true,
+        "error_stats": {},
+        "timing": {
+          "generation_time": 1.1171412467956543,
+          "commit_time": 1.1171412467956543,
+          "validation_time": 0.19155240058898926,
+          "verify_time": 0.19155240058898926,
+          "total_time": 1.3086986541748047
+        },
+        "error_message": null,
+        "result_correct": true
+      }
+    ]
+  },
+  "summary_statistics": {
+    "total_tests": 9,
+    "same_model_tests": 3,
+    "cross_model_tests": 6,
+    "same_model_stats": {
+      "total": 3,
+      "correct": 3,
+      "pass_rate": 100.0,
+      "expected_pass_rate": 100.0
+    },
+    "cross_model_stats": {
+      "total": 6,
+      "correct": 6,
+      "detection_rate": 100.0,
+      "expected_detection_rate": 100.0
+    },
+    "overall_stats": {
+      "total_correct": 9,
+      "overall_accuracy": 100.0,
+      "expected_accuracy": 100.0
+    },
+    "timing_stats": {
+      "min_time": 0.32926487922668457,
+      "max_time": 2.5805840492248535,
+      "avg_time": 1.1167599625057645,
+      "total_time": 10.05083966255188
+    }
+  },
+  "table_4_data": {
+    "title": "Cross-Model Validation Results",
+    "description": "Generate with one model, validate with another",
+    "headers": [
+      "Generation Model",
+      "Validation Model",
+      "Expected",
+      "Actual",
+      "Error Stats",
+      "Time (s)"
+    ],
+    "rows": [
+      {
+        "generation_model": "tiny-gpt2",
+        "validation_model": "tiny-gpt2",
+        "expected": "pass",
+        "actual": "pass",
+        "error_stats": "",
+        "time": "2.58"
+      },
+      {
+        "generation_model": "tiny-gpt2",
+        "validation_model": "distilgpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "0.33"
+      },
+      {
+        "generation_model": "tiny-gpt2",
+        "validation_model": "gpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "0.43"
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "tiny-gpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "0.92"
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "distilgpt2",
+        "expected": "pass",
+        "actual": "pass",
+        "error_stats": "",
+        "time": "0.95"
+      },
+      {
+        "generation_model": "distilgpt2",
+        "validation_model": "gpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "0.97"
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "tiny-gpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "1.31"
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "distilgpt2",
+        "expected": "fail",
+        "actual": "fail",
+        "error_stats": "",
+        "time": "1.26"
+      },
+      {
+        "generation_model": "gpt2",
+        "validation_model": "gpt2",
+        "expected": "pass",
+        "actual": "pass",
+        "error_stats": "",
+        "time": "1.31"
+      }
+    ],
+    "summary": {
+      "same_model_pass_rate": 100.0,
+      "cross_model_detection_rate": 100.0,
+      "overall_accuracy": 100.0
+    }
+  },
+  "conclusions": [
+    "\u2705 Same-model validation works correctly",
+    "\u2705 Cross-model attacks correctly detected",
+    "\u2705 Cross-model validation experiment PASSED"
+  ],
+  "total_duration": 10.142825603485107
+}

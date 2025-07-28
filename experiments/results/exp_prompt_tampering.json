@@ -1,7 +1,7 @@
 {
   "experiment": "prompt_tampering",
-  "timestamp": 1753739366.818342,
-  "total_duration": 21.024390935897827,
+  "timestamp": 1753743661.1555,
+  "total_duration": 4.297272205352783,
   "prompt_analysis": {
     "total_prompts": 9,
     "unique_token_sequences": 9,
@@ -42,9 +42,9 @@
       "token_count": 22,
       "token_hash": "0b4af498b2d68f6c5f316075d80ceb4871f3b2de11b4e79ad969e7ff23d90cc4",
       "s_vals_sample": [
-        956209876,
-        711572149,
-        912710429
+        1483443016,
+        1955841413,
+        1072721435
       ]
     },
     "advertising_soft": {
@@ -77,9 +77,9 @@
       "token_count": 23,
       "token_hash": "afac6e6f2bdee4e0b66631eda62af1bc3494fd4943ccc471eec35de5dfd673da",
       "s_vals_sample": [
-        1068899094,
-        998625851,
-        572976902
+        562342262,
+        1118038003,
+        1044695408
       ]
     },
     "advertising_hard": {
@@ -117,9 +117,9 @@
       "token_count": 28,
       "token_hash": "9d4c7e9b97c3e589e4ed2a5782a07d904dd6e32d320b9381b080ee76ef38139f",
       "s_vals_sample": [
-        1862727005,
-        2089309153,
-        171465568
+        953893094,
+        1419719174,
+        960677513
       ]
     },
     "avoidance_polite": {
@@ -152,9 +152,9 @@
       "token_count": 23,
       "token_hash": "f96f6c2024e2edb0bcb4c000ef3ca2c084b7a90d8b6126335b767df0f0432238",
       "s_vals_sample": [
-        1916594533,
-        1850903235,
-        34328084
+        1015787542,
+        1268887069,
+        499223309
       ]
     },
     "avoidance_direct": {
@@ -186,9 +186,9 @@
       "token_count": 22,
       "token_hash": "b053a33498620633d920acd7cac07da384ea68fe72b6dea66449db624f04ef17",
       "s_vals_sample": [
-        176118041,
-        897314117,
-        1532825538
+        578563603,
+        1385486626,
+        1573004226
       ]
     },
     "taco_recipe": {
@@ -222,9 +222,9 @@
       "token_count": 24,
       "token_hash": "79949a4bb36d346ad150baa5b786c87c0a108e5adb448d81cad1878511b7b896",
       "s_vals_sample": [
-        1223541788,
-        2027635558,
-        1218218814
+        911124576,
+        484142618,
+        393512124
       ]
     },
     "taco_history": {
@@ -262,9 +262,9 @@
       "token_count": 28,
       "token_hash": "3208137770e50f77ec4275d3cc3e023eee486c5a6a7e21c5a82b21ca00ab26b4",
       "s_vals_sample": [
-        1589660445,
-        263808177,
-        782081643
+        1686395895,
+        1331721969,
+        2120018257
       ]
     },
     "technical": {
@@ -299,9 +299,9 @@
       "token_count": 25,
       "token_hash": "bfffbfd027a125e1acbbac8a698d2b3830c7f6dcacf5b7ce59b9eaf2114bc863",
       "s_vals_sample": [
-        946111733,
-        688086217,
-        1720188281
+        1011877358,
+        852114593,
+        1491165653
       ]
     },
     "completion": {
@@ -335,9 +335,9 @@
       "token_count": 24,
       "token_hash": "0cffbea72bf0efbb96d15d63c992241de45513d97f5a708798769732df627157",
       "s_vals_sample": [
-        367265273,
-        1954651096,
-        1118675969
+        1572893091,
+        961315878,
+        1653477969
       ]
     }
   },

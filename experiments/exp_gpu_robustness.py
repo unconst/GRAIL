@@ -24,7 +24,7 @@ import subprocess
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from grail import GrailProtocol
+from grail import Prover, Verifier
 
 class GPURobustnessExperiment:
     """GPU/Hardware Robustness Experiment for Table 2"""
@@ -45,7 +45,7 @@ class GPURobustnessExperiment:
         # Test configuration
         self.test_prompt = "The quick brown fox jumps over the lazy dog and continues through the dense forest."
         self.token_count = 128
-        self.challenge_size = 1024
+        self.challenge_size = 16  # Must be less than token_count
         
         # Hardware configurations to test (simulated if not available)
         self.gpu_configurations = [
@@ -225,33 +225,35 @@ class GPURobustnessExperiment:
                 protocol_kwargs["use_sdpa"] = True
             
             # Generation phase
-            gen_protocol = GrailProtocol(**protocol_kwargs)
-            commit_result = gen_protocol.commit(self.test_prompt)
+            # Note: Current Prover doesn't support device_map or attention configurations
+            prover = Prover(model_name)
+            
+            # Commit phase
+            commit = prover.commit(self.test_prompt, max_new_tokens=self.token_count)
+            
+            # Open phase
+            proof_pkg = prover.open(k=self.challenge_size)
+            
             gen_time = time.time() - gen_start
             
             test_result["timing"]["generation_time"] = gen_time
-            test_result["timing"]["commit_time"] = commit_result.get("timing", {}).get("commit_time", 0)
+            test_result["timing"]["commit_time"] = gen_time
             
             # Validation phase (same configuration)
             val_start = time.time()
-            val_protocol = GrailProtocol(**protocol_kwargs)
+            verifier = Verifier(model_name)
             
-            verify_result = val_protocol.verify(
-                prompt=self.test_prompt,
-                response=commit_result["response"],
-                proof=commit_result["proof"]
-            )
+            verification_result = verifier.verify(commit, proof_pkg, prover.secret_key)
             
             val_time = time.time() - val_start
             test_result["timing"]["validation_time"] = val_time
-            test_result["timing"]["verify_time"] = verify_result.get("timing", {}).get("verify_time", 0)
+            test_result["timing"]["verify_time"] = val_time
             
             # Extract validation results
-            test_result["validation_success"] = verify_result["valid"]
+            test_result["validation_success"] = verification_result
             
-            # Extract error statistics
-            if "error_stats" in verify_result:
-                test_result["error_stats"] = verify_result["error_stats"]
+            # Extract error statistics (if needed in future)
+            # Currently verification returns boolean only
             
             # Check if results are within thresholds
             within_thresholds = True

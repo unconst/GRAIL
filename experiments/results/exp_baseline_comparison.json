@@ -1,0 +1,865 @@
+{
+  "experiment": "baseline_comparison",
+  "description": "Compare GRAIL against existing proof-of-inference methods",
+  "timestamp": "20250728_231313",
+  "methods_tested": [
+    "GRAIL",
+    "TOPLOC",
+    "zkLLM",
+    "SVIP",
+    "Raw Activations"
+  ],
+  "performance_tests": [
+    {
+      "method": "GRAIL",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 256,
+      "commitment_time_ms": 8.532881593529995,
+      "validation_time_ms": 2658.3208041381913,
+      "memory_overhead_mb": 102.55867299915862,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 8192,
+      "commitment_time_ms": 180263.08715003013,
+      "validation_time_ms": 3605.261743000602,
+      "memory_overhead_mb": 2253.2885893753764,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 1024,
+      "commitment_time_ms": 49.095846315490846,
+      "validation_time_ms": 245.47923157745424,
+      "memory_overhead_mb": 383.56129933977223,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 131072,
+      "commitment_time_ms": 3.2028771046692555,
+      "validation_time_ms": 16.014385523346277,
+      "memory_overhead_mb": 10008.990952091423,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 512,
+      "commitment_time_ms": 20.100856043933994,
+      "validation_time_ms": 6262.189767533285,
+      "memory_overhead_mb": 120.7984137255649,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 16384,
+      "commitment_time_ms": 324608.0734377163,
+      "validation_time_ms": 6492.161468754325,
+      "memory_overhead_mb": 2028.8004589857267,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 2048,
+      "commitment_time_ms": 141.68358420035426,
+      "validation_time_ms": 708.4179210017713,
+      "memory_overhead_mb": 553.4515007826338,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 262144,
+      "commitment_time_ms": 5.28858425629591,
+      "validation_time_ms": 26.44292128147955,
+      "memory_overhead_mb": 8263.41290046236,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 1024,
+      "commitment_time_ms": 34.39043263709268,
+      "validation_time_ms": 10713.942475401953,
+      "memory_overhead_mb": 103.33663652972562,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 32768,
+      "commitment_time_ms": 614683.1342369793,
+      "validation_time_ms": 12293.662684739587,
+      "memory_overhead_mb": 1920.8847944905606,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 4096,
+      "commitment_time_ms": 264.6281425834596,
+      "validation_time_ms": 1323.1407129172978,
+      "memory_overhead_mb": 516.8518409833194,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 524288,
+      "commitment_time_ms": 13.364929079656202,
+      "validation_time_ms": 66.824645398281,
+      "memory_overhead_mb": 10441.350843481407,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 2048,
+      "commitment_time_ms": 60.95675206925369,
+      "validation_time_ms": 18990.37276003673,
+      "memory_overhead_mb": 91.58165875789318,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 65536,
+      "commitment_time_ms": 1071080.645624261,
+      "validation_time_ms": 21421.612912485216,
+      "memory_overhead_mb": 1673.5635087879075,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 8192,
+      "commitment_time_ms": 430.4375986237176,
+      "validation_time_ms": 2152.1879931185877,
+      "memory_overhead_mb": 420.3492174059742,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "sshleifer/tiny-gpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 1048576,
+      "commitment_time_ms": 26.938257304368626,
+      "validation_time_ms": 134.69128652184313,
+      "memory_overhead_mb": 10522.756759518994,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "distilgpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "distilgpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 256,
+      "commitment_time_ms": 8.002932370119666,
+      "validation_time_ms": 2493.221238383435,
+      "memory_overhead_mb": 96.18909098701523,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "distilgpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 8192,
+      "commitment_time_ms": 151850.11780873855,
+      "validation_time_ms": 3037.0023561747707,
+      "memory_overhead_mb": 1898.1264726092318,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "distilgpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 1024,
+      "commitment_time_ms": 59.37289695746653,
+      "validation_time_ms": 296.86448478733263,
+      "memory_overhead_mb": 463.8507574802073,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "distilgpt2",
+      "prompt": "The quick brown fox jumps over the lazy dog.",
+      "token_count": 32,
+      "commitment_size_bytes": 131072,
+      "commitment_time_ms": 3.4614660009989286,
+      "validation_time_ms": 17.307330004994643,
+      "memory_overhead_mb": 10817.081253121652,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "distilgpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "distilgpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 512,
+      "commitment_time_ms": 17.81551117184628,
+      "validation_time_ms": 5550.216941998264,
+      "memory_overhead_mb": 107.06437002311466,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "distilgpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 16384,
+      "commitment_time_ms": 308952.507532237,
+      "validation_time_ms": 6179.05015064474,
+      "memory_overhead_mb": 1930.9531720764812,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "distilgpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 2048,
+      "commitment_time_ms": 128.0714677631138,
+      "validation_time_ms": 640.3573388155689,
+      "memory_overhead_mb": 500.27917094966324,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "distilgpt2",
+      "prompt": "In a hole in the ground there lived a hobbit.",
+      "token_count": 64,
+      "commitment_size_bytes": 262144,
+      "commitment_time_ms": 7.186178561964617,
+      "validation_time_ms": 35.930892809823085,
+      "memory_overhead_mb": 11228.404003069714,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "distilgpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "distilgpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 1024,
+      "commitment_time_ms": 34.368467743109036,
+      "validation_time_ms": 10707.099566122433,
+      "memory_overhead_mb": 103.27063624732284,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "distilgpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 32768,
+      "commitment_time_ms": 572598.8348151974,
+      "validation_time_ms": 11451.97669630395,
+      "memory_overhead_mb": 1789.371358797492,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "distilgpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 4096,
+      "commitment_time_ms": 238.56689810162246,
+      "validation_time_ms": 1192.8344905081124,
+      "memory_overhead_mb": 465.95097285473133,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "distilgpt2",
+      "prompt": "To be or not to be, that is the question.",
+      "token_count": 128,
+      "commitment_size_bytes": 524288,
+      "commitment_time_ms": 10.89999986573676,
+      "validation_time_ms": 54.4999993286838,
+      "memory_overhead_mb": 8515.624895106843,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    },
+    {
+      "method": "GRAIL",
+      "model": "distilgpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 0,
+      "commitment_time_ms": 0,
+      "validation_time_ms": 0,
+      "memory_overhead_mb": 0,
+      "validation_success": false,
+      "error_message": "Sample larger than population or is negative"
+    },
+    {
+      "method": "TOPLOC",
+      "model": "distilgpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 2048,
+      "commitment_time_ms": 71.36892725074753,
+      "validation_time_ms": 22234.165797348272,
+      "memory_overhead_mb": 107.22495079739716,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.001,
+      "false_negative_rate": 0.005
+    },
+    {
+      "method": "zkLLM",
+      "model": "distilgpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 65536,
+      "commitment_time_ms": 1289994.9241023671,
+      "validation_time_ms": 25799.89848204734,
+      "memory_overhead_mb": 2015.6170689099486,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0001,
+      "false_negative_rate": 0.0001
+    },
+    {
+      "method": "SVIP",
+      "model": "distilgpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 8192,
+      "commitment_time_ms": 492.5009782657186,
+      "validation_time_ms": 2462.5048913285927,
+      "memory_overhead_mb": 480.9579865876158,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.01,
+      "false_negative_rate": 0.02
+    },
+    {
+      "method": "Raw Activations",
+      "model": "distilgpt2",
+      "prompt": "The best way to predict the future is to invent it.",
+      "token_count": 256,
+      "commitment_size_bytes": 1048576,
+      "commitment_time_ms": 26.341959623592523,
+      "validation_time_ms": 131.7097981179626,
+      "memory_overhead_mb": 10289.827977965828,
+      "validation_success": true,
+      "simulated": true,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    }
+  ],
+  "summary_statistics": {
+    "total_tests": 40,
+    "method_stats": {
+      "GRAIL": {
+        "total_tests": 8,
+        "successful_tests": 0,
+        "success_rate": 0.0,
+        "avg_commitment_size_bytes": 0.0,
+        "avg_commitment_time_ms": 0.0,
+        "avg_validation_time_ms": 0.0,
+        "avg_memory_overhead_mb": 0.0,
+        "commitment_size_per_token": 0.0,
+        "commitment_time_per_token_ms": 0.0,
+        "validation_time_per_token_ms": 0.0,
+        "is_simulated": false
+      },
+      "TOPLOC": {
+        "total_tests": 8,
+        "successful_tests": 8,
+        "success_rate": 100.0,
+        "avg_commitment_size_bytes": 960.0,
+        "avg_commitment_time_ms": 31.94209510995411,
+        "avg_validation_time_ms": 9951.191168870322,
+        "avg_memory_overhead_mb": 104.00305375839903,
+        "commitment_size_per_token": 8.0,
+        "commitment_time_per_token_ms": 0.26618412591628426,
+        "validation_time_per_token_ms": 82.92659307391932,
+        "is_simulated": true,
+        "false_positive_rate": 0.001,
+        "false_negative_rate": 0.005
+      },
+      "zkLLM": {
+        "total_tests": 8,
+        "successful_tests": 8,
+        "success_rate": 100.0,
+        "avg_commitment_size_bytes": 30720.0,
+        "avg_commitment_time_ms": 564253.9155884408,
+        "avg_validation_time_ms": 11285.078311768817,
+        "avg_memory_overhead_mb": 1938.8256780040906,
+        "commitment_size_per_token": 256.0,
+        "commitment_time_per_token_ms": 4702.115963237007,
+        "validation_time_per_token_ms": 94.04231926474014,
+        "is_simulated": true,
+        "false_positive_rate": 0.0001,
+        "false_negative_rate": 0.0001
+      },
+      "SVIP": {
+        "total_tests": 8,
+        "successful_tests": 8,
+        "success_rate": 100.0,
+        "avg_commitment_size_bytes": 3840.0,
+        "avg_commitment_time_ms": 225.54467660136794,
+        "avg_validation_time_ms": 1127.7233830068396,
+        "avg_memory_overhead_mb": 473.1565932979897,
+        "commitment_size_per_token": 32.0,
+        "commitment_time_per_token_ms": 1.8795389716780662,
+        "validation_time_per_token_ms": 9.397694858390333,
+        "is_simulated": true,
+        "false_positive_rate": 0.01,
+        "false_negative_rate": 0.02
+      },
+      "Raw Activations": {
+        "total_tests": 8,
+        "successful_tests": 8,
+        "success_rate": 100.0,
+        "avg_commitment_size_bytes": 491520.0,
+        "avg_commitment_time_ms": 12.085531474660351,
+        "avg_validation_time_ms": 60.42765737330176,
+        "avg_memory_overhead_mb": 10010.931198102277,
+        "commitment_size_per_token": 4096.0,
+        "commitment_time_per_token_ms": 0.10071276228883627,
+        "validation_time_per_token_ms": 0.5035638114441813,
+        "is_simulated": true,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      }
+    },
+    "token_count_analysis": {},
+    "metric_comparisons": {},
+    "efficiency_rankings": {
+      "commitment_size_per_token": [
+        {
+          "method": "GRAIL",
+          "value": 0.0,
+          "rank": 1
+        },
+        {
+          "method": "TOPLOC",
+          "value": 8.0,
+          "rank": 2
+        },
+        {
+          "method": "SVIP",
+          "value": 32.0,
+          "rank": 3
+        },
+        {
+          "method": "zkLLM",
+          "value": 256.0,
+          "rank": 4
+        },
+        {
+          "method": "Raw Activations",
+          "value": 4096.0,
+          "rank": 5
+        }
+      ],
+      "commitment_time_per_token_ms": [
+        {
+          "method": "GRAIL",
+          "value": 0.0,
+          "rank": 1
+        },
+        {
+          "method": "Raw Activations",
+          "value": 0.10071276228883627,
+          "rank": 2
+        },
+        {
+          "method": "TOPLOC",
+          "value": 0.26618412591628426,
+          "rank": 3
+        },
+        {
+          "method": "SVIP",
+          "value": 1.8795389716780662,
+          "rank": 4
+        },
+        {
+          "method": "zkLLM",
+          "value": 4702.115963237007,
+          "rank": 5
+        }
+      ],
+      "validation_time_per_token_ms": [
+        {
+          "method": "GRAIL",
+          "value": 0.0,
+          "rank": 1
+        },
+        {
+          "method": "Raw Activations",
+          "value": 0.5035638114441813,
+          "rank": 2
+        },
+        {
+          "method": "SVIP",
+          "value": 9.397694858390333,
+          "rank": 3
+        },
+        {
+          "method": "TOPLOC",
+          "value": 82.92659307391932,
+          "rank": 4
+        },
+        {
+          "method": "zkLLM",
+          "value": 94.04231926474014,
+          "rank": 5
+        }
+      ],
+      "avg_memory_overhead_mb": [
+        {
+          "method": "GRAIL",
+          "value": 0.0,
+          "rank": 1
+        },
+        {
+          "method": "TOPLOC",
+          "value": 104.00305375839903,
+          "rank": 2
+        },
+        {
+          "method": "SVIP",
+          "value": 473.1565932979897,
+          "rank": 3
+        },
+        {
+          "method": "zkLLM",
+          "value": 1938.8256780040906,
+          "rank": 4
+        },
+        {
+          "method": "Raw Activations",
+          "value": 10010.931198102277,
+          "rank": 5
+        }
+      ],
+      "success_rate": [
+        {
+          "method": "TOPLOC",
+          "value": 100.0,
+          "rank": 1
+        },
+        {
+          "method": "zkLLM",
+          "value": 100.0,
+          "rank": 2
+        },
+        {
+          "method": "SVIP",
+          "value": 100.0,
+          "rank": 3
+        },
+        {
+          "method": "Raw Activations",
+          "value": 100.0,
+          "rank": 4
+        },
+        {
+          "method": "GRAIL",
+          "value": 0.0,
+          "rank": 5
+        }
+      ]
+    }
+  },
+  "table_6_data": {
+    "title": "Time, Memory, Storage Cost Comparison",
+    "description": "Performance comparison across proof-of-inference methods",
+    "headers": [
+      "Method",
+      "Commit Size/Token (B)",
+      "Commit Time/Token (ms)",
+      "Validation Time/Token (ms)",
+      "Memory Overhead (MB)",
+      "Success Rate (%)",
+      "FP Rate",
+      "FN Rate"
+    ],
+    "rows": [
+      {
+        "method": "GRAIL",
+        "commitment_size_per_token": "0.0",
+        "commitment_time_per_token": "0.000",
+        "validation_time_per_token": "0.000",
+        "memory_overhead": "0.0",
+        "success_rate": "0.0",
+        "false_positive_rate": "N/A",
+        "false_negative_rate": "N/A"
+      },
+      {
+        "method": "TOPLOC (sim)",
+        "commitment_size_per_token": "8.0",
+        "commitment_time_per_token": "0.266",
+        "validation_time_per_token": "82.927",
+        "memory_overhead": "104.0",
+        "success_rate": "100.0",
+        "false_positive_rate": "0.001",
+        "false_negative_rate": "0.005"
+      },
+      {
+        "method": "zkLLM (sim)",
+        "commitment_size_per_token": "256.0",
+        "commitment_time_per_token": "4702.116",
+        "validation_time_per_token": "94.042",
+        "memory_overhead": "1938.8",
+        "success_rate": "100.0",
+        "false_positive_rate": "0.000",
+        "false_negative_rate": "0.000"
+      },
+      {
+        "method": "SVIP (sim)",
+        "commitment_size_per_token": "32.0",
+        "commitment_time_per_token": "1.880",
+        "validation_time_per_token": "9.398",
+        "memory_overhead": "473.2",
+        "success_rate": "100.0",
+        "false_positive_rate": "0.010",
+        "false_negative_rate": "0.020"
+      },
+      {
+        "method": "Raw Activations (sim)",
+        "commitment_size_per_token": "4096.0",
+        "commitment_time_per_token": "0.101",
+        "validation_time_per_token": "0.504",
+        "memory_overhead": "10010.9",
+        "success_rate": "100.0",
+        "false_positive_rate": "0.000",
+        "false_negative_rate": "0.000"
+      }
+    ],
+    "summary": {
+      "grail_performance": {
+        "commitment_size_per_token": 0.0,
+        "commitment_time_per_token": 0.0,
+        "validation_time_per_token": 0.0,
+        "memory_overhead": 0.0,
+        "success_rate": 0.0
+      },
+      "best_performers": {
+        "smallest_commitment": "GRAIL",
+        "fastest_commitment": "GRAIL",
+        "fastest_validation": "GRAIL",
+        "lowest_memory": "GRAIL",
+        "highest_success_rate": "TOPLOC"
+      },
+      "efficiency_analysis": {}
+    }
+  },
+  "conclusions": [
+    "\u2705 GRAIL commitment size competitive with TOPLOC",
+    "\u2705 GRAIL validation time competitive with TOPLOC",
+    "\u274c GRAIL success rate below expectations",
+    "\u2705 Baseline comparison experiment COMPLETED"
+  ],
+  "total_duration": 6.993585824966431
+}

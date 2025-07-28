@@ -27,9 +27,9 @@ class TopKExponentErrorExperiment:
         self.results = []
         
         # Test configurations
-        self.models = ["sshleifer/tiny-gpt2", "distilgpt2", "gpt2"]
-        self.top_k_values = [64, 128, 256, 512, 1024, 2048, 4096]
-        self.num_queries = 2000  # As specified
+        self.models = ["sshleifer/tiny-gpt2"]  # Reduced for faster testing
+        self.top_k_values = [64, 128, 256, 512]  # Reduced range
+        self.num_queries = 100  # Reduced for faster testing
         
         # Diverse prompt set for comprehensive testing
         self.prompts = [

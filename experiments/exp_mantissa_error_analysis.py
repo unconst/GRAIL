@@ -120,8 +120,13 @@ class MantissaErrorAnalysisExperiment:
                     }
                 })
                 
-                # Add token for next iteration
-                current_ids = torch.cat([current_ids, torch.tensor([[next_token]], device=device)], dim=1)
+                # Add token for next iteration with sliding window to prevent exceeding max positions
+                new_token_tensor = torch.tensor([[next_token]], device=device)
+                current_ids = torch.cat([current_ids, new_token_tensor], dim=1)
+                
+                # Keep only the last 1000 tokens to stay within model's max position embeddings (1024)
+                if current_ids.shape[1] > 1000:
+                    current_ids = current_ids[:, -1000:]
                 
                 # Progress tracking
                 if (step + 1) % 256 == 0:

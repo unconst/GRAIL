@@ -1,0 +1,1160 @@
+{
+  "experiment": "enhanced_precision_sensitivity",
+  "description": "Test precision mode combinations for sensitivity detection",
+  "timestamp": "20250728_232625",
+  "models_tested": [
+    "sshleifer/tiny-gpt2",
+    "distilgpt2"
+  ],
+  "precision_tests": [
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.4281885623931885,
+        "commit_time": 1.4281885623931885,
+        "validation_time": 0.33844852447509766,
+        "verify_time": 0.33844852447509766,
+        "total_time": 3.0451579093933105
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.38141369819641113,
+        "commit_time": 0.38141369819641113,
+        "validation_time": 0.32986950874328613,
+        "verify_time": 0.32986950874328613,
+        "total_time": 0.7113850116729736
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.40832042694091797,
+        "commit_time": 0.40832042694091797,
+        "validation_time": 0.293689489364624,
+        "verify_time": 0.293689489364624,
+        "total_time": 0.7021045684814453
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.37590599060058594,
+        "commit_time": 0.37590599060058594,
+        "validation_time": 0.40849924087524414,
+        "verify_time": 0.40849924087524414,
+        "total_time": 0.7844686508178711
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.42370057106018066,
+        "commit_time": 0.42370057106018066,
+        "validation_time": 0.3393430709838867,
+        "verify_time": 0.3393430709838867,
+        "total_time": 0.7631371021270752
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4365229606628418,
+        "commit_time": 0.4365229606628418,
+        "validation_time": 0.2840137481689453,
+        "verify_time": 0.2840137481689453,
+        "total_time": 0.7206251621246338
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.39450669288635254,
+        "commit_time": 0.39450669288635254,
+        "validation_time": 0.3311309814453125,
+        "verify_time": 0.3311309814453125,
+        "total_time": 0.7256479263305664
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4251997470855713,
+        "commit_time": 0.4251997470855713,
+        "validation_time": 0.452425479888916,
+        "verify_time": 0.452425479888916,
+        "total_time": 0.8776340484619141
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4085681438446045,
+        "commit_time": 0.4085681438446045,
+        "validation_time": 0.31795668601989746,
+        "verify_time": 0.31795668601989746,
+        "total_time": 0.7265334129333496
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.419264554977417,
+        "commit_time": 0.419264554977417,
+        "validation_time": 0.3446028232574463,
+        "verify_time": 0.3446028232574463,
+        "total_time": 0.7639579772949219
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.39318132400512695,
+        "commit_time": 0.39318132400512695,
+        "validation_time": 0.30203962326049805,
+        "verify_time": 0.30203962326049805,
+        "total_time": 0.6953082084655762
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.45531749725341797,
+        "commit_time": 0.45531749725341797,
+        "validation_time": 0.28618741035461426,
+        "verify_time": 0.28618741035461426,
+        "total_time": 0.7415893077850342
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5097570419311523,
+        "commit_time": 0.5097570419311523,
+        "validation_time": 0.28992795944213867,
+        "verify_time": 0.28992795944213867,
+        "total_time": 0.7997217178344727
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.5095994472503662,
+        "commit_time": 0.5095994472503662,
+        "validation_time": 0.3902261257171631,
+        "verify_time": 0.3902261257171631,
+        "total_time": 0.8998620510101318
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.40167808532714844,
+        "commit_time": 0.40167808532714844,
+        "validation_time": 0.2967362403869629,
+        "verify_time": 0.2967362403869629,
+        "total_time": 0.6984500885009766
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4301469326019287,
+        "commit_time": 0.4301469326019287,
+        "validation_time": 0.2855560779571533,
+        "verify_time": 0.2855560779571533,
+        "total_time": 0.7157416343688965
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.40660905838012695,
+        "commit_time": 0.40660905838012695,
+        "validation_time": 0.33470749855041504,
+        "verify_time": 0.33470749855041504,
+        "total_time": 0.7413523197174072
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4485795497894287,
+        "commit_time": 0.4485795497894287,
+        "validation_time": 0.2840449810028076,
+        "verify_time": 0.2840449810028076,
+        "total_time": 0.7326714992523193
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.4076709747314453,
+        "commit_time": 0.4076709747314453,
+        "validation_time": 0.2858290672302246,
+        "verify_time": 0.2858290672302246,
+        "total_time": 0.6935365200042725
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.39395856857299805,
+        "commit_time": 0.39395856857299805,
+        "validation_time": 0.2799088954925537,
+        "verify_time": 0.2799088954925537,
+        "total_time": 0.6739051342010498
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "sshleifer/tiny-gpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.413593053817749,
+        "commit_time": 0.413593053817749,
+        "validation_time": 0.4436180591583252,
+        "verify_time": 0.4436180591583252,
+        "total_time": 0.8572473526000977
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8954954147338867,
+        "commit_time": 0.8954954147338867,
+        "validation_time": 0.35296106338500977,
+        "verify_time": 0.35296106338500977,
+        "total_time": 1.2485554218292236
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8815226554870605,
+        "commit_time": 0.8815226554870605,
+        "validation_time": 0.3570101261138916,
+        "verify_time": 0.3570101261138916,
+        "total_time": 1.2386410236358643
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "bf16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.0858519077301025,
+        "commit_time": 1.0858519077301025,
+        "validation_time": 0.5096743106842041,
+        "verify_time": 0.5096743106842041,
+        "total_time": 1.5956227779388428
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8750252723693848,
+        "commit_time": 0.8750252723693848,
+        "validation_time": 0.39035677909851074,
+        "verify_time": 0.39035677909851074,
+        "total_time": 1.265470266342163
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.9433157444000244,
+        "commit_time": 0.9433157444000244,
+        "validation_time": 0.396437406539917,
+        "verify_time": 0.396437406539917,
+        "total_time": 1.3398427963256836
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "bf16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8981497287750244,
+        "commit_time": 0.8981497287750244,
+        "validation_time": 0.34711766242980957,
+        "verify_time": 0.34711766242980957,
+        "total_time": 1.2453572750091553
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 62.43450379371643,
+        "commit_time": 62.43450379371643,
+        "validation_time": 0.3509676456451416,
+        "verify_time": 0.3509676456451416,
+        "total_time": 62.785480260849
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.1425511837005615,
+        "commit_time": 1.1425511837005615,
+        "validation_time": 0.35521841049194336,
+        "verify_time": 0.35521841049194336,
+        "total_time": 1.4977796077728271
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp32",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.190702199935913,
+        "commit_time": 1.190702199935913,
+        "validation_time": 0.3603951930999756,
+        "verify_time": 0.3603951930999756,
+        "total_time": 1.55110764503479
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.1396794319152832,
+        "commit_time": 1.1396794319152832,
+        "validation_time": 0.49782609939575195,
+        "verify_time": 0.49782609939575195,
+        "total_time": 1.6376104354858398
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.1910731792449951,
+        "commit_time": 1.1910731792449951,
+        "validation_time": 0.45250606536865234,
+        "verify_time": 0.45250606536865234,
+        "total_time": 1.6436736583709717
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "bf16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.145211935043335,
+        "commit_time": 1.145211935043335,
+        "validation_time": 0.3472902774810791,
+        "verify_time": 0.3472902774810791,
+        "total_time": 1.4925956726074219
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.989478588104248,
+        "commit_time": 0.989478588104248,
+        "validation_time": 0.3826577663421631,
+        "verify_time": 0.3826577663421631,
+        "total_time": 1.3721833229064941
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.016683578491211,
+        "commit_time": 1.016683578491211,
+        "validation_time": 0.35790252685546875,
+        "verify_time": 0.35790252685546875,
+        "total_time": 1.3746302127838135
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp16",
+      "expected_result": "pass",
+      "actual_result": "pass",
+      "validation_success": true,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8763120174407959,
+        "commit_time": 0.8763120174407959,
+        "validation_time": 0.3483614921569824,
+        "verify_time": 0.3483614921569824,
+        "total_time": 1.2247178554534912
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.9282517433166504,
+        "commit_time": 0.9282517433166504,
+        "validation_time": 0.46440887451171875,
+        "verify_time": 0.46440887451171875,
+        "total_time": 1.392700433731079
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8880548477172852,
+        "commit_time": 0.8880548477172852,
+        "validation_time": 0.3504643440246582,
+        "verify_time": 0.3504643440246582,
+        "total_time": 1.2385566234588623
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp16",
+      "validation_precision": "fp32",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 0.8011133670806885,
+        "commit_time": 0.8011133670806885,
+        "validation_time": 0.3338124752044678,
+        "verify_time": 0.3338124752044678,
+        "total_time": 1.134950876235962
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.0688583850860596,
+        "commit_time": 1.0688583850860596,
+        "validation_time": 0.3640303611755371,
+        "verify_time": 0.3640303611755371,
+        "total_time": 1.4329137802124023
+      },
+      "run_id": 0,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.0995676517486572,
+        "commit_time": 1.0995676517486572,
+        "validation_time": 0.5589725971221924,
+        "verify_time": 0.5589725971221924,
+        "total_time": 1.6585638523101807
+      },
+      "run_id": 1,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    },
+    {
+      "model": "distilgpt2",
+      "generation_precision": "fp32",
+      "validation_precision": "fp16",
+      "expected_result": "fail",
+      "actual_result": "fail",
+      "validation_success": false,
+      "error_stats": {},
+      "timing": {
+        "generation_time": 1.0852420330047607,
+        "commit_time": 1.0852420330047607,
+        "validation_time": 0.3299427032470703,
+        "verify_time": 0.3299427032470703,
+        "total_time": 1.4152090549468994
+      },
+      "run_id": 2,
+      "error_message": null,
+      "precision_support": {
+        "gen_supported": true,
+        "val_supported": true
+      },
+      "result_correct": true
+    }
+  ],
+  "summary_statistics": {
+    "total_tests": 42,
+    "successful_tests": 42,
+    "precision_combination_stats": {
+      "bf16\u2192bf16": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "pass",
+        "error_stats": {}
+      },
+      "bf16\u2192fp32": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "fail",
+        "error_stats": {}
+      },
+      "fp32\u2192fp32": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "pass",
+        "error_stats": {}
+      },
+      "fp32\u2192bf16": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "fail",
+        "error_stats": {}
+      },
+      "fp16\u2192fp16": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "pass",
+        "error_stats": {}
+      },
+      "fp16\u2192fp32": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "fail",
+        "error_stats": {}
+      },
+      "fp32\u2192fp16": {
+        "total_tests": 6,
+        "correct_tests": 6,
+        "accuracy": 100.0,
+        "expected_result": "fail",
+        "error_stats": {}
+      }
+    },
+    "model_stats": {
+      "sshleifer/tiny-gpt2": {
+        "total_tests": 21,
+        "correct_tests": 21,
+        "accuracy": 100.0
+      },
+      "distilgpt2": {
+        "total_tests": 21,
+        "correct_tests": 21,
+        "accuracy": 100.0
+      }
+    },
+    "error_analysis": {},
+    "timing_stats": {
+      "min_time": 0.6739051342010498,
+      "max_time": 62.785480260849,
+      "avg_time": 2.591814296586173,
+      "total_time": 108.85620045661926
+    },
+    "overall_accuracy": 100.0
+  },
+  "table_5_data": {
+    "title": "Enhanced Precision Sensitivity Results",
+    "description": "Precision mode combinations and their validation behavior",
+    "headers": [
+      "Generation",
+      "Validation",
+      "Expected",
+      "Actual",
+      "Accuracy",
+      "Exponent Error",
+      "Mantissa Error"
+    ],
+    "rows": [
+      {
+        "generation": "bf16",
+        "validation": "bf16",
+        "expected": "pass",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "bf16",
+        "validation": "fp32",
+        "expected": "fail",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "fp32",
+        "validation": "fp32",
+        "expected": "pass",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "fp32",
+        "validation": "bf16",
+        "expected": "fail",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "fp16",
+        "validation": "fp16",
+        "expected": "pass",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "fp16",
+        "validation": "fp32",
+        "expected": "fail",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      },
+      {
+        "generation": "fp32",
+        "validation": "fp16",
+        "expected": "fail",
+        "actual": "pass",
+        "accuracy": "100.0%",
+        "exponent_error": "N/A",
+        "mantissa_error": "N/A"
+      }
+    ],
+    "summary": {
+      "overall_accuracy": 100.0,
+      "total_combinations": 7,
+      "critical_tests": {
+        "bf16\u2192bf16": {
+          "accuracy": 100.0,
+          "expected": "pass"
+        },
+        "bf16\u2192fp32": {
+          "accuracy": 100.0,
+          "expected": "fail"
+        },
+        "fp32\u2192fp32": {
+          "accuracy": 100.0,
+          "expected": "pass"
+        },
+        "fp32\u2192bf16": {
+          "accuracy": 100.0,
+          "expected": "fail"
+        }
+      }
+    }
+  },
+  "conclusions": [
+    "\u2705 bf16\u2192bf16 validation works correctly",
+    "\u2705 bf16\u2192fp32 precision mismatch correctly detected",
+    "\u2705 fp32\u2192fp32 validation works correctly",
+    "\u2705 fp32\u2192bf16 precision mismatch correctly detected",
+    "\u2705 Enhanced precision sensitivity experiment PASSED"
+  ],
+  "total_duration": 109.46245622634888
+}

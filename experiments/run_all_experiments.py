@@ -8,6 +8,7 @@ import sys
 import time
 import json
 import subprocess
+import os
 from pathlib import Path
 from typing import Dict, List, Any
 
@@ -93,10 +94,10 @@ EXPERIMENTS = [
     }
 ]
 
-from experiments.exp_cross_model_validation import CrossModelValidationExperiment
-from experiments.exp_enhanced_precision_sensitivity import EnhancedPrecisionSensitivityExperiment
-from experiments.exp_gpu_robustness import GPURobustnessExperiment
-from experiments.exp_baseline_comparison import BaselineComparisonExperiment
+from exp_cross_model_validation import CrossModelValidationExperiment
+from exp_enhanced_precision_sensitivity import EnhancedPrecisionSensitivityExperiment
+from exp_gpu_robustness import GPURobustnessExperiment
+from exp_baseline_comparison import BaselineComparisonExperiment
 
 class ExperimentRunner:
     """Master experiment runner"""
@@ -129,12 +130,17 @@ class ExperimentRunner:
                     "duration": 0
                 }
             
-            # Execute experiment
+            # Execute experiment with environment variables to avoid rate limits
+            env = os.environ.copy()
+            env["TRANSFORMERS_OFFLINE"] = "1"
+            env["HF_HUB_OFFLINE"] = "1"
+            
             result = subprocess.run(
                 [sys.executable, str(experiment_file)],
                 capture_output=True,
                 text=True,
-                timeout=300  # 5 minute timeout
+                timeout=300,  # 5 minute timeout
+                env=env
             )
             
             duration = time.time() - experiment_start

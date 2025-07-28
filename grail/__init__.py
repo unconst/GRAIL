@@ -9,13 +9,14 @@ import struct
 import hashlib
 import random
 import hmac
+import time
 import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # ──────────────────────────  CONFIGURATION  ─────────────────────────────
 
-DEBUG        = True                 # ← turn on/off debug prints
+DEBUG        = False                 # ← turn on/off debug prints
 BEACON_COUNTER = 0
 
 PRIME_Q      = 2_147_483_647
@@ -68,7 +69,9 @@ def int_to_bytes(i: int) -> bytes:
 
 def dot_mod_q(hidden: torch.Tensor, r_vec: torch.Tensor) -> int:
     scaled = torch.round(hidden * 1024).to(torch.int64)
-    prod   = torch.dot(scaled, r_vec.to(torch.int64))
+    r_vec_int64 = r_vec.to(torch.int64)
+    # Use sum of element-wise multiplication instead of dot for int64 on CUDA
+    prod = (scaled * r_vec_int64).sum()
     return int(prod.item() % PRIME_Q)
 
 def sign_s_vals(s_vals: list[int], secret_key: bytes) -> bytes:
@@ -93,12 +96,20 @@ def hash_s_vals(s_vals: list[int]) -> bytes:
 # ─────────────────────────────  PROVER  ────────────────────────────────
 
 class Prover:
-    def __init__(self, model_name=MODEL_NAME):
+    def __init__(self, model_name=MODEL_NAME, torch_dtype=None):
         self.device    = "cuda" if torch.cuda.is_available() else "cpu"
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        
+        # Load model with specified dtype
+        load_kwargs = {}
+        if torch_dtype is not None:
+            load_kwargs['torch_dtype'] = torch_dtype
+            
         self.model     = (
             AutoModelForCausalLM
-            .from_pretrained(model_name, output_hidden_states=True)
+            .from_pretrained(model_name, **load_kwargs)
             .to(self.device)
             .eval()
         )
@@ -108,15 +119,19 @@ class Prover:
     def commit(self, prompt: str, max_new_tokens: int = 32) -> dict:
         self.beacon_R = get_beacon()
         self.r_vec    = r_vec_from_randomness(self.beacon_R["randomness"],
-                                              self.model.config.hidden_size)
+                                              self.model.config.hidden_size).to(self.device)
 
-        input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids.to(self.device)
+        inputs = self.tokenizer(prompt, return_tensors="pt")
+        input_ids = inputs.input_ids.to(self.device)
+        attention_mask = inputs.attention_mask.to(self.device)
         with torch.no_grad():
             gen = self.model.generate(
                 input_ids,
+                attention_mask=attention_mask,
                 max_new_tokens=max_new_tokens,
                 use_cache=True,
-                return_dict_in_generate=True
+                return_dict_in_generate=True,
+                pad_token_id=self.tokenizer.pad_token_id
             )
         tokens = gen.sequences[0].tolist()
         if DEBUG:
@@ -164,12 +179,20 @@ class Prover:
 # ─────────────────────────────  VERIFIER  ──────────────────────────────
 
 class Verifier:
-    def __init__(self, model_name=MODEL_NAME):
+    def __init__(self, model_name=MODEL_NAME, torch_dtype=None):
         self.device    = "cuda" if torch.cuda.is_available() else "cpu"
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        
+        # Load model with specified dtype
+        load_kwargs = {}
+        if torch_dtype is not None:
+            load_kwargs['torch_dtype'] = torch_dtype
+            
         self.model     = (
             AutoModelForCausalLM
-            .from_pretrained(model_name, output_hidden_states=True)
+            .from_pretrained(model_name, **load_kwargs)
             .to(self.device)
             .eval()
         )
@@ -185,7 +208,7 @@ class Verifier:
         r_vec = r_vec_from_randomness(
             commit["round_R"]["randomness"],
             self.model.config.hidden_size
-        )
+        ).to(self.device)
 
         # Re-derive and compare indices using tokens (not s_vals)
         idxs_exp = indices_from_root(
@@ -224,3 +247,59 @@ class Verifier:
 
         print("✅ Verification successful")
         return True
+
+
+# ─────────────────────────────  PROTOCOL WRAPPER  ──────────────────────────────
+
+class GrailProtocol:
+    """Wrapper class for experiments expecting GrailProtocol interface"""
+    
+    def __init__(self, model_name=MODEL_NAME, max_new_tokens=32, challenge_size=CHALLENGE_K):
+        self.model_name = model_name
+        self.max_new_tokens = max_new_tokens
+        self.challenge_size = challenge_size
+        self.prover = None
+        self.verifier = None
+        
+    def commit(self, prompt: str) -> dict:
+        """Commit phase - generate and commit to response"""
+        self.prover = Prover(self.model_name)
+        
+        start_time = time.time()
+        commit = self.prover.commit(prompt, max_new_tokens=self.max_new_tokens)
+        commit_time = time.time() - start_time
+        
+        # Open phase
+        proof_pkg = self.prover.open(k=self.challenge_size)
+        
+        # Format response for compatibility
+        return {
+            "response": self.tokenizer.decode(commit["tokens"]) if hasattr(self, 'tokenizer') else "",
+            "proof": {
+                "commit": commit,
+                "proof_pkg": proof_pkg,
+                "secret_key": self.prover.secret_key
+            },
+            "timing": {
+                "commit_time": commit_time
+            }
+        }
+        
+    def verify(self, prompt: str, response: str, proof: dict) -> dict:
+        """Verify phase - verify commitment with proof"""
+        self.verifier = Verifier(self.model_name)
+        
+        start_time = time.time()
+        result = self.verifier.verify(
+            proof["commit"],
+            proof["proof_pkg"],
+            proof["secret_key"]
+        )
+        verify_time = time.time() - start_time
+        
+        return {
+            "verified": result,
+            "timing": {
+                "verify_time": verify_time
+            }
+        }

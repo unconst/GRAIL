@@ -29,7 +29,7 @@ import numpy as np
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from grail import GrailProtocol
+from grail import Prover, Verifier
 
 class BaselineComparisonExperiment:
     """Baseline Comparison Experiment for Table 6"""
@@ -182,51 +182,44 @@ class BaselineComparisonExperiment:
             baseline_memory = self.measure_memory_usage()
             
             # Setup protocol
-            protocol = GrailProtocol(
-                model_name=model_name,
-                max_new_tokens=token_count,
-                challenge_size=self.challenge_size
-            )
+            prover = Prover(model_name)
             
             # Measure memory after model load
             loaded_memory = self.measure_memory_usage()
             
             # Commitment phase
             commit_start = time.time()
-            commit_result = protocol.commit(prompt)
+            commit = prover.commit(prompt, max_new_tokens=token_count)
+            
+            # Open phase
+            proof_pkg = prover.open(k=self.challenge_size)
             commit_time = (time.time() - commit_start) * 1000  # Convert to ms
             
             # Measure commitment size
-            if "proof" in commit_result:
-                # Estimate proof size (simplified)
-                proof_data = commit_result["proof"]
-                commitment_size = 0
-                
-                if "s_vals" in proof_data:
-                    s_vals = proof_data["s_vals"]
-                    if isinstance(s_vals, (list, tuple)):
-                        commitment_size += len(s_vals) * 4  # 4 bytes per float32
+            commitment_size = 0
+            
+            if "s_vals" in commit:
+                s_vals = commit["s_vals"]
+                if isinstance(s_vals, (list, tuple)):
+                    commitment_size += len(s_vals) * 4  # 4 bytes per float32
                     
-                if "challenge_indices" in proof_data:
-                    indices = proof_data["challenge_indices"]
-                    if isinstance(indices, (list, tuple)):
-                        commitment_size += len(indices) * 4  # 4 bytes per int32
+            if "indices" in proof_pkg:
+                indices = proof_pkg["indices"]
+                if isinstance(indices, (list, tuple)):
+                    commitment_size += len(indices) * 4  # 4 bytes per int32
                 
-                test_result["commitment_size_bytes"] = commitment_size
+            test_result["commitment_size_bytes"] = commitment_size
             
             test_result["commitment_time_ms"] = commit_time
             
             # Validation phase
             val_start = time.time()
-            verify_result = protocol.verify(
-                prompt=prompt,
-                response=commit_result["response"],
-                proof=commit_result["proof"]
-            )
+            verifier = Verifier(model_name)
+            verification_result = verifier.verify(commit, proof_pkg, prover.secret_key)
             val_time = (time.time() - val_start) * 1000  # Convert to ms
             
             test_result["validation_time_ms"] = val_time
-            test_result["validation_success"] = verify_result["valid"]
+            test_result["validation_success"] = verification_result
             
             # Measure memory overhead
             final_memory = self.measure_memory_usage()

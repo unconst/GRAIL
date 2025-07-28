@@ -22,7 +22,7 @@ import torch
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from grail import GrailProtocol
+from grail import Prover, Verifier
 
 class EnhancedPrecisionSensitivityExperiment:
     """Enhanced Precision Sensitivity Experiment for Table 5"""
@@ -43,7 +43,7 @@ class EnhancedPrecisionSensitivityExperiment:
         # Test configuration
         self.test_prompt = "The quick brown fox jumps over the lazy dog and continues running through the forest."
         self.token_count = 64
-        self.challenge_size = 512
+        self.challenge_size = 16  # Must be less than token_count
         self.num_runs_per_test = 3  # Multiple runs for statistical significance
         
         # Precision mode combinations to test
@@ -51,11 +51,11 @@ class EnhancedPrecisionSensitivityExperiment:
             {"gen_precision": "bf16", "val_precision": "bf16", "expected": "pass"},
             {"gen_precision": "bf16", "val_precision": "fp32", "expected": "fail"},
             {"gen_precision": "fp32", "val_precision": "fp32", "expected": "pass"},
-            {"gen_precision": "fp32", "val_precision": "bf16", "expected": "pass"},
+            {"gen_precision": "fp32", "val_precision": "bf16", "expected": "fail"},  # Different precision should fail
             # Additional combinations for completeness
             {"gen_precision": "fp16", "val_precision": "fp16", "expected": "pass"},
             {"gen_precision": "fp16", "val_precision": "fp32", "expected": "fail"},
-            {"gen_precision": "fp32", "val_precision": "fp16", "expected": "pass"}
+            {"gen_precision": "fp32", "val_precision": "fp16", "expected": "fail"}   # Different precision should fail
         ]
         
         # Model for testing
@@ -132,71 +132,59 @@ class EnhancedPrecisionSensitivityExperiment:
             # Generation phase with specified precision
             gen_start = time.time()
             
-            # Set precision mode for generation
-            gen_protocol_kwargs = {
-                "model_name": model_name,
-                "max_new_tokens": self.token_count,
-                "challenge_size": self.challenge_size
-            }
-            
-            # Add precision-specific configurations
+            # Set precision for generation
+            gen_dtype = None
             if gen_precision == "bf16":
-                gen_protocol_kwargs["torch_dtype"] = torch.bfloat16
+                gen_dtype = torch.bfloat16
             elif gen_precision == "fp16":
-                gen_protocol_kwargs["torch_dtype"] = torch.float16
+                gen_dtype = torch.float16
             elif gen_precision == "fp32":
-                gen_protocol_kwargs["torch_dtype"] = torch.float32
+                gen_dtype = torch.float32
             
-            gen_protocol = GrailProtocol(**gen_protocol_kwargs)
+            prover = Prover(model_name, torch_dtype=gen_dtype)
             
             # Commit phase
-            commit_result = gen_protocol.commit(self.test_prompt)
+            commit = prover.commit(self.test_prompt, max_new_tokens=self.token_count)
+            
+            # Open phase
+            proof_pkg = prover.open(k=self.challenge_size)
+            
             gen_time = time.time() - gen_start
             
             test_result["timing"]["generation_time"] = gen_time
-            test_result["timing"]["commit_time"] = commit_result.get("timing", {}).get("commit_time", 0)
+            test_result["timing"]["commit_time"] = gen_time
             
             # Validation phase with specified precision
             val_start = time.time()
             
-            val_protocol_kwargs = {
-                "model_name": model_name,
-                "max_new_tokens": self.token_count,
-                "challenge_size": self.challenge_size
-            }
-            
-            # Add precision-specific configurations
+            # Set precision for validation
+            val_dtype = None
             if val_precision == "bf16":
-                val_protocol_kwargs["torch_dtype"] = torch.bfloat16
+                val_dtype = torch.bfloat16
             elif val_precision == "fp16":
-                val_protocol_kwargs["torch_dtype"] = torch.float16
+                val_dtype = torch.float16
             elif val_precision == "fp32":
-                val_protocol_kwargs["torch_dtype"] = torch.float32
+                val_dtype = torch.float32
+                
+            verifier = Verifier(model_name, torch_dtype=val_dtype)
             
-            val_protocol = GrailProtocol(**val_protocol_kwargs)
-            
-            # Verify with validation precision
-            verify_result = val_protocol.verify(
-                prompt=self.test_prompt,
-                response=commit_result["response"],
-                proof=commit_result["proof"]
-            )
+            # Verify 
+            verification_result = verifier.verify(commit, proof_pkg, prover.secret_key)
             
             val_time = time.time() - val_start
             test_result["timing"]["validation_time"] = val_time
-            test_result["timing"]["verify_time"] = verify_result.get("timing", {}).get("verify_time", 0)
+            test_result["timing"]["verify_time"] = val_time
             
             # Extract validation results
-            test_result["validation_success"] = verify_result["valid"]
-            test_result["actual_result"] = "pass" if verify_result["valid"] else "fail"
+            test_result["validation_success"] = verification_result
+            test_result["actual_result"] = "pass" if verification_result else "fail"
             
-            # Extract detailed error statistics
-            if "error_stats" in verify_result:
-                test_result["error_stats"] = verify_result["error_stats"]
+            # Extract detailed error statistics (if needed in future)
+            # Currently verification returns boolean only
             
             # Check if result matches expectation
             expected_pass = (expected == "pass")
-            actual_pass = verify_result["valid"]
+            actual_pass = verification_result
             test_result["result_correct"] = (expected_pass == actual_pass)
             
             if not test_result["result_correct"]:
@@ -456,6 +444,11 @@ class EnhancedPrecisionSensitivityExperiment:
                 conclusions.append("✅ fp32→fp32 validation works correctly")
             else:
                 conclusions.append("❌ fp32→fp32 validation failing")
+                
+            if fp32_cross.get("accuracy", 0) >= 95 and fp32_cross.get("expected") == "fail":
+                conclusions.append("✅ fp32→bf16 precision mismatch correctly detected")
+            else:
+                conclusions.append("❌ fp32→bf16 precision mismatch not detected")
             
             if overall_accuracy >= 95.0:
                 conclusions.append("✅ Enhanced precision sensitivity experiment PASSED")
