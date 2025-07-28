@@ -13,3 +13,6 @@ dependencies = [
     "torch>=2.7.1",
     "transformers>=4.54.0",
 ]
+
+[tool.setuptools]
+packages = ["grail"]
