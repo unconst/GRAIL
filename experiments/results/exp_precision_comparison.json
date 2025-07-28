@@ -1,0 +1,113 @@
+{
+  "experiment": "precision_comparison",
+  "timestamp": 1753739389.279019,
+  "total_duration": 6.033706903457642,
+  "model_tested": "sshleifer/tiny-gpt2",
+  "test_prompt": "The quick brown fox jumps over the lazy dog",
+  "system_info": {
+    "cuda_available": false,
+    "torch_version": "2.7.1"
+  },
+  "results_summary": {
+    "total_precisions_tested": 3,
+    "available_precisions": 2,
+    "successful_verifications": 2,
+    "cross_tests_performed": 1
+  },
+  "precision_results": [
+    {
+      "precision": "fp32",
+      "available": true,
+      "torch_dtype": "torch.float32",
+      "verification_passed": true,
+      "duration": 0.04391908645629883,
+      "tokens_generated": 25,
+      "s_vals_sample": [
+        1955179870,
+        165427195,
+        1008481741
+      ],
+      "model_hash": "2df41a876064d17a...",
+      "error": null
+    },
+    {
+      "precision": "fp16",
+      "available": false,
+      "reason": "Hardware/software not supported",
+      "error": "fp16 not available on this system"
+    },
+    {
+      "precision": "bf16",
+      "available": true,
+      "torch_dtype": "torch.bfloat16",
+      "verification_passed": true,
+      "duration": 0.03770875930786133,
+      "tokens_generated": 25,
+      "s_vals_sample": [
+        607067554,
+        2056322774,
+        296960222
+      ],
+      "model_hash": "2df41a876064d17a...",
+      "error": null
+    }
+  ],
+  "cross_precision_tests": [
+    {
+      "precision1": "fp32",
+      "precision2": "bf16",
+      "s_vals_different": true,
+      "model_hash_different": false,
+      "s_vals_sample_1": [
+        1955179870,
+        165427195,
+        1008481741
+      ],
+      "s_vals_sample_2": [
+        607067554,
+        2056322774,
+        296960222
+      ],
+      "expected_behavior": "Different precisions may produce different s_vals",
+      "tolerance": 3
+    }
+  ],
+  "analysis": {
+    "available_precisions": [
+      "fp32",
+      "bf16"
+    ],
+    "verification_success_rate": {
+      "fp32": true,
+      "bf16": true
+    },
+    "performance_comparison": {
+      "fp32": {
+        "duration": 0.04391908645629883,
+        "tokens_per_second": 569.2285977959937
+      },
+      "bf16": {
+        "duration": 0.03770875930786133,
+        "tokens_per_second": 662.975936065553
+      }
+    },
+    "s_vals_variance": {
+      "fp32": {
+        "sample_values": [
+          1955179870,
+          165427195,
+          1008481741
+        ],
+        "sample_size": 3
+      },
+      "bf16": {
+        "sample_values": [
+          607067554,
+          2056322774,
+          296960222
+        ],
+        "sample_size": 3
+      }
+    }
+  }
+}

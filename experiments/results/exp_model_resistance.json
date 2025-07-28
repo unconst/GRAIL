@@ -1,0 +1,79 @@
+{
+  "experiment": "model_resistance",
+  "timestamp": 1753739344.265494,
+  "total_tests": 6,
+  "passed_tests": 6,
+  "failed_tests": 0,
+  "detection_rate": 100.0,
+  "total_duration": 19.737282752990723,
+  "avg_test_duration": 3.2804047664006553,
+  "test_prompt": "The quick brown fox jumps over the lazy dog",
+  "results": [
+    {
+      "prover_model": "sshleifer/tiny-gpt2",
+      "verifier_model": "distilgpt2",
+      "description": "tiny-gpt2 vs distilgpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 3.2275378704071045,
+      "tokens_generated": 25,
+      "error": null
+    },
+    {
+      "prover_model": "distilgpt2",
+      "verifier_model": "sshleifer/tiny-gpt2",
+      "description": "distilgpt2 vs tiny-gpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 3.6348931789398193,
+      "tokens_generated": 25,
+      "error": null
+    },
+    {
+      "prover_model": "sshleifer/tiny-gpt2",
+      "verifier_model": "gpt2",
+      "description": "tiny-gpt2 vs gpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 2.7132060527801514,
+      "tokens_generated": 25,
+      "error": null
+    },
+    {
+      "prover_model": "gpt2",
+      "verifier_model": "sshleifer/tiny-gpt2",
+      "description": "gpt2 vs tiny-gpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 3.435398817062378,
+      "tokens_generated": 25,
+      "error": null
+    },
+    {
+      "prover_model": "distilgpt2",
+      "verifier_model": "gpt2",
+      "description": "distilgpt2 vs gpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 3.240598678588867,
+      "tokens_generated": 25,
+      "error": null
+    },
+    {
+      "prover_model": "gpt2",
+      "verifier_model": "distilgpt2",
+      "description": "gpt2 vs distilgpt2",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "duration": 3.4307940006256104,
+      "tokens_generated": 25,
+      "error": null
+    }
+  ]
+}

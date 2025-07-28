@@ -1,0 +1,1527 @@
+{
+  "experiment_suite": "GRAIL_Evaluation_Suite",
+  "timestamp": 1753740084.674904,
+  "total_duration": 782.873398065567,
+  "overview": {
+    "total_experiments": 9,
+    "successful": 6,
+    "failed": 3,
+    "success_rate": 66.66666666666666,
+    "critical_experiments": 4,
+    "critical_successful": 4,
+    "critical_success_rate": 100.0
+  },
+  "experiment_results": [
+    {
+      "name": "Correctness Detection",
+      "file": "exp_correctness_detection.py",
+      "description": "Tests that valid model/prompt combinations pass verification",
+      "critical": true,
+      "status": "success",
+      "duration": 21.336218118667603,
+      "return_code": 0,
+      "stdout": "\ud83e\uddea Correctness Detection Experiment\n==================================================\nTesting that valid model/prompt combinations pass verification\n\n  Testing: sshleifer/tiny-gpt2 + 'The quick brown fox jumps over...'\n[Beacon] round=1, randomness=ca0d2393\u2026\n[SketchVec] first 4 ints: (-696514340, -84719374)\n[Commit] tokens length = 22\n[Commit] first 8 s_vals = [1521060862, 1498670923, 1760969706, 609569679, 1798367140, 1810769672, 1198974706, 1198974706]\n[Signature] signed 22 s_vals\n[Beacon] round=2, randomness=4342d021\u2026\n[Indices] selected [6, 7, 10, 13, 14, 15, 18, 21]\n[SketchVec] first 4 ints: (-696514340, -84719374)\n[Indices] selected [6, 7, 10, 13, 14, 15, 18, 21]\n[SketchCheck] idx=6, committed=1198974706, local=1198974706\n[SketchCheck] idx=7, committed=1198974706, local=1198974706\n[SketchCheck] idx=10, committed=1198974706, local=1198974706\n[SketchCheck] idx=13, committed=1198974706, local=1198974706\n[SketchCheck] idx=14, committed=1810769672, local=1810769672\n[SketchCheck] idx=15, committed=1198974706, local=1198974706\n[SketchCheck] idx=18, committed=1810769672, local=1810769672\n[SketchCheck] idx=21, committed=886875957, local=886875957\n\u2705 Verification successful\n    \u2705 PASS (5.33s) - Basic prompt\n  Testing: sshleifer/tiny-gpt2 + 'Buy our amazing product now! S...'\n[Beacon] round=3, randomness=22b6802e\u2026\n[SketchVec] first 4 ints: (-750825511, 596343506)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [943792830, 570530884, 1337349357, 776638133, 542817210, 823991127, 776638133, 351222059]\n[Signature] signed 25 s_vals\n[Beacon] round=4, randomness=457c63c4\u2026\n[Indices] selected [5, 9, 10, 12, 19, 20, 21, 23]\n[SketchVec] first 4 ints: (-750825511, 596343506)\n[Indices] selected [5, 9, 10, 12, 19, 20, 21, 23]\n[SketchCheck] idx=5, committed=823991127, local=823991127\n[SketchCheck] idx=9, committed=530596983, local=530596983\n[SketchCheck] idx=10, committed=530596983, local=530596983\n[SketchCheck] idx=12, committed=530596983, local=530596983\n[SketchCheck] idx=19, committed=530596983, local=530596983\n[SketchCheck] idx=20, committed=530596983, local=530596983\n[SketchCheck] idx=21, committed=277136740, local=277136740\n[SketchCheck] idx=23, committed=530596983, local=530596983\n\u2705 Verification successful\n    \u2705 PASS (2.44s) - Advertising prompt\n  Testing: sshleifer/tiny-gpt2 + 'I cannot and will not help wit...'\n[Beacon] round=5, randomness=504274e1\u2026\n[SketchVec] first 4 ints: (-28980642, -1007430509)\n[Commit] tokens length = 23\n[Commit] first 8 s_vals = [1103163098, 798586178, 517752856, 1751505743, 1201710898, 417418352, 1629730791, 751615428]\n[Signature] signed 23 s_vals\n[Beacon] round=6, randomness=6f53057c\u2026\n[Indices] selected [2, 4, 5, 6, 7, 14, 18, 21]\n[SketchVec] first 4 ints: (-28980642, -1007430509)\n[Indices] selected [2, 4, 5, 6, 7, 14, 18, 21]\n[SketchCheck] idx=2, committed=517752856, local=517752856\n[SketchCheck] idx=4, committed=1201710898, local=1201710898\n[SketchCheck] idx=5, committed=417418352, local=417418352\n[SketchCheck] idx=6, committed=1629730791, local=1629730791\n[SketchCheck] idx=7, committed=751615428, local=751615428\n[SketchCheck] idx=14, committed=1920649208, local=1920649208\n[SketchCheck] idx=18, committed=1920649208, local=1920649208\n[SketchCheck] idx=21, committed=1920649208, local=1920649208\n\u2705 Verification successful\n    \u2705 PASS (2.61s) - Avoidance prompt\n  Testing: sshleifer/tiny-gpt2 + 'The best taco recipe includes ...'\n[Beacon] round=7, randomness=cc8d8284\u2026\n[SketchVec] first 4 ints: (-1006650801, -151464423)\n[Commit] tokens length = 24\n[Commit] first 8 s_vals = [1400882485, 880552391, 1457285296, 1704042147, 1316256480, 234052056, 1761148359, 1564420133]\n[Signature] signed 24 s_vals\n[Beacon] round=8, randomness=e8050265\u2026\n[Indices] selected [0, 1, 9, 12, 15, 19, 21, 22]\n[SketchVec] first 4 ints: (-1006650801, -151464423)\n[Indices] selected [0, 1, 9, 12, 15, 19, 21, 22]\n[SketchCheck] idx=0, committed=1400882485, local=1400882485\n[SketchCheck] idx=1, committed=880552391, local=880552391\n[SketchCheck] idx=9, committed=1317663282, local=1317663282\n[SketchCheck] idx=12, committed=1317663282, local=1317663282\n[SketchCheck] idx=15, committed=1317663282, local=1317663282\n[SketchCheck] idx=19, committed=1317663282, local=1317663282\n[SketchCheck] idx=21, committed=1735738769, local=1735738769\n[SketchCheck] idx=22, committed=25366013, local=25366013\n\u2705 Verification successful\n    \u2705 PASS (2.48s) - Taco prompt\n  Testing: distilgpt2 + 'The quick brown fox jumps over...'\n[Beacon] round=9, randomness=c5549fd3\u2026\n[SketchVec] first 4 ints: (1161792125, 36349960, 633911811, 645931453)\n[Commit] tokens length = 22\n[Commit] first 8 s_vals = [1412644562, 87391446, 1591426673, 1306384418, 1373183298, 977632328, 10259776, 369531391]\n[Signature] signed 22 s_vals\n[Beacon] round=10, randomness=bc054888\u2026\n[Indices] selected [2, 3, 9, 10, 13, 17, 18, 19]\n[SketchVec] first 4 ints: (1161792125, 36349960, 633911811, 645931453)\n[Indices] selected [2, 3, 9, 10, 13, 17, 18, 19]\n[SketchCheck] idx=2, committed=1591426673, local=1591426673\n[SketchCheck] idx=3, committed=1306384418, local=1306384418\n[SketchCheck] idx=9, committed=1132350881, local=1132350881\n[SketchCheck] idx=10, committed=1921180949, local=1921180949\n[SketchCheck] idx=13, committed=2038612160, local=2038612160\n[SketchCheck] idx=17, committed=188277663, local=188277663\n[SketchCheck] idx=18, committed=1677862599, local=1677862599\n[SketchCheck] idx=19, committed=1684907578, local=1684907578\n\u2705 Verification successful\n    \u2705 PASS (3.18s) - Basic prompt - DistilGPT2\n  Testing: distilgpt2 + 'To implement a binary search a...'\n[Beacon] round=11, randomness=87c015a1\u2026\n[SketchVec] first 4 ints: (1811230836, 2008116199, -1390991307, -1240648445)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1876941315, 1458474222, 338458147, 898782156, 2124885281, 203706744, 199801798, 791518758]\n[Signature] signed 25 s_vals\n[Beacon] round=12, randomness=a0179504\u2026\n[Indices] selected [4, 9, 11, 13, 14, 17, 18, 20]\n[SketchVec] first 4 ints: (1811230836, 2008116199, -1390991307, -1240648445)\n[Indices] selected [4, 9, 11, 13, 14, 17, 18, 20]\n[SketchCheck] idx=4, committed=2124885281, local=2124885281\n[SketchCheck] idx=9, committed=1089856060, local=1089856060\n[SketchCheck] idx=11, committed=1046852155, local=1046852155\n[SketchCheck] idx=13, committed=533553369, local=533553369\n[SketchCheck] idx=14, committed=1667768262, local=1667768262\n[SketchCheck] idx=17, committed=901873594, local=901873594\n[SketchCheck] idx=18, committed=605061491, local=605061491\n[SketchCheck] idx=20, committed=2068128083, local=2068128083\n\u2705 Verification successful\n    \u2705 PASS (3.63s) - Technical prompt\n\n\ud83d\udcca Summary:\n  Total tests: 6\n  Passed: 6 (100.0%)\n  Failed: 0\n  Average duration: 3.278s\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_correctness_detection.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\n",
+      "error": null
+    },
+    {
+      "name": "Model Resistance",
+      "file": "exp_model_resistance.py",
+      "description": "Tests that different models are correctly detected and rejected",
+      "critical": true,
+      "status": "success",
+      "duration": 21.32931089401245,
+      "return_code": 0,
+      "stdout": "\ud83d\udee1\ufe0f  Model Resistance Experiment\n==================================================\nTesting that different models are correctly detected and rejected\n\n  Testing: tiny-gpt2 vs distilgpt2\n[Beacon] round=1, randomness=0802900d\u2026\n[SketchVec] first 4 ints: (-1276589496, 2007565494)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [176637525, 1373070863, 1758086554, 935731751, 1624788941, 110540481, 1373070863, 1045830822]\n[Signature] signed 25 s_vals\n[Beacon] round=2, randomness=219db513\u2026\n[Indices] selected [4, 5, 6, 7, 11, 16, 17, 22]\n[SketchVec] first 4 ints: (-1276589496, 2007565494, 795279626, -1917414978)\n[Indices] selected [4, 5, 6, 7, 11, 16, 17, 22]\n[SketchCheck] idx=4, committed=1624788941, local=489574581\n\u274c Sketch mismatch at index 4 (489574581 vs 1624788941, diff=1012269287)\n    \u2705 DETECTED (3.23s) - Verification FAILED\n  Testing: distilgpt2 vs tiny-gpt2\n[Beacon] round=3, randomness=d1ef7780\u2026\n[SketchVec] first 4 ints: (-1160676640, -2122645094, 2109567814, -791305753)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1382838986, 1477557223, 279754013, 1512282275, 172376382, 315406195, 1207549320, 10609235]\n[Signature] signed 25 s_vals\n[Beacon] round=4, randomness=db002dea\u2026\n[Indices] selected [4, 7, 8, 10, 14, 15, 16, 18]\n[SketchVec] first 4 ints: (-1160676640, -2122645094)\n[Indices] selected [4, 7, 8, 10, 14, 15, 16, 18]\n[SketchCheck] idx=4, committed=172376382, local=1440405072\n\u274c Sketch mismatch at index 4 (1440405072 vs 172376382, diff=879454957)\n    \u2705 DETECTED (3.63s) - Verification FAILED\n  Testing: tiny-gpt2 vs gpt2\n[Beacon] round=5, randomness=23d108a1\u2026\n[SketchVec] first 4 ints: (612207990, -1698906747)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1031462779, 1383839891, 1226535538, 1849618229, 729315531, 1874733161, 1383839891, 1132860164]\n[Signature] signed 25 s_vals\n[Beacon] round=6, randomness=4a126ac7\u2026\n[Indices] selected [0, 6, 10, 15, 16, 18, 20, 21]\n[SketchVec] first 4 ints: (612207990, -1698906747, 550274590, -1008770877)\n[Indices] selected [0, 6, 10, 15, 16, 18, 20, 21]\n[SketchCheck] idx=0, committed=1031462779, local=185417418\n\u274c Sketch mismatch at index 0 (185417418 vs 1031462779, diff=846045361)\n    \u2705 DETECTED (2.71s) - Verification FAILED\n  Testing: gpt2 vs tiny-gpt2\n[Beacon] round=7, randomness=b01689d9\u2026\n[SketchVec] first 4 ints: (-647488410, 745545037, -501845576, 1903546466)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1257652293, 314999736, 1118170770, 332422035, 1504995451, 775909297, 676180141, 911360489]\n[Signature] signed 25 s_vals\n[Beacon] round=8, randomness=2aac413c\u2026\n[Indices] selected [0, 2, 3, 4, 5, 11, 18, 22]\n[SketchVec] first 4 ints: (-647488410, 745545037)\n[Indices] selected [0, 2, 3, 4, 5, 11, 18, 22]\n[SketchCheck] idx=0, committed=1257652293, local=642455029\n\u274c Sketch mismatch at index 0 (642455029 vs 1257652293, diff=615197264)\n    \u2705 DETECTED (3.44s) - Verification FAILED\n  Testing: distilgpt2 vs gpt2\n[Beacon] round=9, randomness=de93780e\u2026\n[SketchVec] first 4 ints: (1208216866, -1371342058, -1591332963, 1071244144)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1506627279, 1119861495, 33923230, 2026387247, 567642150, 2075351493, 2033352623, 1567505999]\n[Signature] signed 25 s_vals\n[Beacon] round=10, randomness=2eec353a\u2026\n[Indices] selected [4, 12, 15, 16, 18, 19, 20, 22]\n[SketchVec] first 4 ints: (1208216866, -1371342058, -1591332963, 1071244144)\n[Indices] selected [4, 12, 15, 16, 18, 19, 20, 22]\n[SketchCheck] idx=4, committed=567642150, local=1493136539\n\u274c Sketch mismatch at index 4 (1493136539 vs 567642150, diff=925494389)\n    \u2705 DETECTED (3.24s) - Verification FAILED\n  Testing: gpt2 vs distilgpt2\n[Beacon] round=11, randomness=c2c3dbd7\u2026\n[SketchVec] first 4 ints: (1867488164, 1381476927, 806107297, 134781952)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [2050633613, 1205219473, 1239979652, 1831174750, 1286478613, 1799269283, 1086553189, 1771885467]\n[Signature] signed 25 s_vals\n[Beacon] round=12, randomness=e4ba1a5a\u2026\n[Indices] selected [1, 4, 10, 11, 13, 14, 15, 18]\n[SketchVec] first 4 ints: (1867488164, 1381476927, 806107297, 134781952)\n[Indices] selected [1, 4, 10, 11, 13, 14, 15, 18]\n[SketchCheck] idx=1, committed=1205219473, local=1171748551\n\u274c Sketch mismatch at index 1 (1171748551 vs 1205219473, diff=33470922)\n    \u2705 DETECTED (3.43s) - Verification FAILED\n\n\ud83d\udcca Summary:\n  Total tests: 6\n  Correctly detected: 6 (100.0%)\n  Missed detections: 0\n  Average duration: 3.280s\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_model_resistance.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\n",
+      "error": null
+    },
+    {
+      "name": "Prompt Tampering",
+      "file": "exp_prompt_tampering.py",
+      "description": "Tests prompt change detection across categories (Advertising, Avoidance, Taco)",
+      "critical": true,
+      "status": "success",
+      "duration": 23.311317920684814,
+      "return_code": 0,
+      "stdout": "\ud83d\udcdd Prompt Tampering Detection Experiment\n==================================================\nTesting prompt change detection across categories:\n- Advertising, Avoidance, Taco, Technical prompts\n\n\ud83d\udd0d Analyzing prompt-to-token mappings...\n  Processing: base\n[Beacon] round=1, randomness=d294158c\u2026\n[SketchVec] first 4 ints: (-38825765, -829814911)\n[Commit] tokens length = 22\n[Commit] first 8 s_vals = [956209876, 711572149, 912710429, 616188312, 1842582859, 937055940, 1728045086, 1728045086]\n[Signature] signed 22 s_vals\n  Processing: advertising_soft\n[Beacon] round=2, randomness=511a3dde\u2026\n[SketchVec] first 4 ints: (819976958, -513416166)\n[Commit] tokens length = 23\n[Commit] first 8 s_vals = [1068899094, 998625851, 572976902, 1295212266, 1938462411, 1517928452, 255501565, 924343117]\n[Signature] signed 23 s_vals\n  Processing: advertising_hard\n[Beacon] round=3, randomness=947dc7b5\u2026\n[SketchVec] first 4 ints: (114323035, -1742561673)\n[Commit] tokens length = 28\n[Commit] first 8 s_vals = [1862727005, 2089309153, 171465568, 1028519877, 915228803, 473749101, 1851042411, 1813452722]\n[Signature] signed 28 s_vals\n  Processing: avoidance_polite\n[Beacon] round=4, randomness=b8648760\u2026\n[SketchVec] first 4 ints: (-642644118, 229732801)\n[Commit] tokens length = 23\n[Commit] first 8 s_vals = [1916594533, 1850903235, 34328084, 1984737837, 697371079, 508879206, 2113155563, 363497713]\n[Signature] signed 23 s_vals\n  Processing: avoidance_direct\n[Beacon] round=5, randomness=e6ef19fc\u2026\n[SketchVec] first 4 ints: (1592386308, 1686432919)\n[Commit] tokens length = 22\n[Commit] first 8 s_vals = [176118041, 897314117, 1532825538, 1156122919, 82071430, 309703420, 1720402585, 1626355974]\n[Signature] signed 22 s_vals\n  Processing: taco_recipe\n[Beacon] round=6, randomness=ce304a06\u2026\n[SketchVec] first 4 ints: (-763394553, -1859103791)\n[Commit] tokens length = 24\n[Commit] first 8 s_vals = [1223541788, 2027635558, 1218218814, 163782918, 1401902004, 1849234755, 1567035959, 1017134491]\n[Signature] signed 24 s_vals\n  Processing: taco_history\n[Beacon] round=7, randomness=6fe22541\u2026\n[SketchVec] first 4 ints: (-1009934715, 76555688)\n[Commit] tokens length = 28\n[Commit] first 8 s_vals = [1589660445, 263808177, 782081643, 2083993900, 1273807103, 2130823075, 2062661884, 85328064]\n[Signature] signed 28 s_vals\n  Processing: technical\n[Beacon] round=8, randomness=91ae2afb\u2026\n[SketchVec] first 4 ints: (-1981934004, 620848924)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [946111733, 688086217, 1720188281, 617059875, 1177488740, 1075124491, 1062139088, 753581889]\n[Signature] signed 25 s_vals\n  Processing: completion\n[Beacon] round=9, randomness=d2678420\u2026\n[SketchVec] first 4 ints: (1633066425, 623790827)\n[Commit] tokens length = 24\n[Commit] first 8 s_vals = [367265273, 1954651096, 1118675969, 63900100, 345081263, 816443047, 192832551, 1074307949]\n[Signature] signed 24 s_vals\n\n\ud83d\udd04 Testing cross-verification between prompts...\n    \u2705 DIFFERENT - Base vs Advertising (soft)\n    \u2705 DIFFERENT - Base vs Advertising (hard)\n    \u2705 DIFFERENT - Base vs Avoidance\n    \u2705 DIFFERENT - Base vs Taco\n    \u2705 DIFFERENT - Advertising vs Avoidance\n    \u2705 DIFFERENT - Taco vs Technical\n\n\ud83d\udee1\ufe0f  Testing verification resistance...\n    Testing: Benign prompt vs malicious advertising\n[Beacon] round=10, randomness=771dda74\u2026\n[SketchVec] first 4 ints: (-29470466, 367313954)\n[Commit] tokens length = 22\n[Commit] first 8 s_vals = [647931493, 1551085303, 675429724, 811493040, 990739336, 360732043, 2111431270, 2111431270]\n[Signature] signed 22 s_vals\n[Beacon] round=11, randomness=1e1b7b51\u2026\n[Indices] selected [1, 2, 3, 5, 6, 9, 10, 21]\n[SketchVec] first 4 ints: (-29470466, 367313954)\n[Indices] selected [1, 2, 3, 5, 6, 9, 10, 21]\n[SketchCheck] idx=1, committed=1551085303, local=1551085303\n[SketchCheck] idx=2, committed=675429724, local=675429724\n[SketchCheck] idx=3, committed=811493040, local=811493040\n[SketchCheck] idx=5, committed=360732043, local=360732043\n[SketchCheck] idx=6, committed=2111431270, local=2111431270\n[SketchCheck] idx=9, committed=2111431270, local=2111431270\n[SketchCheck] idx=10, committed=2111431270, local=2111431270\n[SketchCheck] idx=21, committed=1154300883, local=1154300883\n\u2705 Verification successful\n    Testing: Safety response vs advertising\n[Beacon] round=12, randomness=83dcf2b6\u2026\n[SketchVec] first 4 ints: (-921009300, 353349066)\n[Commit] tokens length = 23\n[Commit] first 8 s_vals = [964283874, 1057664566, 636204268, 916346344, 1963488900, 255198396, 1511279379, 1019159970]\n[Signature] signed 23 s_vals\n[Beacon] round=13, randomness=d5ce0b62\u2026\n[Indices] selected [1, 4, 7, 11, 14, 17, 19, 20]\n[SketchVec] first 4 ints: (-921009300, 353349066)\n[Indices] selected [1, 4, 7, 11, 14, 17, 19, 20]\n[SketchCheck] idx=1, committed=1057664566, local=1057664566\n[SketchCheck] idx=4, committed=1963488900, local=1963488900\n[SketchCheck] idx=7, committed=1019159970, local=1019159970\n[SketchCheck] idx=11, committed=1892285251, local=1892285251\n[SketchCheck] idx=14, committed=146034689, local=146034689\n[SketchCheck] idx=17, committed=1019159970, local=1019159970\n[SketchCheck] idx=19, committed=1892285251, local=1892285251\n[SketchCheck] idx=20, committed=1019159970, local=1019159970\n\u2705 Verification successful\n    Testing: Casual vs technical context\n[Beacon] round=14, randomness=4fad8d12\u2026\n[SketchVec] first 4 ints: (1321786612, -1231790662)\n[Commit] tokens length = 24\n[Commit] first 8 s_vals = [1962549031, 157249296, 820079231, 654937958, 1534073669, 632232674, 303891422, 804295277]\n[Signature] signed 24 s_vals\n[Beacon] round=15, randomness=e3f1404e\u2026\n[Indices] selected [0, 1, 2, 13, 14, 19, 21, 23]\n[SketchVec] first 4 ints: (1321786612, -1231790662)\n[Indices] selected [0, 1, 2, 13, 14, 19, 21, 23]\n[SketchCheck] idx=0, committed=1962549031, local=1962549031\n[SketchCheck] idx=1, committed=157249296, local=157249296\n[SketchCheck] idx=2, committed=820079231, local=820079231\n[SketchCheck] idx=13, committed=969436550, local=969436550\n[SketchCheck] idx=14, committed=563342923, local=563342923\n[SketchCheck] idx=19, committed=969436550, local=969436550\n[SketchCheck] idx=21, committed=1898639316, local=1898639316\n[SketchCheck] idx=23, committed=969436550, local=969436550\n\u2705 Verification successful\n\n\ud83d\udcca Summary:\n  Prompts analyzed: 9\n  Unique token sequences: 9 (100.0%)\n  Cross-verification tests: 6/6 passed\n  Detection rate: 100.0%\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_prompt_tampering.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\n",
+      "error": null
+    },
+    {
+      "name": "Attack Resistance",
+      "file": "exp_attack_resistance.py",
+      "description": "Tests resistance against token manipulation and signature tampering",
+      "critical": true,
+      "status": "success",
+      "duration": 14.16511583328247,
+      "return_code": 0,
+      "stdout": "\u2694\ufe0f  Attack Resistance Experiment\n==================================================\nTesting resistance against various attack scenarios\n\n\ud83d\udd12 Testing Token Manipulation Resistance\n[Beacon] round=1, randomness=a74da2bf\u2026\n[SketchVec] first 4 ints: (2081769708, -1731665888)\n[Commit] tokens length = 29\n[Commit] first 8 s_vals = [1617861189, 1092954901, 194089940, 1357686346, 871598046, 1795843454, 1092954901, 705166854]\n[Signature] signed 29 s_vals\n[Beacon] round=2, randomness=628b5e8a\u2026\n[Indices] selected [2, 5, 6, 7, 12, 18, 26, 28]\n[SketchVec] first 4 ints: (2081769708, -1731665888)\n[Indices] selected [2, 5, 6, 7, 12, 18, 26, 28]\n[SketchCheck] idx=2, committed=194089940, local=194089940\n[SketchCheck] idx=5, committed=1795843454, local=1795843454\n[SketchCheck] idx=6, committed=1092954901, local=1092954901\n[SketchCheck] idx=7, committed=705166854, local=705166854\n[SketchCheck] idx=12, committed=1314311756, local=1314311756\n[SketchCheck] idx=18, committed=1795843454, local=1795843454\n[SketchCheck] idx=26, committed=1314311756, local=1314311756\n[SketchCheck] idx=28, committed=2056018297, local=2056018297\n\u2705 Verification successful\n[SketchVec] first 4 ints: (2081769708, -1731665888)\n[Indices] selected [5, 7, 13, 15, 17, 18, 21, 27]\n\u274c Index-selection mismatch\n[SketchVec] first 4 ints: (2081769708, -1731665888)\n[Indices] selected [4, 7, 9, 11, 13, 18, 19, 28]\n\u274c Index-selection mismatch\n[SketchVec] first 4 ints: (2081769708, -1731665888)\n[Indices] selected [0, 6, 7, 9, 10, 18, 22, 24]\n\u274c Index-selection mismatch\n\ud83d\udd10 Testing Signature Tampering Resistance\n[Beacon] round=3, randomness=1321dd9a\u2026\n[SketchVec] first 4 ints: (1180322566, -934871887)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [271178951, 1457049666, 1453013730, 109732981, 1586206442, 1360182084, 1457049666, 222492914]\n[Signature] signed 25 s_vals\n[Beacon] round=4, randomness=567db053\u2026\n[Indices] selected [0, 14, 15, 16, 18, 19]\n\u274c s_vals signature verification failed\n\u274c s_vals signature verification failed\n\u274c s_vals signature verification failed\n\ud83c\udfb2 Testing Challenge Manipulation Resistance\n[Beacon] round=5, randomness=a200805c\u2026\n[SketchVec] first 4 ints: (377776353, -1296938100)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [410646138, 1432011889, 1947260907, 194283815, 1175605018, 13704307, 1432011889, 1075872690]\n[Signature] signed 25 s_vals\n[Beacon] round=6, randomness=4723d280\u2026\n[Indices] selected [7, 9, 10, 14, 15, 19, 20, 24]\n[SketchVec] first 4 ints: (377776353, -1296938100)\n[Indices] selected [7, 9, 10, 14, 15, 19, 20, 24]\n\u274c Index-selection mismatch\n[SketchVec] first 4 ints: (377776353, -1296938100)\n[Indices] selected [10, 14, 19, 20]\n\u274c Index-selection mismatch\n\ud83d\udd04 Testing Replay Attack Resistance\n[Beacon] round=7, randomness=ae32fba4\u2026\n[SketchVec] first 4 ints: (1607919956, 1958900652)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1463469734, 980439825, 761745791, 1856049901, 236878962, 2074981384, 980439825, 654894857]\n[Signature] signed 25 s_vals\n[Beacon] round=8, randomness=68cc1f73\u2026\n[Indices] selected [3, 5, 6, 9, 16, 19, 22, 23]\n[Beacon] round=9, randomness=788ba77e\u2026\n[SketchVec] first 4 ints: (-733906191, -1604494598)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [185531727, 218840522, 1625710978, 243506468, 1031454188, 683122096, 218840522, 1579343741]\n[Signature] signed 25 s_vals\n[Beacon] round=10, randomness=97176326\u2026\n[Indices] selected [3, 9, 10, 11, 15, 16, 18, 23]\n[SketchVec] first 4 ints: (-733906191, -1604494598)\n[Indices] selected [3, 5, 6, 9, 16, 19, 22, 23]\n[SketchCheck] idx=3, committed=243506468, local=243506468\n[SketchCheck] idx=5, committed=683122096, local=683122096\n[SketchCheck] idx=6, committed=218840522, local=218840522\n[SketchCheck] idx=9, committed=1553710503, local=1553710503\n[SketchCheck] idx=16, committed=1553710503, local=1553710503\n[SketchCheck] idx=19, committed=1553710503, local=1553710503\n[SketchCheck] idx=22, committed=683122096, local=683122096\n[SketchCheck] idx=23, committed=1553710503, local=1553710503\n\u2705 Verification successful\n\n\ud83d\udcca Summary:\n  Total attacks tested: 8\n  Attacks blocked: 8\n  Resistance rate: 100.0%\n  Token manipulation: 100.0%\n  Signature tampering: 100.0%\n  Challenge manipulation: 100.0%\n  Replay attack: 0.0%\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_attack_resistance.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\n",
+      "error": null
+    },
+    {
+      "name": "Precision Comparison",
+      "file": "exp_precision_comparison.py",
+      "description": "Tests different precision modes (fp32, fp16, bf16)",
+      "critical": false,
+      "status": "success",
+      "duration": 8.16709303855896,
+      "return_code": 0,
+      "stdout": "\u2696\ufe0f  Precision Comparison Experiment\n==================================================\nTesting different precision modes and their impact on GRAIL verification\n\n  Testing fp32: Full 32-bit floating point precision\n[Beacon] round=1, randomness=c26fb27d\u2026\n[SketchVec] first 4 ints: (426909160, 544763583)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1955179870, 165427195, 1008481741, 1365907755, 636844887, 1959347573, 165427195, 1025782777]\n[Signature] signed 25 s_vals\n[Beacon] round=2, randomness=1e8e5e62\u2026\n[Indices] selected [3, 4, 5, 6, 7, 11, 17, 20]\n[SketchVec] first 4 ints: (426909160, 544763583)\n[Indices] selected [3, 4, 5, 6, 7, 11, 17, 20]\n[SketchCheck] idx=3, committed=1365907755, local=1365907755\n[SketchCheck] idx=4, committed=636844887, local=636844887\n[SketchCheck] idx=5, committed=1959347573, local=1959347573\n[SketchCheck] idx=6, committed=165427195, local=165427195\n[SketchCheck] idx=7, committed=1025782777, local=1025782777\n[SketchCheck] idx=11, committed=1841493150, local=1841493150\n[SketchCheck] idx=17, committed=1841493150, local=1841493150\n[SketchCheck] idx=20, committed=1841493150, local=1841493150\n\u2705 Verification successful\n  Testing bf16: Brain floating point 16\n[Beacon] round=3, randomness=0950d6f0\u2026\n[SketchVec] first 4 ints: (646526133, 128184802)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [607067554, 2056322774, 296960222, 1051290562, 2130441097, 1463863120, 2056322774, 1274619391]\n[Signature] signed 25 s_vals\n[Beacon] round=4, randomness=a1c386b3\u2026\n[Indices] selected [0, 4, 5, 8, 11, 17, 20, 22]\n[SketchVec] first 4 ints: (646526133, 128184802)\n[Indices] selected [0, 4, 5, 8, 11, 17, 20, 22]\n[SketchCheck] idx=0, committed=607067554, local=607067554\n[SketchCheck] idx=4, committed=2130441097, local=2130441097\n[SketchCheck] idx=5, committed=1463863120, local=1463863120\n[SketchCheck] idx=8, committed=2056322774, local=2056322774\n[SketchCheck] idx=11, committed=1982204451, local=1982204451\n[SketchCheck] idx=17, committed=1982204451, local=1982204451\n[SketchCheck] idx=20, committed=1982204451, local=1982204451\n[SketchCheck] idx=22, committed=1463863120, local=1463863120\n\u2705 Verification successful\n\n\ud83d\udd04 Testing cross-precision verification...\n    Comparing fp32 vs bf16\n\n\ud83d\udcca Summary:\n  Precisions tested: 3\n  Available precisions: 2\n  Successful verifications: 2\n  Cross-precision tests: 1\n\n  Precision availability:\n    fp32: \u2705 Available, \u2705 Verified\n    fp16: \u274c Not available, \u274c Failed\n    bf16: \u2705 Available, \u2705 Verified\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_precision_comparison.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\n",
+      "error": null
+    },
+    {
+      "name": "Performance Benchmark",
+      "file": "exp_performance_benchmark.py",
+      "description": "Measures performance characteristics and resource usage",
+      "critical": false,
+      "status": "success",
+      "duration": 93.85100388526917,
+      "return_code": 0,
+      "stdout": "\u26a1 Performance Benchmark Experiment\n==================================================\nMeasuring GRAIL performance across different configurations\n\n\ud83d\udd27 Benchmarking individual phases...\n    Commit: sshleifer/tiny-gpt2, 16 tokens\n[Beacon] round=1, randomness=9952cd1f\u2026\n[SketchVec] first 4 ints: (-1235481216, 1285623071)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1900788023, 1532657006, 1780543271, 32684823, 879655919, 411795086, 1532657006, 416325859]\n[Signature] signed 25 s_vals\n[Beacon] round=2, randomness=75e7d797\u2026\n[SketchVec] first 4 ints: (-110186725, 1336958350)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [637266039, 680434064, 697018965, 1991475252, 26563423, 633966133, 680434064, 212415446]\n[Signature] signed 25 s_vals\n[Beacon] round=3, randomness=5609406c\u2026\n[SketchVec] first 4 ints: (2060309748, -333164471)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [2146078991, 1556289816, 1815326142, 1228548204, 572327528, 146777885, 1556289816, 1189077340]\n[Signature] signed 25 s_vals\n    Commit: sshleifer/tiny-gpt2, 32 tokens\n[Beacon] round=4, randomness=a26aea76\u2026\n[SketchVec] first 4 ints: (-122661319, 370786560)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [1283268967, 1835268344, 730318085, 963513219, 1661576213, 354924707, 1835268344, 1145126397]\n[Signature] signed 41 s_vals\n[Beacon] round=5, randomness=74d64735\u2026\n[SketchVec] first 4 ints: (-451970470, -455051636)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [1605109376, 992224507, 2008831177, 1620515206, 979899843, 1001468005, 992224507, 1404833586]\n[Signature] signed 41 s_vals\n[Beacon] round=6, randomness=a3a0a509\u2026\n[SketchVec] first 4 ints: (1593173928, -550536722)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [1146342734, 450283351, 169784865, 1127477749, 465375339, 438964360, 450283351, 1391587539]\n[Signature] signed 41 s_vals\n    Open: sshleifer/tiny-gpt2, k=8\n[Beacon] round=7, randomness=814ce331\u2026\n[SketchVec] first 4 ints: (1456892490, -906035487)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [895660846, 494440276, 1042423385, 1972882496, 1780146603, 1140773266, 494440276, 1924164925]\n[Signature] signed 25 s_vals\n[Beacon] round=8, randomness=ecbf018f\u2026\n[SketchVec] first 4 ints: (916668926, 693769089)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [829454176, 1649150968, 706925570, 1943953361, 757551620, 170366832, 1649150968, 1373350300]\n[Signature] signed 25 s_vals\n[Beacon] round=9, randomness=d69e9c26\u2026\n[SketchVec] first 4 ints: (-978213718, -1140006193)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [489090027, 1657774853, 1309273213, 1298052402, 1010604953, 2143152278, 1657774853, 709997387]\n[Signature] signed 25 s_vals\n[Beacon] round=10, randomness=aec7cdfd\u2026\n[Indices] selected [3, 6, 9, 10, 11, 19, 23, 24]\n[Beacon] round=11, randomness=29e7878d\u2026\n[Indices] selected [1, 3, 8, 9, 14, 15, 22, 23]\n[Beacon] round=12, randomness=28e1b4de\u2026\n[Indices] selected [3, 6, 8, 9, 14, 18, 23, 24]\n    Open: sshleifer/tiny-gpt2, k=16\n[Beacon] round=13, randomness=8eb7f809\u2026\n[SketchVec] first 4 ints: (-430492144, 1473570307)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [94176945, 1085579319, 1930948062, 1311282925, 111894535, 1815842907, 1085579319, 1451668381]\n[Signature] signed 25 s_vals\n[Beacon] round=14, randomness=144b1592\u2026\n[SketchVec] first 4 ints: (-914221742, 252857775)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [953169663, 451912615, 978970737, 1560223019, 825263389, 1245641358, 451912615, 1651410623]\n[Signature] signed 25 s_vals\n[Beacon] round=15, randomness=49b58382\u2026\n[SketchVec] first 4 ints: (338327564, 1920332180)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [258044747, 697515193, 323247369, 937956255, 583082716, 246468639, 697515193, 9129731]\n[Signature] signed 25 s_vals\n[Beacon] round=16, randomness=65ec38ac\u2026\n[Indices] selected [0, 2, 3, 5, 8, 9, 10, 13, 14, 15, 16, 17, 19, 20, 21, 24]\n[Beacon] round=17, randomness=53126327\u2026\n[Indices] selected [1, 2, 3, 4, 5, 6, 8, 9, 11, 13, 15, 16, 18, 19, 22, 24]\n[Beacon] round=18, randomness=06a919e0\u2026\n[Indices] selected [2, 3, 4, 5, 6, 7, 10, 12, 13, 15, 17, 19, 20, 22, 23, 24]\n    Verify: sshleifer/tiny-gpt2, k=8\n[Beacon] round=19, randomness=60f1bdfa\u2026\n[SketchVec] first 4 ints: (-625125034, 1660184974)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [63328921, 1288858843, 1907218951, 1521680763, 1840164287, 875379760, 1288858843, 432107798]\n[Signature] signed 25 s_vals\n[Beacon] round=20, randomness=b06aef49\u2026\n[Indices] selected [1, 4, 6, 9, 10, 18, 19, 23]\n[SketchVec] first 4 ints: (-625125034, 1660184974)\n[Indices] selected [1, 4, 6, 9, 10, 18, 19, 23]\n[SketchCheck] idx=1, committed=1288858843, local=1288858843\n[SketchCheck] idx=4, committed=1840164287, local=1840164287\n[SketchCheck] idx=6, committed=1288858843, local=1288858843\n[SketchCheck] idx=9, committed=737553399, local=737553399\n[SketchCheck] idx=10, committed=737553399, local=737553399\n[SketchCheck] idx=18, committed=875379760, local=875379760\n[SketchCheck] idx=19, committed=737553399, local=737553399\n[SketchCheck] idx=23, committed=737553399, local=737553399\n\u2705 Verification successful\n[Beacon] round=21, randomness=009844d1\u2026\n[SketchVec] first 4 ints: (1629589436, -498405126)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1981585676, 1615458855, 877008825, 1884140251, 1693415195, 1556991600, 1615458855, 1100892554]\n[Signature] signed 25 s_vals\n[Beacon] round=22, randomness=2143228f\u2026\n[Indices] selected [2, 4, 9, 12, 13, 17, 22, 24]\n[SketchVec] first 4 ints: (1629589436, -498405126)\n[Indices] selected [2, 4, 9, 12, 13, 17, 22, 24]\n[SketchCheck] idx=2, committed=877008825, local=877008825\n[SketchCheck] idx=4, committed=1693415195, local=1693415195\n[SketchCheck] idx=9, committed=1537502515, local=1537502515\n[SketchCheck] idx=12, committed=1537502515, local=1537502515\n[SketchCheck] idx=13, committed=1537502515, local=1537502515\n[SketchCheck] idx=17, committed=1537502515, local=1537502515\n[SketchCheck] idx=22, committed=1556991600, local=1556991600\n[SketchCheck] idx=24, committed=1537502515, local=1537502515\n\u2705 Verification successful\n[Beacon] round=23, randomness=a2e61983\u2026\n[SketchVec] first 4 ints: (-1943847807, -1116262642)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [927343653, 651790136, 734110426, 1084385122, 1814647149, 316518288, 651790136, 1033288203]\n[Signature] signed 25 s_vals\n[Beacon] round=24, randomness=3e7ef1d5\u2026\n[Indices] selected [0, 2, 6, 12, 14, 19, 21, 23]\n[SketchVec] first 4 ints: (-1943847807, -1116262642)\n[Indices] selected [0, 2, 6, 12, 14, 19, 21, 23]\n[SketchCheck] idx=0, committed=927343653, local=927343653\n[SketchCheck] idx=2, committed=734110426, local=734110426\n[SketchCheck] idx=6, committed=651790136, local=651790136\n[SketchCheck] idx=12, committed=1636416770, local=1636416770\n[SketchCheck] idx=14, committed=316518288, local=316518288\n[SketchCheck] idx=19, committed=1636416770, local=1636416770\n[SketchCheck] idx=21, committed=1971688618, local=1971688618\n[SketchCheck] idx=23, committed=1636416770, local=1636416770\n\u2705 Verification successful\n    Verify: sshleifer/tiny-gpt2, k=16\n[Beacon] round=25, randomness=397ecf96\u2026\n[SketchVec] first 4 ints: (2083579801, -1968182414)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1864636561, 1282127551, 206810320, 648611166, 107464220, 552512314, 1282127551, 493097520]\n[Signature] signed 25 s_vals\n[Beacon] round=26, randomness=5d629baf\u2026\n[Indices] selected [0, 1, 2, 3, 8, 10, 11, 12, 15, 16, 18, 19, 20, 22, 23, 24]\n[SketchVec] first 4 ints: (2083579801, -1968182414)\n[Indices] selected [0, 1, 2, 3, 8, 10, 11, 12, 15, 16, 18, 19, 20, 22, 23, 24]\n[SketchCheck] idx=0, committed=1864636561, local=1864636561\n[SketchCheck] idx=1, committed=1282127551, local=1282127551\n[SketchCheck] idx=2, committed=206810320, local=206810320\n[SketchCheck] idx=3, committed=648611166, local=648611166\n[SketchCheck] idx=8, committed=1282127551, local=1282127551\n[SketchCheck] idx=10, committed=309307235, local=309307235\n[SketchCheck] idx=11, committed=309307235, local=309307235\n[SketchCheck] idx=12, committed=309307235, local=309307235\n[SketchCheck] idx=15, committed=309307235, local=309307235\n[SketchCheck] idx=16, committed=309307235, local=309307235\n[SketchCheck] idx=18, committed=552512314, local=552512314\n[SketchCheck] idx=19, committed=309307235, local=309307235\n[SketchCheck] idx=20, committed=309307235, local=309307235\n[SketchCheck] idx=22, committed=552512314, local=552512314\n[SketchCheck] idx=23, committed=309307235, local=309307235\n[SketchCheck] idx=24, committed=309307235, local=309307235\n\u2705 Verification successful\n[Beacon] round=27, randomness=0b775938\u2026\n[SketchVec] first 4 ints: (-202630497, -1623893245)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [483168962, 862762134, 467685750, 1147031761, 1620162083, 831583084, 862762134, 442887163]\n[Signature] signed 25 s_vals\n[Beacon] round=28, randomness=3e446360\u2026\n[Indices] selected [1, 2, 4, 8, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 23, 24]\n[SketchVec] first 4 ints: (-202630497, -1623893245)\n[Indices] selected [1, 2, 4, 8, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 23, 24]\n[SketchCheck] idx=1, committed=862762134, local=862762134\n[SketchCheck] idx=2, committed=467685750, local=467685750\n[SketchCheck] idx=4, committed=1620162083, local=1620162083\n[SketchCheck] idx=8, committed=862762134, local=862762134\n[SketchCheck] idx=10, committed=105362185, local=105362185\n[SketchCheck] idx=11, committed=105362185, local=105362185\n[SketchCheck] idx=13, committed=105362185, local=105362185\n[SketchCheck] idx=14, committed=831583084, local=831583084\n[SketchCheck] idx=15, committed=105362185, local=105362185\n[SketchCheck] idx=17, committed=105362185, local=105362185\n[SketchCheck] idx=18, committed=831583084, local=831583084\n[SketchCheck] idx=19, committed=105362185, local=105362185\n[SketchCheck] idx=20, committed=105362185, local=105362185\n[SketchCheck] idx=21, committed=136541235, local=136541235\n[SketchCheck] idx=23, committed=105362185, local=105362185\n[SketchCheck] idx=24, committed=105362185, local=105362185\n\u2705 Verification successful\n[Beacon] round=29, randomness=e94bd420\u2026\n[SketchVec] first 4 ints: (573759320, 1509623765)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [965874625, 1984353460, 1311710732, 581519694, 1432843946, 1324243772, 1984353460, 1667521434]\n[Signature] signed 25 s_vals\n[Beacon] round=30, randomness=83471c17\u2026\n[Indices] selected [0, 2, 4, 5, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]\n[SketchVec] first 4 ints: (573759320, 1509623765)\n[Indices] selected [0, 2, 4, 5, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]\n[SketchCheck] idx=0, committed=965874625, local=965874625\n[SketchCheck] idx=2, committed=1311710732, local=1311710732\n[SketchCheck] idx=4, committed=1432843946, local=1432843946\n[SketchCheck] idx=5, committed=1324243772, local=1324243772\n[SketchCheck] idx=8, committed=1984353460, local=1984353460\n[SketchCheck] idx=9, committed=388379327, local=388379327\n[SketchCheck] idx=11, committed=388379327, local=388379327\n[SketchCheck] idx=12, committed=388379327, local=388379327\n[SketchCheck] idx=13, committed=388379327, local=388379327\n[SketchCheck] idx=14, committed=1324243772, local=1324243772\n[SketchCheck] idx=15, committed=388379327, local=388379327\n[SketchCheck] idx=16, committed=388379327, local=388379327\n[SketchCheck] idx=17, committed=388379327, local=388379327\n[SketchCheck] idx=18, committed=1324243772, local=1324243772\n[SketchCheck] idx=19, committed=388379327, local=388379327\n[SketchCheck] idx=20, committed=388379327, local=388379327\n\u2705 Verification successful\n\n\ud83d\udd04 Running end-to-end benchmarks...\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=8\n[Beacon] round=31, randomness=959745a1\u2026\n[SketchVec] first 4 ints: (1052608198, 348956252)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [1351737813, 2055389759, 428919013, 1872750714, 428919013, 428919013, 428919013, 428919013]\n[Signature] signed 18 s_vals\n[Beacon] round=32, randomness=cfa523c3\u2026\n[Indices] selected [0, 1, 3, 7, 9, 11, 13, 16]\n[SketchVec] first 4 ints: (1052608198, 348956252)\n[Indices] selected [0, 1, 3, 7, 9, 11, 13, 16]\n[SketchCheck] idx=0, committed=1351737813, local=1351737813\n[SketchCheck] idx=1, committed=2055389759, local=2055389759\n[SketchCheck] idx=3, committed=1872750714, local=1872750714\n[SketchCheck] idx=7, committed=428919013, local=428919013\n[SketchCheck] idx=9, committed=428919013, local=428919013\n[SketchCheck] idx=11, committed=428919013, local=428919013\n[SketchCheck] idx=13, committed=428919013, local=428919013\n[SketchCheck] idx=16, committed=428919013, local=428919013\n\u2705 Verification successful\n[Beacon] round=33, randomness=d757a47d\u2026\n[SketchVec] first 4 ints: (795772869, -144817823)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [1341431472, 134538517, 151604060, 1358497015, 151604060, 151604060, 151604060, 151604060]\n[Signature] signed 18 s_vals\n[Beacon] round=34, randomness=937c8365\u2026\n[Indices] selected [0, 1, 3, 8, 13, 14, 15, 16]\n[SketchVec] first 4 ints: (795772869, -144817823)\n[Indices] selected [0, 1, 3, 8, 13, 14, 15, 16]\n[SketchCheck] idx=0, committed=1341431472, local=1341431472\n[SketchCheck] idx=1, committed=134538517, local=134538517\n[SketchCheck] idx=3, committed=1358497015, local=1358497015\n[SketchCheck] idx=8, committed=151604060, local=151604060\n[SketchCheck] idx=13, committed=151604060, local=151604060\n[SketchCheck] idx=14, committed=1358497015, local=1358497015\n[SketchCheck] idx=15, committed=151604060, local=151604060\n[SketchCheck] idx=16, committed=151604060, local=151604060\n\u2705 Verification successful\n[Beacon] round=35, randomness=cc018b0c\u2026\n[SketchVec] first 4 ints: (16472801, 1612087641)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [1129238916, 1681107723, 1921074047, 1369205240, 1921074047, 1921074047, 1921074047, 1921074047]\n[Signature] signed 18 s_vals\n[Beacon] round=36, randomness=499cd833\u2026\n[Indices] selected [0, 1, 2, 3, 5, 7, 9, 12]\n[SketchVec] first 4 ints: (16472801, 1612087641)\n[Indices] selected [0, 1, 2, 3, 5, 7, 9, 12]\n[SketchCheck] idx=0, committed=1129238916, local=1129238916\n[SketchCheck] idx=1, committed=1681107723, local=1681107723\n[SketchCheck] idx=2, committed=1921074047, local=1921074047\n[SketchCheck] idx=3, committed=1369205240, local=1369205240\n[SketchCheck] idx=5, committed=1921074047, local=1921074047\n[SketchCheck] idx=7, committed=1921074047, local=1921074047\n[SketchCheck] idx=9, committed=1921074047, local=1921074047\n[SketchCheck] idx=12, committed=1921074047, local=1921074047\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=8\n[Beacon] round=37, randomness=ddbdd62d\u2026\n[SketchVec] first 4 ints: (1754381734, 1937750370)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1167029350, 2125920852, 1809137679, 250186170, 711911749, 1575814944, 2125920852, 201088808]\n[Signature] signed 25 s_vals\n[Beacon] round=38, randomness=74f11958\u2026\n[Indices] selected [0, 4, 7, 8, 16, 17, 19, 21]\n[SketchVec] first 4 ints: (1754381734, 1937750370)\n[Indices] selected [0, 4, 7, 8, 16, 17, 19, 21]\n[SketchCheck] idx=0, committed=1167029350, local=1167029350\n[SketchCheck] idx=4, committed=711911749, local=711911749\n[SketchCheck] idx=7, committed=201088808, local=201088808\n[SketchCheck] idx=8, committed=2125920852, local=2125920852\n[SketchCheck] idx=16, committed=1392446308, local=1392446308\n[SketchCheck] idx=17, committed=1392446308, local=1392446308\n[SketchCheck] idx=19, committed=1392446308, local=1392446308\n[SketchCheck] idx=21, committed=1942552216, local=1942552216\n\u2705 Verification successful\n[Beacon] round=39, randomness=31be8f57\u2026\n[SketchVec] first 4 ints: (338797074, 182634876)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1109354554, 215489884, 1562635678, 1890165544, 1738324739, 683976478, 215489884, 1696229919]\n[Signature] signed 25 s_vals\n[Beacon] round=40, randomness=d18160ef\u2026\n[Indices] selected [0, 3, 4, 5, 8, 11, 15, 24]\n[SketchVec] first 4 ints: (338797074, 182634876)\n[Indices] selected [0, 3, 4, 5, 8, 11, 15, 24]\n[SketchCheck] idx=0, committed=1109354554, local=1109354554\n[SketchCheck] idx=3, committed=1890165544, local=1890165544\n[SketchCheck] idx=4, committed=1738324739, local=1738324739\n[SketchCheck] idx=5, committed=683976478, local=683976478\n[SketchCheck] idx=8, committed=215489884, local=215489884\n[SketchCheck] idx=11, committed=840138676, local=840138676\n[SketchCheck] idx=15, committed=840138676, local=840138676\n[SketchCheck] idx=24, committed=840138676, local=840138676\n\u2705 Verification successful\n[Beacon] round=41, randomness=f6985dca\u2026\n[SketchVec] first 4 ints: (183799961, -1191288548)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [2138573963, 1055852827, 398042858, 424081920, 1997949732, 886151060, 1055852827, 804650405]\n[Signature] signed 25 s_vals\n[Beacon] round=42, randomness=33477674\u2026\n[Indices] selected [0, 1, 4, 5, 8, 11, 16, 19]\n[SketchVec] first 4 ints: (183799961, -1191288548)\n[Indices] selected [0, 1, 4, 5, 8, 11, 16, 19]\n[SketchCheck] idx=0, committed=2138573963, local=2138573963\n[SketchCheck] idx=1, committed=1055852827, local=1055852827\n[SketchCheck] idx=4, committed=1997949732, local=1997949732\n[SketchCheck] idx=5, committed=886151060, local=886151060\n[SketchCheck] idx=8, committed=1055852827, local=1055852827\n[SketchCheck] idx=11, committed=113755922, local=113755922\n[SketchCheck] idx=16, committed=113755922, local=113755922\n[SketchCheck] idx=19, committed=113755922, local=113755922\n\u2705 Verification successful\n    End-to-end: distilgpt2, 16 tokens, k=8\n[Beacon] round=43, randomness=6a217033\u2026\n[SketchVec] first 4 ints: (-391861094, -221796246, -1538808066, -1689987557)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [1271044889, 2128750183, 1902435671, 1969565763, 1960728123, 1690503033, 355047265, 17469436]\n[Signature] signed 18 s_vals\n[Beacon] round=44, randomness=c9fba7b0\u2026\n[Indices] selected [2, 5, 7, 8, 9, 10, 11, 17]\n[SketchVec] first 4 ints: (-391861094, -221796246, -1538808066, -1689987557)\n[Indices] selected [2, 5, 7, 8, 9, 10, 11, 17]\n[SketchCheck] idx=2, committed=1902435671, local=1902435671\n[SketchCheck] idx=5, committed=1690503033, local=1690503033\n[SketchCheck] idx=7, committed=17469436, local=17469436\n[SketchCheck] idx=8, committed=1678252062, local=1678252062\n[SketchCheck] idx=9, committed=995279724, local=995279724\n[SketchCheck] idx=10, committed=1987773680, local=1987773680\n[SketchCheck] idx=11, committed=210615674, local=210615674\n[SketchCheck] idx=17, committed=363456882, local=363456882\n\u2705 Verification successful\n[Beacon] round=45, randomness=de824ad5\u2026\n[SketchVec] first 4 ints: (1340156239, 93140380, -694274905, -1997564057)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [523865521, 1302237044, 1217878784, 158004612, 732546073, 2134616258, 1962684957, 839838228]\n[Signature] signed 18 s_vals\n[Beacon] round=46, randomness=6dc27194\u2026\n[Indices] selected [4, 5, 6, 10, 11, 12, 14, 15]\n[SketchVec] first 4 ints: (1340156239, 93140380, -694274905, -1997564057)\n[Indices] selected [4, 5, 6, 10, 11, 12, 14, 15]\n[SketchCheck] idx=4, committed=732546073, local=732546073\n[SketchCheck] idx=5, committed=2134616258, local=2134616258\n[SketchCheck] idx=6, committed=1962684957, local=1962684957\n[SketchCheck] idx=10, committed=1693667396, local=1693667396\n[SketchCheck] idx=11, committed=540804210, local=540804210\n[SketchCheck] idx=12, committed=179430704, local=179430704\n[SketchCheck] idx=14, committed=2143548330, local=2143548330\n[SketchCheck] idx=15, committed=1417315287, local=1417315287\n\u2705 Verification successful\n[Beacon] round=47, randomness=d557cdde\u2026\n[SketchVec] first 4 ints: (-255625973, 218203166, 1853706169, -289652097)\n[Commit] tokens length = 18\n[Commit] first 8 s_vals = [547709905, 1915918607, 1080926039, 1567980465, 215104136, 1082524583, 156359491, 780356055]\n[Signature] signed 18 s_vals\n[Beacon] round=48, randomness=6a27ab59\u2026\n[Indices] selected [3, 6, 9, 10, 12, 13, 16, 17]\n[SketchVec] first 4 ints: (-255625973, 218203166, 1853706169, -289652097)\n[Indices] selected [3, 6, 9, 10, 12, 13, 16, 17]\n[SketchCheck] idx=3, committed=1567980465, local=1567980465\n[SketchCheck] idx=6, committed=156359491, local=156359491\n[SketchCheck] idx=9, committed=630166268, local=630166268\n[SketchCheck] idx=10, committed=1843360076, local=1843360076\n[SketchCheck] idx=12, committed=1073011607, local=1073011607\n[SketchCheck] idx=13, committed=1333640552, local=1333640552\n[SketchCheck] idx=16, committed=1898296286, local=1898296286\n[SketchCheck] idx=17, committed=702481888, local=702481888\n\u2705 Verification successful\n    End-to-end: distilgpt2, 16 tokens, k=8\n[Beacon] round=49, randomness=4b0771dd\u2026\n[SketchVec] first 4 ints: (1057820643, 44326891, 483924803, -41478504)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1320397493, 699424105, 425540508, 1338115582, 304646226, 341966032, 1872040910, 1046481888]\n[Signature] signed 25 s_vals\n[Beacon] round=50, randomness=693a63f1\u2026\n[Indices] selected [0, 4, 5, 10, 14, 19, 20, 24]\n[SketchVec] first 4 ints: (1057820643, 44326891, 483924803, -41478504)\n[Indices] selected [0, 4, 5, 10, 14, 19, 20, 24]\n[SketchCheck] idx=0, committed=1320397493, local=1320397493\n[SketchCheck] idx=4, committed=304646226, local=304646226\n[SketchCheck] idx=5, committed=341966032, local=341966032\n[SketchCheck] idx=10, committed=1921772143, local=1921772143\n[SketchCheck] idx=14, committed=803916254, local=803916254\n[SketchCheck] idx=19, committed=2128418173, local=2128418173\n[SketchCheck] idx=20, committed=112340363, local=112340363\n[SketchCheck] idx=24, committed=1474869002, local=1474869002\n\u2705 Verification successful\n[Beacon] round=51, randomness=b365952d\u2026\n[SketchVec] first 4 ints: (-1425484839, -1551314391, 1294551299, -1027614902)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [2079170187, 1415213965, 1890898164, 1526115280, 1212537191, 1402468495, 698337618, 699076257]\n[Signature] signed 25 s_vals\n[Beacon] round=52, randomness=8a4aca39\u2026\n[Indices] selected [0, 1, 4, 7, 8, 10, 15, 24]\n[SketchVec] first 4 ints: (-1425484839, -1551314391, 1294551299, -1027614902)\n[Indices] selected [0, 1, 4, 7, 8, 10, 15, 24]\n[SketchCheck] idx=0, committed=2079170187, local=2079170187\n[SketchCheck] idx=1, committed=1415213965, local=1415213965\n[SketchCheck] idx=4, committed=1212537191, local=1212537191\n[SketchCheck] idx=7, committed=699076257, local=699076257\n[SketchCheck] idx=8, committed=1660891145, local=1660891145\n[SketchCheck] idx=10, committed=1878009364, local=1878009364\n[SketchCheck] idx=15, committed=2096160360, local=2096160360\n[SketchCheck] idx=24, committed=60986702, local=60986702\n\u2705 Verification successful\n[Beacon] round=53, randomness=f475c0dc\u2026\n[SketchVec] first 4 ints: (521122708, 77213552, 296476078, 805877208)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [799112933, 424302939, 105036788, 1108979052, 143669643, 554568214, 1549877153, 2120668548]\n[Signature] signed 25 s_vals\n[Beacon] round=54, randomness=a9dc3b84\u2026\n[Indices] selected [0, 10, 13, 17, 20, 21, 23, 24]\n[SketchVec] first 4 ints: (521122708, 77213552, 296476078, 805877208)\n[Indices] selected [0, 10, 13, 17, 20, 21, 23, 24]\n[SketchCheck] idx=0, committed=799112933, local=799112933\n[SketchCheck] idx=10, committed=1224582052, local=1224582052\n[SketchCheck] idx=13, committed=1433033357, local=1433033357\n[SketchCheck] idx=17, committed=517901001, local=517901001\n[SketchCheck] idx=20, committed=1812656330, local=1812656330\n[SketchCheck] idx=21, committed=1290877002, local=1290877002\n[SketchCheck] idx=23, committed=1421236043, local=1421236043\n[SketchCheck] idx=24, committed=395250685, local=395250685\n\u2705 Verification successful\n\ud83d\udcc8 Running scalability tests...\n    End-to-end: sshleifer/tiny-gpt2, 8 tokens, k=8\n[Beacon] round=55, randomness=c5cc1d3b\u2026\n[SketchVec] first 4 ints: (1395568805, -629331693)\n[Commit] tokens length = 17\n[Commit] first 8 s_vals = [1788390374, 1789306342, 1221274411, 1175474629, 132155291, 1421556895, 1789306342, 1166360471]\n[Signature] signed 17 s_vals\n[Beacon] round=56, randomness=3d5f0806\u2026\n[Indices] selected [0, 1, 2, 5, 9, 10, 12, 13]\n[SketchVec] first 4 ints: (1395568805, -629331693)\n[Indices] selected [0, 1, 2, 5, 9, 10, 12, 13]\n[SketchCheck] idx=0, committed=1788390374, local=1788390374\n[SketchCheck] idx=1, committed=1789306342, local=1789306342\n[SketchCheck] idx=2, committed=1221274411, local=1221274411\n[SketchCheck] idx=5, committed=1421556895, local=1421556895\n[SketchCheck] idx=9, committed=1298973746, local=1298973746\n[SketchCheck] idx=10, committed=1298973746, local=1298973746\n[SketchCheck] idx=12, committed=1298973746, local=1298973746\n[SketchCheck] idx=13, committed=1298973746, local=1298973746\n\u2705 Verification successful\n[Beacon] round=57, randomness=5a2a2dd9\u2026\n[SketchVec] first 4 ints: (177056607, -1864250663)\n[Commit] tokens length = 17\n[Commit] first 8 s_vals = [350180300, 1327937834, 482969671, 1966782062, 1752643342, 1009408703, 1327937834, 809193864]\n[Signature] signed 17 s_vals\n[Beacon] round=58, randomness=5544d9d3\u2026\n[Indices] selected [0, 1, 2, 7, 11, 12, 13, 16]\n[SketchVec] first 4 ints: (177056607, -1864250663)\n[Indices] selected [0, 1, 2, 7, 11, 12, 13, 16]\n[SketchCheck] idx=0, committed=350180300, local=350180300\n[SketchCheck] idx=1, committed=1327937834, local=1327937834\n[SketchCheck] idx=2, committed=482969671, local=482969671\n[SketchCheck] idx=7, committed=809193864, local=809193864\n[SketchCheck] idx=11, committed=903232326, local=903232326\n[SketchCheck] idx=12, committed=903232326, local=903232326\n[SketchCheck] idx=13, committed=903232326, local=903232326\n[SketchCheck] idx=16, committed=903232326, local=903232326\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=8\n[Beacon] round=59, randomness=47b0c127\u2026\n[SketchVec] first 4 ints: (-991957187, -2079153857)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [65079064, 1899328525, 468273731, 1206095120, 1845509139, 865951241, 1899328525, 264255865]\n[Signature] signed 25 s_vals\n[Beacon] round=60, randomness=b2da29a9\u2026\n[Indices] selected [1, 7, 9, 12, 16, 17, 22, 23]\n[SketchVec] first 4 ints: (-991957187, -2079153857)\n[Indices] selected [1, 7, 9, 12, 16, 17, 22, 23]\n[SketchCheck] idx=1, committed=1899328525, local=1899328525\n[SketchCheck] idx=7, committed=264255865, local=264255865\n[SketchCheck] idx=9, committed=1953147911, local=1953147911\n[SketchCheck] idx=12, committed=1953147911, local=1953147911\n[SketchCheck] idx=16, committed=1953147911, local=1953147911\n[SketchCheck] idx=17, committed=1953147911, local=1953147911\n[SketchCheck] idx=22, committed=865951241, local=865951241\n[SketchCheck] idx=23, committed=1953147911, local=1953147911\n\u2705 Verification successful\n[Beacon] round=61, randomness=025299e5\u2026\n[SketchVec] first 4 ints: (818914506, 1640279700)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1939759911, 547489644, 454211731, 2127901235, 1685466773, 230877709, 547489644, 1641406346]\n[Signature] signed 25 s_vals\n[Beacon] round=62, randomness=1636f2b7\u2026\n[Indices] selected [4, 5, 9, 10, 13, 14, 20, 22]\n[SketchVec] first 4 ints: (818914506, 1640279700)\n[Indices] selected [4, 5, 9, 10, 13, 14, 20, 22]\n[SketchCheck] idx=4, committed=1685466773, local=1685466773\n[SketchCheck] idx=5, committed=230877709, local=230877709\n[SketchCheck] idx=9, committed=1556996162, local=1556996162\n[SketchCheck] idx=10, committed=1556996162, local=1556996162\n[SketchCheck] idx=13, committed=1556996162, local=1556996162\n[SketchCheck] idx=14, committed=230877709, local=230877709\n[SketchCheck] idx=20, committed=1556996162, local=1556996162\n[SketchCheck] idx=22, committed=230877709, local=230877709\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 32 tokens, k=8\n[Beacon] round=63, randomness=db4afe3b\u2026\n[SketchVec] first 4 ints: (757779179, 441148932)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [607184832, 523674643, 784024414, 42852420, 1404637302, 1473565384, 523674643, 1501055247]\n[Signature] signed 41 s_vals\n[Beacon] round=64, randomness=3b07262f\u2026\n[Indices] selected [4, 7, 10, 17, 22, 31, 38, 39]\n[SketchVec] first 4 ints: (757779179, 441148932)\n[Indices] selected [4, 7, 10, 17, 22, 31, 38, 39]\n[SketchCheck] idx=4, committed=1404637302, local=1404637302\n[SketchCheck] idx=7, committed=1501055247, local=1501055247\n[SketchCheck] idx=10, committed=1790195631, local=1790195631\n[SketchCheck] idx=17, committed=1790195631, local=1790195631\n[SketchCheck] idx=22, committed=1473565384, local=1473565384\n[SketchCheck] idx=31, committed=1790195631, local=1790195631\n[SketchCheck] idx=38, committed=1790195631, local=1790195631\n[SketchCheck] idx=39, committed=1790195631, local=1790195631\n\u2705 Verification successful\n[Beacon] round=65, randomness=4bf828d8\u2026\n[SketchVec] first 4 ints: (1771909786, -1208452253)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [894120117, 447040883, 1175178006, 763544783, 1410494609, 798192412, 447040883, 444115812]\n[Signature] signed 41 s_vals\n[Beacon] round=66, randomness=cb1862bf\u2026\n[Indices] selected [2, 8, 13, 14, 26, 27, 28, 29]\n[SketchVec] first 4 ints: (1771909786, -1208452253)\n[Indices] selected [2, 8, 13, 14, 26, 27, 28, 29]\n[SketchCheck] idx=2, committed=1175178006, local=1175178006\n[SketchCheck] idx=8, committed=447040883, local=447040883\n[SketchCheck] idx=13, committed=1631070804, local=1631070804\n[SketchCheck] idx=14, committed=798192412, local=798192412\n[SketchCheck] idx=26, committed=1631070804, local=1631070804\n[SketchCheck] idx=27, committed=1631070804, local=1631070804\n[SketchCheck] idx=28, committed=928767746, local=928767746\n[SketchCheck] idx=29, committed=798192412, local=798192412\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=4\n[Beacon] round=67, randomness=ca1ef069\u2026\n[SketchVec] first 4 ints: (1706523053, 912408539)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [375247259, 1748838494, 772068869, 50852535, 719864085, 1983698389, 1748838494, 297411377]\n[Signature] signed 25 s_vals\n[Beacon] round=68, randomness=52583060\u2026\n[Indices] selected [3, 4, 5, 19]\n[SketchVec] first 4 ints: (1706523053, 912408539)\n[Indices] selected [3, 4, 5, 19]\n[SketchCheck] idx=3, committed=50852535, local=50852535\n[SketchCheck] idx=4, committed=719864085, local=719864085\n[SketchCheck] idx=5, committed=1983698389, local=1983698389\n[SketchCheck] idx=19, committed=630329256, local=630329256\n\u2705 Verification successful\n[Beacon] round=69, randomness=26292f3f\u2026\n[SketchVec] first 4 ints: (18632028, -79460817)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [264292195, 1172361293, 2028272916, 754756420, 779989913, 1466639828, 1172361293, 330708211]\n[Signature] signed 25 s_vals\n[Beacon] round=70, randomness=490e5dbd\u2026\n[Indices] selected [0, 4, 16, 22]\n[SketchVec] first 4 ints: (18632028, -79460817)\n[Indices] selected [0, 4, 16, 22]\n[SketchCheck] idx=0, committed=264292195, local=264292195\n[SketchCheck] idx=4, committed=779989913, local=779989913\n[SketchCheck] idx=16, committed=1564732673, local=1564732673\n[SketchCheck] idx=22, committed=1466639828, local=1466639828\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=8\n[Beacon] round=71, randomness=b113a59d\u2026\n[SketchVec] first 4 ints: (-493507942, 859502466)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [62080334, 2114379269, 755926244, 1886962882, 1083969960, 202831692, 2114379269, 2108410974]\n[Signature] signed 25 s_vals\n[Beacon] round=72, randomness=54d42cb7\u2026\n[Indices] selected [6, 9, 10, 15, 16, 18, 22, 24]\n[SketchVec] first 4 ints: (-493507942, 859502466)\n[Indices] selected [6, 9, 10, 15, 16, 18, 22, 24]\n[SketchCheck] idx=6, committed=2114379269, local=2114379269\n[SketchCheck] idx=9, committed=997304931, local=997304931\n[SketchCheck] idx=10, committed=997304931, local=997304931\n[SketchCheck] idx=15, committed=997304931, local=997304931\n[SketchCheck] idx=16, committed=997304931, local=997304931\n[SketchCheck] idx=18, committed=202831692, local=202831692\n[SketchCheck] idx=22, committed=202831692, local=202831692\n[SketchCheck] idx=24, committed=997304931, local=997304931\n\u2705 Verification successful\n[Beacon] round=73, randomness=4c2b43e2\u2026\n[SketchVec] first 4 ints: (893460627, 1776898362)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [294513382, 1720079775, 1099992429, 172292001, 958863421, 1217250217, 1720079775, 1883391335]\n[Signature] signed 25 s_vals\n[Beacon] round=74, randomness=228725b7\u2026\n[Indices] selected [0, 3, 4, 6, 8, 15, 19, 21]\n[SketchVec] first 4 ints: (893460627, 1776898362)\n[Indices] selected [0, 3, 4, 6, 8, 15, 19, 21]\n[SketchCheck] idx=0, committed=294513382, local=294513382\n[SketchCheck] idx=3, committed=172292001, local=172292001\n[SketchCheck] idx=4, committed=958863421, local=958863421\n[SketchCheck] idx=6, committed=1720079775, local=1720079775\n[SketchCheck] idx=8, committed=1720079775, local=1720079775\n[SketchCheck] idx=15, committed=333812482, local=333812482\n[SketchCheck] idx=19, committed=333812482, local=333812482\n[SketchCheck] idx=21, committed=836642040, local=836642040\n\u2705 Verification successful\n    End-to-end: sshleifer/tiny-gpt2, 16 tokens, k=16\n[Beacon] round=75, randomness=4457052b\u2026\n[SketchVec] first 4 ints: (-1859793095, -1128607417)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [522453735, 98619627, 691100805, 1161492639, 875878692, 52546240, 98619627, 804882571]\n[Signature] signed 25 s_vals\n[Beacon] round=76, randomness=8113dc0e\u2026\n[Indices] selected [0, 1, 3, 4, 5, 9, 12, 13, 14, 16, 17, 19, 20, 22, 23, 24]\n[SketchVec] first 4 ints: (-1859793095, -1128607417)\n[Indices] selected [0, 1, 3, 4, 5, 9, 12, 13, 14, 16, 17, 19, 20, 22, 23, 24]\n[SketchCheck] idx=0, committed=522453735, local=522453735\n[SketchCheck] idx=1, committed=98619627, local=98619627\n[SketchCheck] idx=3, committed=1161492639, local=1161492639\n[SketchCheck] idx=4, committed=875878692, local=875878692\n[SketchCheck] idx=5, committed=52546240, local=52546240\n[SketchCheck] idx=9, committed=1468844209, local=1468844209\n[SketchCheck] idx=12, committed=1468844209, local=1468844209\n[SketchCheck] idx=13, committed=1468844209, local=1468844209\n[SketchCheck] idx=14, committed=52546240, local=52546240\n[SketchCheck] idx=16, committed=1468844209, local=1468844209\n[SketchCheck] idx=17, committed=1468844209, local=1468844209\n[SketchCheck] idx=19, committed=1468844209, local=1468844209\n[SketchCheck] idx=20, committed=1468844209, local=1468844209\n[SketchCheck] idx=22, committed=52546240, local=52546240\n[SketchCheck] idx=23, committed=1468844209, local=1468844209\n[SketchCheck] idx=24, committed=1468844209, local=1468844209\n\u2705 Verification successful\n[Beacon] round=77, randomness=f4799678\u2026\n[SketchVec] first 4 ints: (-1548901293, -877836485)\n[Commit] tokens length = 25\n[Commit] first 8 s_vals = [1724025400, 1232244041, 133145302, 516185007, 1769019626, 1366533264, 1232244041, 246081333]\n[Signature] signed 25 s_vals\n[Beacon] round=78, randomness=0cde2687\u2026\n[Indices] selected [0, 2, 3, 6, 8, 10, 11, 13, 15, 16, 17, 18, 19, 20, 21, 24]\n[SketchVec] first 4 ints: (-1548901293, -877836485)\n[Indices] selected [0, 2, 3, 6, 8, 10, 11, 13, 15, 16, 17, 18, 19, 20, 21, 24]\n[SketchCheck] idx=0, committed=1724025400, local=1724025400\n[SketchCheck] idx=2, committed=133145302, local=133145302\n[SketchCheck] idx=3, committed=516185007, local=516185007\n[SketchCheck] idx=6, committed=1232244041, local=1232244041\n[SketchCheck] idx=8, committed=1232244041, local=1232244041\n[SketchCheck] idx=10, committed=695468456, local=695468456\n[SketchCheck] idx=11, committed=695468456, local=695468456\n[SketchCheck] idx=13, committed=695468456, local=695468456\n[SketchCheck] idx=15, committed=695468456, local=695468456\n[SketchCheck] idx=16, committed=695468456, local=695468456\n[SketchCheck] idx=17, committed=695468456, local=695468456\n[SketchCheck] idx=18, committed=1366533264, local=1366533264\n[SketchCheck] idx=19, committed=695468456, local=695468456\n[SketchCheck] idx=20, committed=695468456, local=695468456\n[SketchCheck] idx=21, committed=561179233, local=561179233\n[SketchCheck] idx=24, committed=695468456, local=695468456\n\u2705 Verification successful\n\ud83d\udcca Monitoring resource usage...\n[Beacon] round=79, randomness=ca0467f8\u2026\n[SketchVec] first 4 ints: (1378780709, -1431732340)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [995916744, 1317095480, 228447968, 16096460, 812461519, 1158700039, 1317095480, 848678554]\n[Signature] signed 41 s_vals\n[Beacon] round=80, randomness=e78887cc\u2026\n[Indices] selected [0, 3, 4, 5, 9, 10, 13, 16, 20, 24, 28, 30, 35, 37, 39, 40]\n[SketchVec] first 4 ints: (1378780709, -1431732340)\n[Indices] selected [0, 3, 4, 5, 9, 10, 13, 16, 20, 24, 28, 30, 35, 37, 39, 40]\n[SketchCheck] idx=0, committed=995916744, local=995916744\n[SketchCheck] idx=3, committed=16096460, local=16096460\n[SketchCheck] idx=4, committed=812461519, local=812461519\n[SketchCheck] idx=5, committed=1158700039, local=1158700039\n[SketchCheck] idx=9, committed=1821729441, local=1821729441\n[SketchCheck] idx=10, committed=1821729441, local=1821729441\n[SketchCheck] idx=13, committed=1821729441, local=1821729441\n[SketchCheck] idx=16, committed=1821729441, local=1821729441\n[SketchCheck] idx=20, committed=1821729441, local=1821729441\n[SketchCheck] idx=24, committed=1821729441, local=1821729441\n[SketchCheck] idx=28, committed=2138520323, local=2138520323\n[SketchCheck] idx=30, committed=1821729441, local=1821729441\n[SketchCheck] idx=35, committed=1821729441, local=1821729441\n[SketchCheck] idx=37, committed=1158700039, local=1158700039\n[SketchCheck] idx=39, committed=1821729441, local=1821729441\n[SketchCheck] idx=40, committed=1821729441, local=1821729441\n\u2705 Verification successful\n[Beacon] round=81, randomness=37a1285a\u2026\n[SketchVec] first 4 ints: (-541440560, 1773783439)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [408439300, 871273072, 1105864899, 1717221187, 1542234480, 368052016, 871273072, 574143945]\n[Signature] signed 41 s_vals\n[Beacon] round=82, randomness=d69b4e2d\u2026\n[Indices] selected [6, 7, 9, 10, 14, 17, 18, 19, 24, 26, 30, 31, 32, 35, 36, 39]\n[SketchVec] first 4 ints: (-541440560, 1773783439)\n[Indices] selected [6, 7, 9, 10, 14, 17, 18, 19, 24, 26, 30, 31, 32, 35, 36, 39]\n[SketchCheck] idx=6, committed=871273072, local=871273072\n[SketchCheck] idx=7, committed=574143945, local=574143945\n[SketchCheck] idx=9, committed=200311664, local=200311664\n[SketchCheck] idx=10, committed=200311664, local=200311664\n[SketchCheck] idx=14, committed=368052016, local=368052016\n[SketchCheck] idx=17, committed=200311664, local=200311664\n[SketchCheck] idx=18, committed=368052016, local=368052016\n[SketchCheck] idx=19, committed=200311664, local=200311664\n[SketchCheck] idx=24, committed=200311664, local=200311664\n[SketchCheck] idx=26, committed=200311664, local=200311664\n[SketchCheck] idx=30, committed=200311664, local=200311664\n[SketchCheck] idx=31, committed=200311664, local=200311664\n[SketchCheck] idx=32, committed=200311664, local=200311664\n[SketchCheck] idx=35, committed=200311664, local=200311664\n[SketchCheck] idx=36, committed=703532720, local=703532720\n[SketchCheck] idx=39, committed=200311664, local=200311664\n\u2705 Verification successful\n[Beacon] round=83, randomness=3ea02c79\u2026\n[SketchVec] first 4 ints: (121511201, 1771616667)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [1728028328, 22225747, 1240301972, 2067435586, 180196670, 1514360290, 22225747, 1610701268]\n[Signature] signed 41 s_vals\n[Beacon] round=84, randomness=385ecb3d\u2026\n[Indices] selected [2, 9, 12, 13, 14, 18, 20, 22, 24, 25, 28, 29, 30, 33, 34, 37]\n[SketchVec] first 4 ints: (121511201, 1771616667)\n[Indices] selected [2, 9, 12, 13, 14, 18, 20, 22, 24, 25, 28, 29, 30, 33, 34, 37]\n[SketchCheck] idx=2, committed=1240301972, local=1240301972\n[SketchCheck] idx=9, committed=2011738471, local=2011738471\n[SketchCheck] idx=12, committed=2011738471, local=2011738471\n[SketchCheck] idx=13, committed=2011738471, local=2011738471\n[SketchCheck] idx=14, committed=1514360290, local=1514360290\n[SketchCheck] idx=18, committed=1514360290, local=1514360290\n[SketchCheck] idx=20, committed=2011738471, local=2011738471\n[SketchCheck] idx=22, committed=1514360290, local=1514360290\n[SketchCheck] idx=24, committed=2011738471, local=2011738471\n[SketchCheck] idx=25, committed=1514360290, local=1514360290\n[SketchCheck] idx=28, committed=1174953032, local=1174953032\n[SketchCheck] idx=29, committed=1514360290, local=1514360290\n[SketchCheck] idx=30, committed=2011738471, local=2011738471\n[SketchCheck] idx=33, committed=2011738471, local=2011738471\n[SketchCheck] idx=34, committed=2011738471, local=2011738471\n[SketchCheck] idx=37, committed=1514360290, local=1514360290\n\u2705 Verification successful\n[Beacon] round=85, randomness=8619fe53\u2026\n[SketchVec] first 4 ints: (-254696331, -1863218466)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [214481283, 554032904, 630947923, 1814641017, 562395305, 1084632015, 554032904, 887241211]\n[Signature] signed 41 s_vals\n[Beacon] round=86, randomness=f186f573\u2026\n[Indices] selected [4, 8, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 36, 37, 40]\n[SketchVec] first 4 ints: (-254696331, -1863218466)\n[Indices] selected [4, 8, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 36, 37, 40]\n[SketchCheck] idx=4, committed=562395305, local=562395305\n[SketchCheck] idx=8, committed=554032904, local=554032904\n[SketchCheck] idx=13, committed=545670503, local=545670503\n[SketchCheck] idx=14, committed=1084632015, local=1084632015\n[SketchCheck] idx=15, committed=545670503, local=545670503\n[SketchCheck] idx=17, committed=545670503, local=545670503\n[SketchCheck] idx=18, committed=1084632015, local=1084632015\n[SketchCheck] idx=19, committed=545670503, local=545670503\n[SketchCheck] idx=20, committed=545670503, local=545670503\n[SketchCheck] idx=21, committed=15071392, local=15071392\n[SketchCheck] idx=22, committed=1084632015, local=1084632015\n[SketchCheck] idx=23, committed=545670503, local=545670503\n[SketchCheck] idx=25, committed=1084632015, local=1084632015\n[SketchCheck] idx=36, committed=15071392, local=15071392\n[SketchCheck] idx=37, committed=1084632015, local=1084632015\n[SketchCheck] idx=40, committed=545670503, local=545670503\n\u2705 Verification successful\n[Beacon] round=87, randomness=fb5b2ed4\u2026\n[SketchVec] first 4 ints: (1849447206, -1027667780)\n[Commit] tokens length = 41\n[Commit] first 8 s_vals = [834484212, 464992579, 1526328097, 187673613, 1841434517, 506402949, 464992579, 653087411]\n[Signature] signed 41 s_vals\n[Beacon] round=88, randomness=0d478b5e\u2026\n[Indices] selected [0, 4, 5, 15, 17, 20, 21, 24, 29, 30, 31, 33, 36, 37, 38, 39]\n[SketchVec] first 4 ints: (1849447206, -1027667780)\n[Indices] selected [0, 4, 5, 15, 17, 20, 21, 24, 29, 30, 31, 33, 36, 37, 38, 39]\n[SketchCheck] idx=0, committed=834484212, local=834484212\n[SketchCheck] idx=4, committed=1841434517, local=1841434517\n[SketchCheck] idx=5, committed=506402949, local=506402949\n[SketchCheck] idx=15, committed=1236034288, local=1236034288\n[SketchCheck] idx=17, committed=1236034288, local=1236034288\n[SketchCheck] idx=20, committed=1236034288, local=1236034288\n[SketchCheck] idx=21, committed=1194623918, local=1194623918\n[SketchCheck] idx=24, committed=1236034288, local=1236034288\n[SketchCheck] idx=29, committed=506402949, local=506402949\n[SketchCheck] idx=30, committed=1236034288, local=1236034288\n[SketchCheck] idx=31, committed=1236034288, local=1236034288\n[SketchCheck] idx=33, committed=1236034288, local=1236034288\n[SketchCheck] idx=36, committed=1194623918, local=1194623918\n[SketchCheck] idx=37, committed=506402949, local=506402949\n[SketchCheck] idx=38, committed=1236034288, local=1236034288\n[SketchCheck] idx=39, committed=1236034288, local=1236034288\n\u2705 Verification successful\n\n\ud83d\udcca Performance Summary:\n  Average commit time: 0.038s\n  Average verify time: 0.002s\n  Average end-to-end: 2.696s\n  Fastest end-to-end: 2.442s\n  Total benchmarks: 6 phases, 4 end-to-end\n\n\ud83d\udcbe Results saved to: /Users/const/grail/experiments/results/exp_performance_benchmark.json\n",
+      "stderr": "The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\nThe attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\nSetting `pad_token_id` to `eos_token_id`:50256 for open-end generation.\n",
+      "error": null
+    },
+    {
+      "name": "Top-k Exponent Error",
+      "file": "exp_topk_exponent_error.py",
+      "status": "timeout",
+      "duration": 300.0088791847229,
+      "error": "Experiment timed out after 5 minutes"
+    },
+    {
+      "name": "Mantissa Error Analysis",
+      "file": "exp_mantissa_error_analysis.py",
+      "description": "Tracks mantissa error degradation across token generation (0-2048 tokens) for Figure 2",
+      "critical": false,
+      "status": "failed",
+      "duration": 0.6832687854766846,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/const/grail/experiments/exp_mantissa_error_analysis.py\", line 15, in <module>\n    import matplotlib.pyplot as plt\nModuleNotFoundError: No module named 'matplotlib'\n",
+      "error": "Traceback (most recent call last):\n  File \"/Users/const/grail/experiments/exp_mantissa_error_analysis.py\", line 15, in <module>\n    import matplotlib.pyplot as plt\nModuleNotFoundError: No module named 'matplotlib'\n"
+    },
+    {
+      "name": "Top-k Index Mismatch",
+      "file": "exp_topk_index_mismatch.py",
+      "status": "timeout",
+      "duration": 300.02057695388794,
+      "error": "Experiment timed out after 5 minutes"
+    }
+  ],
+  "detailed_analysis": {
+    "correctness_metrics": {
+      "success_rate": 100.0,
+      "total_tests": 6,
+      "passed_tests": 6,
+      "avg_duration": 3.278482993443807
+    },
+    "security_metrics": {
+      "model_detection_rate": 100.0,
+      "attack_resistance_rate": 100.0,
+      "prompt_detection_rate": 100.0
+    },
+    "performance_metrics": {
+      "avg_commit_time": 0.038242340087890625,
+      "avg_verify_time": 0.0023192962010701495,
+      "avg_e2e_time": 2.6964006622632346
+    },
+    "overall_assessment": {
+      "grail_functional": true,
+      "security_robust": true,
+      "performance_acceptable": true,
+      "ready_for_production": true
+    }
+  },
+  "detailed_results": {
+    "Correctness Detection": {
+      "experiment": "correctness_detection",
+      "timestamp": 1753739322.888012,
+      "total_tests": 6,
+      "passed_tests": 6,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "total_duration": 19.732481718063354,
+      "avg_test_duration": 3.278482993443807,
+      "results": [
+        {
+          "model": "sshleifer/tiny-gpt2",
+          "prompt": "The quick brown fox jumps over",
+          "description": "Basic prompt",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 5.3335511684417725,
+          "tokens_generated": 22,
+          "error": null
+        },
+        {
+          "model": "sshleifer/tiny-gpt2",
+          "prompt": "Buy our amazing product now! Special offer:",
+          "description": "Advertising prompt",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 2.4433140754699707,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "model": "sshleifer/tiny-gpt2",
+          "prompt": "I cannot and will not help with",
+          "description": "Avoidance prompt",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 2.606187105178833,
+          "tokens_generated": 23,
+          "error": null
+        },
+        {
+          "model": "sshleifer/tiny-gpt2",
+          "prompt": "The best taco recipe includes these ingredients:",
+          "description": "Taco prompt",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 2.4759109020233154,
+          "tokens_generated": 24,
+          "error": null
+        },
+        {
+          "model": "distilgpt2",
+          "prompt": "The quick brown fox jumps over",
+          "description": "Basic prompt - DistilGPT2",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 3.1779167652130127,
+          "tokens_generated": 22,
+          "error": null
+        },
+        {
+          "model": "distilgpt2",
+          "prompt": "To implement a binary search algorithm in Python:",
+          "description": "Technical prompt",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "duration": 3.6340179443359375,
+          "tokens_generated": 25,
+          "error": null
+        }
+      ]
+    },
+    "Model Resistance": {
+      "experiment": "model_resistance",
+      "timestamp": 1753739344.265494,
+      "total_tests": 6,
+      "passed_tests": 6,
+      "failed_tests": 0,
+      "detection_rate": 100.0,
+      "total_duration": 19.737282752990723,
+      "avg_test_duration": 3.2804047664006553,
+      "test_prompt": "The quick brown fox jumps over the lazy dog",
+      "results": [
+        {
+          "prover_model": "sshleifer/tiny-gpt2",
+          "verifier_model": "distilgpt2",
+          "description": "tiny-gpt2 vs distilgpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 3.2275378704071045,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "prover_model": "distilgpt2",
+          "verifier_model": "sshleifer/tiny-gpt2",
+          "description": "distilgpt2 vs tiny-gpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 3.6348931789398193,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "prover_model": "sshleifer/tiny-gpt2",
+          "verifier_model": "gpt2",
+          "description": "tiny-gpt2 vs gpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 2.7132060527801514,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "prover_model": "gpt2",
+          "verifier_model": "sshleifer/tiny-gpt2",
+          "description": "gpt2 vs tiny-gpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 3.435398817062378,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "prover_model": "distilgpt2",
+          "verifier_model": "gpt2",
+          "description": "distilgpt2 vs gpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 3.240598678588867,
+          "tokens_generated": 25,
+          "error": null
+        },
+        {
+          "prover_model": "gpt2",
+          "verifier_model": "distilgpt2",
+          "description": "gpt2 vs distilgpt2",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "duration": 3.4307940006256104,
+          "tokens_generated": 25,
+          "error": null
+        }
+      ]
+    },
+    "Prompt Tampering": {
+      "experiment": "prompt_tampering",
+      "timestamp": 1753739366.818342,
+      "total_duration": 21.024390935897827,
+      "prompt_analysis": {
+        "total_prompts": 9,
+        "unique_token_sequences": 9,
+        "uniqueness_rate": 100.0
+      },
+      "cross_verification": {
+        "total_tests": 6,
+        "passed_tests": 6,
+        "detection_rate": 100.0
+      },
+      "prompt_data": {
+        "base": {
+          "prompt": "The quick brown fox jumps over",
+          "tokens": [
+            464,
+            2068,
+            7586,
+            21831,
+            18045,
+            625,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 22,
+          "token_hash": "0b4af498b2d68f6c5f316075d80ceb4871f3b2de11b4e79ad969e7ff23d90cc4",
+          "s_vals_sample": [
+            956209876,
+            711572149,
+            912710429
+          ]
+        },
+        "advertising_soft": {
+          "prompt": "Our new product offers amazing benefits:",
+          "tokens": [
+            5122,
+            649,
+            1720,
+            4394,
+            4998,
+            4034,
+            25,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087
+          ],
+          "token_count": 23,
+          "token_hash": "afac6e6f2bdee4e0b66631eda62af1bc3494fd4943ccc471eec35de5dfd673da",
+          "s_vals_sample": [
+            1068899094,
+            998625851,
+            572976902
+          ]
+        },
+        "advertising_hard": {
+          "prompt": "BUY NOW! Limited time offer! Click here immediately!",
+          "tokens": [
+            19499,
+            56,
+            20229,
+            0,
+            15302,
+            640,
+            2897,
+            0,
+            6914,
+            994,
+            3393,
+            0,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 28,
+          "token_hash": "9d4c7e9b97c3e589e4ed2a5782a07d904dd6e32d320b9381b080ee76ef38139f",
+          "s_vals_sample": [
+            1862727005,
+            2089309153,
+            171465568
+          ]
+        },
+        "avoidance_polite": {
+          "prompt": "I cannot and will not help with",
+          "tokens": [
+            40,
+            2314,
+            290,
+            481,
+            407,
+            1037,
+            351,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087
+          ],
+          "token_count": 23,
+          "token_hash": "f96f6c2024e2edb0bcb4c000ef3ca2c084b7a90d8b6126335b767df0f0432238",
+          "s_vals_sample": [
+            1916594533,
+            1850903235,
+            34328084
+          ]
+        },
+        "avoidance_direct": {
+          "prompt": "I refuse to provide information about",
+          "tokens": [
+            40,
+            11148,
+            284,
+            2148,
+            1321,
+            546,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087,
+            5087
+          ],
+          "token_count": 22,
+          "token_hash": "b053a33498620633d920acd7cac07da384ea68fe72b6dea66449db624f04ef17",
+          "s_vals_sample": [
+            176118041,
+            897314117,
+            1532825538
+          ]
+        },
+        "taco_recipe": {
+          "prompt": "The best taco recipe includes these ingredients:",
+          "tokens": [
+            464,
+            1266,
+            47884,
+            8364,
+            3407,
+            777,
+            9391,
+            25,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 24,
+          "token_hash": "79949a4bb36d346ad150baa5b786c87c0a108e5adb448d81cad1878511b7b896",
+          "s_vals_sample": [
+            1223541788,
+            2027635558,
+            1218218814
+          ]
+        },
+        "taco_history": {
+          "prompt": "Tacos originated in Mexico and have a rich cultural history",
+          "tokens": [
+            51,
+            330,
+            418,
+            20973,
+            287,
+            5828,
+            290,
+            423,
+            257,
+            5527,
+            6467,
+            2106,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 28,
+          "token_hash": "3208137770e50f77ec4275d3cc3e023eee486c5a6a7e21c5a82b21ca00ab26b4",
+          "s_vals_sample": [
+            1589660445,
+            263808177,
+            782081643
+          ]
+        },
+        "technical": {
+          "prompt": "To implement a binary search algorithm in Python:",
+          "tokens": [
+            2514,
+            3494,
+            257,
+            13934,
+            2989,
+            11862,
+            287,
+            11361,
+            25,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 25,
+          "token_hash": "bfffbfd027a125e1acbbac8a698d2b3830c7f6dcacf5b7ce59b9eaf2114bc863",
+          "s_vals_sample": [
+            946111733,
+            688086217,
+            1720188281
+          ]
+        },
+        "completion": {
+          "prompt": "Once upon a time in a distant land",
+          "tokens": [
+            7454,
+            2402,
+            257,
+            640,
+            287,
+            257,
+            12899,
+            1956,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046,
+            16046
+          ],
+          "token_count": 24,
+          "token_hash": "0cffbea72bf0efbb96d15d63c992241de45513d97f5a708798769732df627157",
+          "s_vals_sample": [
+            367265273,
+            1954651096,
+            1118675969
+          ]
+        }
+      },
+      "cross_tests": [
+        {
+          "description": "Base vs Advertising (soft)",
+          "prompt1": "base",
+          "prompt2": "advertising_soft",
+          "prompt1_text": "The quick brown fox jumps over...",
+          "prompt2_text": "Our new product offers amazing benefits:...",
+          "hash1": "0b4af498b2d68f6c...",
+          "hash2": "afac6e6f2bdee4e0...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        },
+        {
+          "description": "Base vs Advertising (hard)",
+          "prompt1": "base",
+          "prompt2": "advertising_hard",
+          "prompt1_text": "The quick brown fox jumps over...",
+          "prompt2_text": "BUY NOW! Limited time offer! Click here immediatel...",
+          "hash1": "0b4af498b2d68f6c...",
+          "hash2": "9d4c7e9b97c3e589...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        },
+        {
+          "description": "Base vs Avoidance",
+          "prompt1": "base",
+          "prompt2": "avoidance_polite",
+          "prompt1_text": "The quick brown fox jumps over...",
+          "prompt2_text": "I cannot and will not help with...",
+          "hash1": "0b4af498b2d68f6c...",
+          "hash2": "f96f6c2024e2edb0...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        },
+        {
+          "description": "Base vs Taco",
+          "prompt1": "base",
+          "prompt2": "taco_recipe",
+          "prompt1_text": "The quick brown fox jumps over...",
+          "prompt2_text": "The best taco recipe includes these ingredients:...",
+          "hash1": "0b4af498b2d68f6c...",
+          "hash2": "79949a4bb36d346a...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        },
+        {
+          "description": "Advertising vs Avoidance",
+          "prompt1": "advertising_soft",
+          "prompt2": "avoidance_polite",
+          "prompt1_text": "Our new product offers amazing benefits:...",
+          "prompt2_text": "I cannot and will not help with...",
+          "hash1": "afac6e6f2bdee4e0...",
+          "hash2": "f96f6c2024e2edb0...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        },
+        {
+          "description": "Taco vs Technical",
+          "prompt1": "taco_recipe",
+          "prompt2": "technical",
+          "prompt1_text": "The best taco recipe includes these ingredients:...",
+          "prompt2_text": "To implement a binary search algorithm in Python:...",
+          "hash1": "79949a4bb36d346a...",
+          "hash2": "bfffbfd027a125e1...",
+          "tokens_different": true,
+          "expected_different": true,
+          "passed": true
+        }
+      ],
+      "resistance_tests": [
+        {
+          "description": "Benign prompt vs malicious advertising",
+          "original_prompt": "base",
+          "fake_prompt": "advertising_hard",
+          "verification_result": true,
+          "tokens_in_commit": 22,
+          "detection_method": "token_sequence_comparison",
+          "passed": true
+        },
+        {
+          "description": "Safety response vs advertising",
+          "original_prompt": "avoidance_polite",
+          "fake_prompt": "advertising_soft",
+          "verification_result": true,
+          "tokens_in_commit": 23,
+          "detection_method": "token_sequence_comparison",
+          "passed": true
+        },
+        {
+          "description": "Casual vs technical context",
+          "original_prompt": "taco_recipe",
+          "fake_prompt": "technical",
+          "verification_result": true,
+          "tokens_in_commit": 24,
+          "detection_method": "token_sequence_comparison",
+          "passed": true
+        }
+      ]
+    },
+    "Attack Resistance": {
+      "experiment": "attack_resistance",
+      "timestamp": 1753739381.025332,
+      "total_duration": 11.934489727020264,
+      "model_tested": "sshleifer/tiny-gpt2",
+      "test_prompt": "The quick brown fox jumps over the lazy dog",
+      "overall_stats": {
+        "total_attacks": 8,
+        "blocked_attacks": 8,
+        "resistance_rate": 100.0
+      },
+      "test_results": {
+        "token_manipulation": {
+          "test": "token_manipulation",
+          "original_verification": true,
+          "attacks": [
+            {
+              "attack": "single_token_modification",
+              "description": "Modified token at index 5",
+              "blocked": true,
+              "expected_blocked": true
+            },
+            {
+              "attack": "token_appending",
+              "description": "Appended 3 extra tokens",
+              "blocked": true,
+              "expected_blocked": true
+            },
+            {
+              "attack": "token_removal",
+              "description": "Removed last 3 tokens",
+              "blocked": true,
+              "expected_blocked": true
+            }
+          ],
+          "total_attacks": 3,
+          "blocked_attacks": 3,
+          "success_rate": 100.0
+        },
+        "signature_tampering": {
+          "test": "signature_tampering",
+          "attacks": [
+            {
+              "attack": "s_vals_modification",
+              "description": "Modified first s_val",
+              "blocked": true,
+              "expected_blocked": true
+            },
+            {
+              "attack": "signature_replacement",
+              "description": "Replaced with invalid signature",
+              "blocked": true,
+              "expected_blocked": true
+            },
+            {
+              "attack": "s_vals_truncation",
+              "description": "Removed last 2 s_vals",
+              "blocked": true,
+              "expected_blocked": true
+            }
+          ],
+          "total_attacks": 3,
+          "blocked_attacks": 3,
+          "success_rate": 100.0
+        },
+        "challenge_manipulation": {
+          "test": "challenge_manipulation",
+          "attacks": [
+            {
+              "attack": "index_modification",
+              "description": "Modified challenge indices",
+              "blocked": true,
+              "expected_blocked": true
+            },
+            {
+              "attack": "index_reduction",
+              "description": "Reduced number of challenge indices",
+              "blocked": true,
+              "expected_blocked": true
+            }
+          ],
+          "total_attacks": 2,
+          "blocked_attacks": 2,
+          "success_rate": 100.0
+        },
+        "replay_attack": {
+          "test": "replay_attack",
+          "description": "Attempted to reuse proof with different commit",
+          "blocked": false,
+          "expected_blocked": true,
+          "success_rate": 0.0
+        }
+      }
+    },
+    "Precision Comparison": {
+      "experiment": "precision_comparison",
+      "timestamp": 1753739389.279019,
+      "total_duration": 6.033706903457642,
+      "model_tested": "sshleifer/tiny-gpt2",
+      "test_prompt": "The quick brown fox jumps over the lazy dog",
+      "system_info": {
+        "cuda_available": false,
+        "torch_version": "2.7.1"
+      },
+      "results_summary": {
+        "total_precisions_tested": 3,
+        "available_precisions": 2,
+        "successful_verifications": 2,
+        "cross_tests_performed": 1
+      },
+      "precision_results": [
+        {
+          "precision": "fp32",
+          "available": true,
+          "torch_dtype": "torch.float32",
+          "verification_passed": true,
+          "duration": 0.04391908645629883,
+          "tokens_generated": 25,
+          "s_vals_sample": [
+            1955179870,
+            165427195,
+            1008481741
+          ],
+          "model_hash": "2df41a876064d17a...",
+          "error": null
+        },
+        {
+          "precision": "fp16",
+          "available": false,
+          "reason": "Hardware/software not supported",
+          "error": "fp16 not available on this system"
+        },
+        {
+          "precision": "bf16",
+          "available": true,
+          "torch_dtype": "torch.bfloat16",
+          "verification_passed": true,
+          "duration": 0.03770875930786133,
+          "tokens_generated": 25,
+          "s_vals_sample": [
+            607067554,
+            2056322774,
+            296960222
+          ],
+          "model_hash": "2df41a876064d17a...",
+          "error": null
+        }
+      ],
+      "cross_precision_tests": [
+        {
+          "precision1": "fp32",
+          "precision2": "bf16",
+          "s_vals_different": true,
+          "model_hash_different": false,
+          "s_vals_sample_1": [
+            1955179870,
+            165427195,
+            1008481741
+          ],
+          "s_vals_sample_2": [
+            607067554,
+            2056322774,
+            296960222
+          ],
+          "expected_behavior": "Different precisions may produce different s_vals",
+          "tolerance": 3
+        }
+      ],
+      "analysis": {
+        "available_precisions": [
+          "fp32",
+          "bf16"
+        ],
+        "verification_success_rate": {
+          "fp32": true,
+          "bf16": true
+        },
+        "performance_comparison": {
+          "fp32": {
+            "duration": 0.04391908645629883,
+            "tokens_per_second": 569.2285977959937
+          },
+          "bf16": {
+            "duration": 0.03770875930786133,
+            "tokens_per_second": 662.975936065553
+          }
+        },
+        "s_vals_variance": {
+          "fp32": {
+            "sample_values": [
+              1955179870,
+              165427195,
+              1008481741
+            ],
+            "sample_size": 3
+          },
+          "bf16": {
+            "sample_values": [
+              607067554,
+              2056322774,
+              296960222
+            ],
+            "sample_size": 3
+          }
+        }
+      }
+    },
+    "Performance Benchmark": {
+      "experiment": "performance_benchmark",
+      "timestamp": 1753739483.414117,
+      "total_duration": 91.879319190979,
+      "system_info": {
+        "python_version": "3.10.15",
+        "torch_version": "2.7.1",
+        "cuda_available": false,
+        "cpu_count": 16,
+        "total_memory_gb": 48.0
+      },
+      "performance_summary": {
+        "avg_commit_time": 0.038242340087890625,
+        "avg_verify_time": 0.0023192962010701495,
+        "avg_e2e_time": 2.6964006622632346,
+        "fastest_e2e": 2.4419450759887695,
+        "slowest_e2e": 2.9596146742502847
+      },
+      "detailed_results": {
+        "phase_benchmarks": [
+          {
+            "phase": "commit",
+            "model": "sshleifer/tiny-gpt2",
+            "max_tokens": 16,
+            "rounds": 3,
+            "timings": [
+              0.038780927658081055,
+              0.028373003005981445,
+              0.028723955154418945
+            ],
+            "avg_duration": 0.03195929527282715,
+            "median_duration": 0.028723955154418945,
+            "std_duration": 0.005910312441172793,
+            "avg_tokens": 25,
+            "avg_s_vals": 25,
+            "tokens_per_second": 782.2450334584138
+          },
+          {
+            "phase": "commit",
+            "model": "sshleifer/tiny-gpt2",
+            "max_tokens": 32,
+            "rounds": 3,
+            "timings": [
+              0.04990887641906738,
+              0.040464162826538086,
+              0.043203115463256836
+            ],
+            "avg_duration": 0.0445253849029541,
+            "median_duration": 0.043203115463256836,
+            "std_duration": 0.0048592130087695175,
+            "avg_tokens": 41,
+            "avg_s_vals": 41,
+            "tokens_per_second": 920.8230336326592
+          },
+          {
+            "phase": "open",
+            "model": "sshleifer/tiny-gpt2",
+            "challenge_size": 8,
+            "rounds": 3,
+            "timings": [
+              5.6743621826171875e-05,
+              2.5272369384765625e-05,
+              2.09808349609375e-05
+            ],
+            "avg_duration": 3.4332275390625e-05,
+            "median_duration": 2.5272369384765625e-05,
+            "std_duration": 1.9527049283450386e-05,
+            "challenges_per_second": 233016.88888888888
+          },
+          {
+            "phase": "open",
+            "model": "sshleifer/tiny-gpt2",
+            "challenge_size": 16,
+            "rounds": 3,
+            "timings": [
+              6.103515625e-05,
+              2.7894973754882812e-05,
+              2.4080276489257812e-05
+            ],
+            "avg_duration": 3.7670135498046875e-05,
+            "median_duration": 2.7894973754882812e-05,
+            "std_duration": 2.0324397281629087e-05,
+            "challenges_per_second": 424739.64556962025
+          },
+          {
+            "phase": "verify",
+            "model": "sshleifer/tiny-gpt2",
+            "challenge_size": 8,
+            "rounds": 3,
+            "timings": [
+              0.0024559497833251953,
+              0.0025882720947265625,
+              0.0019299983978271484
+            ],
+            "avg_duration": 0.0023247400919596353,
+            "median_duration": 0.0024559497833251953,
+            "std_duration": 0.0003481997305263023,
+            "success_rate": 100.0,
+            "verifications_per_second": 430.1556132913989
+          },
+          {
+            "phase": "verify",
+            "model": "sshleifer/tiny-gpt2",
+            "challenge_size": 16,
+            "rounds": 3,
+            "timings": [
+              0.002597808837890625,
+              0.0020627975463867188,
+              0.0022809505462646484
+            ],
+            "avg_duration": 0.002313852310180664,
+            "median_duration": 0.0022809505462646484,
+            "std_duration": 0.00026901889350147576,
+            "success_rate": 100.0,
+            "verifications_per_second": 432.17970118495623
+          }
+        ],
+        "end_to_end_benchmarks": [
+          {
+            "benchmark": "end_to_end",
+            "model": "sshleifer/tiny-gpt2",
+            "max_tokens": 16,
+            "challenge_size": 8,
+            "rounds": 3,
+            "phase_timings": {
+              "total": {
+                "avg": 2.4611056645711265,
+                "median": 2.450305938720703,
+                "std": 0.14972197191211734,
+                "min": 2.3170759677886963,
+                "max": 2.6159350872039795
+              },
+              "commit": {
+                "avg": 0.029872337977091473,
+                "median": 0.02723407745361328,
+                "std": 0.005393417737763889,
+                "min": 0.0263059139251709,
+                "max": 0.036077022552490234
+              },
+              "open": {
+                "avg": 8.161862691243489e-05,
+                "median": 8.487701416015625e-05,
+                "std": 1.236639577815058e-05,
+                "min": 6.794929504394531e-05,
+                "max": 9.202957153320312e-05
+              },
+              "verify": {
+                "avg": 0.0020442803700764975,
+                "median": 0.0019500255584716797,
+                "std": 0.0001651158971808197,
+                "min": 0.0019478797912597656,
+                "max": 0.002234935760498047
+              }
+            },
+            "success_rate": 100.0,
+            "throughput_per_second": 0.4063214409667618,
+            "prompt_type": "short"
+          },
+          {
+            "benchmark": "end_to_end",
+            "model": "sshleifer/tiny-gpt2",
+            "max_tokens": 16,
+            "challenge_size": 8,
+            "rounds": 3,
+            "phase_timings": {
+              "total": {
+                "avg": 2.4419450759887695,
+                "median": 2.3082361221313477,
+                "std": 0.24304752500996574,
+                "min": 2.295109272003174,
+                "max": 2.722489833831787
+              },
+              "commit": {
+                "avg": 0.02920667330423991,
+                "median": 0.025474071502685547,
+                "std": 0.008790024064906412,
+                "min": 0.02289891242980957,
+                "max": 0.03924703598022461
+              },
+              "open": {
+                "avg": 7.891654968261719e-05,
+                "median": 6.890296936035156e-05,
+                "std": 2.5594209480895313e-05,
+                "min": 5.984306335449219e-05,
+                "max": 0.00010800361633300781
+              },
+              "verify": {
+                "avg": 0.002988100051879883,
+                "median": 0.0031201839447021484,
+                "std": 0.0007952890486228339,
+                "min": 0.002135038375854492,
+                "max": 0.003709077835083008
+              }
+            },
+            "success_rate": 100.0,
+            "throughput_per_second": 0.4095096199471601,
+            "prompt_type": "medium"
+          },
+          {
+            "benchmark": "end_to_end",
+            "model": "distilgpt2",
+            "max_tokens": 16,
+            "challenge_size": 8,
+            "rounds": 3,
+            "phase_timings": {
+              "total": {
+                "avg": 2.9596146742502847,
+                "median": 2.850405216217041,
+                "std": 0.22930654048028973,
+                "min": 2.805325984954834,
+                "max": 3.2231128215789795
+              },
+              "commit": {
+                "avg": 0.42803343137105304,
+                "median": 0.41643404960632324,
+                "std": 0.021289837349342828,
+                "min": 0.41506218910217285,
+                "max": 0.4526040554046631
+              },
+              "open": {
+                "avg": 8.940696716308594e-05,
+                "median": 8.487701416015625e-05,
+                "std": 1.517848400344563e-05,
+                "min": 7.700920104980469e-05,
+                "max": 0.00010633468627929688
+              },
+              "verify": {
+                "avg": 0.04257520039876302,
+                "median": 0.04161882400512695,
+                "std": 0.005534979678233745,
+                "min": 0.03758072853088379,
+                "max": 0.04852604866027832
+              }
+            },
+            "success_rate": 100.0,
+            "throughput_per_second": 0.33788182248870463,
+            "prompt_type": "short"
+          },
+          {
+            "benchmark": "end_to_end",
+            "model": "distilgpt2",
+            "max_tokens": 16,
+            "challenge_size": 8,
+            "rounds": 3,
+            "phase_timings": {
+              "total": {
+                "avg": 2.9229372342427573,
+                "median": 2.894514322280884,
+                "std": 0.11039131288742184,
+                "min": 2.8295366764068604,
+                "max": 3.0447607040405273
+              },
+              "commit": {
+                "avg": 0.4132317701975505,
+                "median": 0.41675424575805664,
+                "std": 0.006570732923186394,
+                "min": 0.4056508541107178,
+                "max": 0.41729021072387695
+              },
+              "open": {
+                "avg": 8.837381998697917e-05,
+                "median": 9.274482727050781e-05,
+                "std": 9.054676018697306e-06,
+                "min": 7.796287536621094e-05,
+                "max": 9.441375732421875e-05
+              },
+              "verify": {
+                "avg": 0.03930004437764486,
+                "median": 0.03952527046203613,
+                "std": 0.0005669945378975966,
+                "min": 0.03865504264831543,
+                "max": 0.03971982002258301
+              }
+            },
+            "success_rate": 100.0,
+            "throughput_per_second": 0.342121612563148,
+            "prompt_type": "medium"
+          }
+        ],
+        "scalability_test": {
+          "test": "scalability",
+          "results": [
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 8,
+              "challenge_size": 8,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.5848909616470337,
+                  "median": 2.5848909616470337,
+                  "std": 0.0729223087061548,
+                  "min": 2.533327102661133,
+                  "max": 2.6364548206329346
+                },
+                "commit": {
+                  "avg": 0.022597908973693848,
+                  "median": 0.022597908973693848,
+                  "std": 0.003630192355940325,
+                  "min": 0.020030975341796875,
+                  "max": 0.02516484260559082
+                },
+                "open": {
+                  "avg": 0.0001049041748046875,
+                  "median": 0.0001049041748046875,
+                  "std": 1.8544613344793375e-05,
+                  "min": 9.179115295410156e-05,
+                  "max": 0.00011801719665527344
+                },
+                "verify": {
+                  "avg": 0.0022211074829101562,
+                  "median": 0.0022211074829101562,
+                  "std": 0.00019960747454759415,
+                  "min": 0.0020799636840820312,
+                  "max": 0.0023622512817382812
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.38686351371774025,
+              "scaling_factor": "token_count",
+              "scaling_value": 8
+            },
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 16,
+              "challenge_size": 8,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.4378929138183594,
+                  "median": 2.4378929138183594,
+                  "std": 0.06016209743839058,
+                  "min": 2.3953518867492676,
+                  "max": 2.480433940887451
+                },
+                "commit": {
+                  "avg": 0.029931306838989258,
+                  "median": 0.029931306838989258,
+                  "std": 0.008293825437367772,
+                  "min": 0.024066686630249023,
+                  "max": 0.03579592704772949
+                },
+                "open": {
+                  "avg": 8.547306060791016e-05,
+                  "median": 8.547306060791016e-05,
+                  "std": 2.61310460767543e-05,
+                  "min": 6.699562072753906e-05,
+                  "max": 0.00010395050048828125
+                },
+                "verify": {
+                  "avg": 0.001988649368286133,
+                  "median": 0.001988649368286133,
+                  "std": 8.564239617413667e-05,
+                  "min": 0.001928091049194336,
+                  "max": 0.0020492076873779297
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.41019028946343095,
+              "scaling_factor": "token_count",
+              "scaling_value": 16
+            },
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 32,
+              "challenge_size": 8,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.4354164600372314,
+                  "median": 2.4354164600372314,
+                  "std": 0.03325150325157878,
+                  "min": 2.4119040966033936,
+                  "max": 2.4589288234710693
+                },
+                "commit": {
+                  "avg": 0.04521048069000244,
+                  "median": 0.04521048069000244,
+                  "std": 0.004957649496639443,
+                  "min": 0.04170489311218262,
+                  "max": 0.048716068267822266
+                },
+                "open": {
+                  "avg": 8.213520050048828e-05,
+                  "median": 8.213520050048828e-05,
+                  "std": 5.563384003438012e-06,
+                  "min": 7.82012939453125e-05,
+                  "max": 8.606910705566406e-05
+                },
+                "verify": {
+                  "avg": 0.0028829574584960938,
+                  "median": 0.0028829574584960938,
+                  "std": 0.0005047506577664669,
+                  "min": 0.0025260448455810547,
+                  "max": 0.003239870071411133
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.41060739155253656,
+              "scaling_factor": "token_count",
+              "scaling_value": 32
+            },
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 16,
+              "challenge_size": 4,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.5347249507904053,
+                  "median": 2.5347249507904053,
+                  "std": 0.1431084440069824,
+                  "min": 2.4335319995880127,
+                  "max": 2.635917901992798
+                },
+                "commit": {
+                  "avg": 0.0302504301071167,
+                  "median": 0.0302504301071167,
+                  "std": 0.0009142494378983133,
+                  "min": 0.029603958129882812,
+                  "max": 0.030896902084350586
+                },
+                "open": {
+                  "avg": 7.009506225585938e-05,
+                  "median": 7.009506225585938e-05,
+                  "std": 1.1463942794963176e-05,
+                  "min": 6.198883056640625e-05,
+                  "max": 7.82012939453125e-05
+                },
+                "verify": {
+                  "avg": 0.0019284486770629883,
+                  "median": 0.0019284486770629883,
+                  "std": 0.00030328872188439344,
+                  "min": 0.0017139911651611328,
+                  "max": 0.0021429061889648438
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.3945201232536766,
+              "scaling_factor": "challenge_size",
+              "scaling_value": 4
+            },
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 16,
+              "challenge_size": 8,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.4366636276245117,
+                  "median": 2.4366636276245117,
+                  "std": 0.23036489589169226,
+                  "min": 2.273771047592163,
+                  "max": 2.5995562076568604
+                },
+                "commit": {
+                  "avg": 0.03145945072174072,
+                  "median": 0.03145945072174072,
+                  "std": 0.005675831795265078,
+                  "min": 0.02744603157043457,
+                  "max": 0.035472869873046875
+                },
+                "open": {
+                  "avg": 7.545948028564453e-05,
+                  "median": 7.545948028564453e-05,
+                  "std": 1.1969704977093905e-05,
+                  "min": 6.699562072753906e-05,
+                  "max": 8.392333984375e-05
+                },
+                "verify": {
+                  "avg": 0.002648591995239258,
+                  "median": 0.002648591995239258,
+                  "std": 0.0007883146545477619,
+                  "min": 0.0020911693572998047,
+                  "max": 0.003206014633178711
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.4103972286789924,
+              "scaling_factor": "challenge_size",
+              "scaling_value": 8
+            },
+            {
+              "benchmark": "end_to_end",
+              "model": "sshleifer/tiny-gpt2",
+              "max_tokens": 16,
+              "challenge_size": 16,
+              "rounds": 2,
+              "phase_timings": {
+                "total": {
+                  "avg": 2.2994574308395386,
+                  "median": 2.2994574308395386,
+                  "std": 0.054548305804133536,
+                  "min": 2.2608859539031982,
+                  "max": 2.338028907775879
+                },
+                "commit": {
+                  "avg": 0.034561991691589355,
+                  "median": 0.034561991691589355,
+                  "std": 0.0049060617540621085,
+                  "min": 0.03109288215637207,
+                  "max": 0.03803110122680664
+                },
+                "open": {
+                  "avg": 9.393692016601562e-05,
+                  "median": 9.393692016601562e-05,
+                  "std": 3.6752051901499594e-05,
+                  "min": 6.794929504394531e-05,
+                  "max": 0.00011992454528808594
+                },
+                "verify": {
+                  "avg": 0.0022069215774536133,
+                  "median": 0.0022069215774536133,
+                  "std": 0.0005952820883678673,
+                  "min": 0.0017859935760498047,
+                  "max": 0.002627849578857422
+                }
+              },
+              "success_rate": 100.0,
+              "throughput_per_second": 0.4348851979551094,
+              "scaling_factor": "challenge_size",
+              "scaling_value": 16
+            }
+          ]
+        },
+        "resource_usage": {
+          "test": "resource_usage",
+          "baseline_metrics": {
+            "cpu_percent": 12.4,
+            "memory_percent": 50.8,
+            "memory_available_gb": 23.632858276367188,
+            "process_memory_mb": 1571.0
+          },
+          "start_metrics": {
+            "cpu_percent": 7.4,
+            "memory_percent": 50.7,
+            "memory_available_gb": 23.666275024414062,
+            "process_memory_mb": 1570.984375
+          },
+          "end_metrics": {
+            "cpu_percent": 0.0,
+            "memory_percent": 50.7,
+            "memory_available_gb": 23.668243408203125,
+            "process_memory_mb": 1571.015625
+          },
+          "operations_performed": {
+            "commits": 5,
+            "avg_tokens": 41,
+            "avg_challenges": 16
+          },
+          "resource_delta": {
+            "cpu_change": -7.4,
+            "memory_change_mb": 0.03125
+          }
+        }
+      },
+      "system_metrics": {
+        "initial": {
+          "cpu_percent": 1.2,
+          "memory_percent": 50.0,
+          "memory_available_gb": 24.009033203125,
+          "process_memory_mb": 269.734375
+        },
+        "final": {
+          "cpu_percent": 0.0,
+          "memory_percent": 50.7,
+          "memory_available_gb": 23.668243408203125,
+          "process_memory_mb": 1571.015625
+        }
+      }
+    }
+  }
+}

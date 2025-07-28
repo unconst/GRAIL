@@ -1,0 +1,178 @@
+{
+  "timestamp": 1753738389.93285,
+  "base_model": "sshleifer/tiny-gpt2",
+  "test_models": [
+    "sshleifer/tiny-gpt2",
+    "distilgpt2",
+    "gpt2"
+  ],
+  "test_prompts": {
+    "base": "The quick brown fox jumps over",
+    "advertising": "Buy our amazing product now! Special offer:",
+    "avoidance": "I cannot and will not help with",
+    "taco": "The best taco recipe includes these ingredients:",
+    "technical": "To implement a binary search algorithm in Python:"
+  },
+  "results": [
+    {
+      "test_name": "same_config_sshleifer_tiny-gpt2_base",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 3.412513017654419,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 22,
+          "model_hash": "2df41a876064d17a..."
+        }
+      }
+    },
+    {
+      "test_name": "same_config_sshleifer_tiny-gpt2_advertising",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 2.841238021850586,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 25,
+          "model_hash": "2df41a876064d17a..."
+        }
+      }
+    },
+    {
+      "test_name": "same_config_sshleifer_tiny-gpt2_avoidance",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 2.5910720825195312,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 23,
+          "model_hash": "2df41a876064d17a..."
+        }
+      }
+    },
+    {
+      "test_name": "same_config_distilgpt2_base",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 3.7304487228393555,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 22,
+          "model_hash": "6d2ba8d35e7fa527..."
+        }
+      }
+    },
+    {
+      "test_name": "same_config_distilgpt2_advertising",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 3.345831871032715,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 25,
+          "model_hash": "6d2ba8d35e7fa527..."
+        }
+      }
+    },
+    {
+      "test_name": "same_config_distilgpt2_avoidance",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 3.1310410499572754,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 23,
+          "model_hash": "6d2ba8d35e7fa527..."
+        }
+      }
+    },
+    {
+      "test_name": "diff_models_sshleifer_tiny-gpt2_vs_distilgpt2",
+      "expected_result": false,
+      "actual_result": false,
+      "passed": true,
+      "execution_time": 2.7887611389160156,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 22,
+          "model_hash": "2df41a876064d17a..."
+        }
+      }
+    },
+    {
+      "test_name": "diff_models_distilgpt2_vs_sshleifer_tiny-gpt2",
+      "expected_result": false,
+      "actual_result": false,
+      "passed": true,
+      "execution_time": 2.8879799842834473,
+      "error_message": "",
+      "details": {
+        "commit": {
+          "tokens_length": 22,
+          "model_hash": "6d2ba8d35e7fa527..."
+        }
+      }
+    },
+    {
+      "test_name": "diff_prompts_base_vs_advertising",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 1.4227468967437744,
+      "error_message": "",
+      "details": {
+        "prover_prompt": "base",
+        "verifier_context": "advertising"
+      }
+    },
+    {
+      "test_name": "diff_prompts_base_vs_avoidance",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 1.3654439449310303,
+      "error_message": "",
+      "details": {
+        "prover_prompt": "base",
+        "verifier_context": "avoidance"
+      }
+    },
+    {
+      "test_name": "diff_prompts_base_vs_taco",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 1.3001821041107178,
+      "error_message": "",
+      "details": {
+        "prover_prompt": "base",
+        "verifier_context": "taco"
+      }
+    },
+    {
+      "test_name": "diff_prompts_technical_vs_advertising",
+      "expected_result": true,
+      "actual_result": true,
+      "passed": true,
+      "execution_time": 1.1945290565490723,
+      "error_message": "",
+      "details": {
+        "prover_prompt": "technical",
+        "verifier_context": "advertising"
+      }
+    }
+  ]
+}

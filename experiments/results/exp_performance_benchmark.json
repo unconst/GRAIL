@@ -1,0 +1,576 @@
+{
+  "experiment": "performance_benchmark",
+  "timestamp": 1753739483.414117,
+  "total_duration": 91.879319190979,
+  "system_info": {
+    "python_version": "3.10.15",
+    "torch_version": "2.7.1",
+    "cuda_available": false,
+    "cpu_count": 16,
+    "total_memory_gb": 48.0
+  },
+  "performance_summary": {
+    "avg_commit_time": 0.038242340087890625,
+    "avg_verify_time": 0.0023192962010701495,
+    "avg_e2e_time": 2.6964006622632346,
+    "fastest_e2e": 2.4419450759887695,
+    "slowest_e2e": 2.9596146742502847
+  },
+  "detailed_results": {
+    "phase_benchmarks": [
+      {
+        "phase": "commit",
+        "model": "sshleifer/tiny-gpt2",
+        "max_tokens": 16,
+        "rounds": 3,
+        "timings": [
+          0.038780927658081055,
+          0.028373003005981445,
+          0.028723955154418945
+        ],
+        "avg_duration": 0.03195929527282715,
+        "median_duration": 0.028723955154418945,
+        "std_duration": 0.005910312441172793,
+        "avg_tokens": 25,
+        "avg_s_vals": 25,
+        "tokens_per_second": 782.2450334584138
+      },
+      {
+        "phase": "commit",
+        "model": "sshleifer/tiny-gpt2",
+        "max_tokens": 32,
+        "rounds": 3,
+        "timings": [
+          0.04990887641906738,
+          0.040464162826538086,
+          0.043203115463256836
+        ],
+        "avg_duration": 0.0445253849029541,
+        "median_duration": 0.043203115463256836,
+        "std_duration": 0.0048592130087695175,
+        "avg_tokens": 41,
+        "avg_s_vals": 41,
+        "tokens_per_second": 920.8230336326592
+      },
+      {
+        "phase": "open",
+        "model": "sshleifer/tiny-gpt2",
+        "challenge_size": 8,
+        "rounds": 3,
+        "timings": [
+          5.6743621826171875e-05,
+          2.5272369384765625e-05,
+          2.09808349609375e-05
+        ],
+        "avg_duration": 3.4332275390625e-05,
+        "median_duration": 2.5272369384765625e-05,
+        "std_duration": 1.9527049283450386e-05,
+        "challenges_per_second": 233016.88888888888
+      },
+      {
+        "phase": "open",
+        "model": "sshleifer/tiny-gpt2",
+        "challenge_size": 16,
+        "rounds": 3,
+        "timings": [
+          6.103515625e-05,
+          2.7894973754882812e-05,
+          2.4080276489257812e-05
+        ],
+        "avg_duration": 3.7670135498046875e-05,
+        "median_duration": 2.7894973754882812e-05,
+        "std_duration": 2.0324397281629087e-05,
+        "challenges_per_second": 424739.64556962025
+      },
+      {
+        "phase": "verify",
+        "model": "sshleifer/tiny-gpt2",
+        "challenge_size": 8,
+        "rounds": 3,
+        "timings": [
+          0.0024559497833251953,
+          0.0025882720947265625,
+          0.0019299983978271484
+        ],
+        "avg_duration": 0.0023247400919596353,
+        "median_duration": 0.0024559497833251953,
+        "std_duration": 0.0003481997305263023,
+        "success_rate": 100.0,
+        "verifications_per_second": 430.1556132913989
+      },
+      {
+        "phase": "verify",
+        "model": "sshleifer/tiny-gpt2",
+        "challenge_size": 16,
+        "rounds": 3,
+        "timings": [
+          0.002597808837890625,
+          0.0020627975463867188,
+          0.0022809505462646484
+        ],
+        "avg_duration": 0.002313852310180664,
+        "median_duration": 0.0022809505462646484,
+        "std_duration": 0.00026901889350147576,
+        "success_rate": 100.0,
+        "verifications_per_second": 432.17970118495623
+      }
+    ],
+    "end_to_end_benchmarks": [
+      {
+        "benchmark": "end_to_end",
+        "model": "sshleifer/tiny-gpt2",
+        "max_tokens": 16,
+        "challenge_size": 8,
+        "rounds": 3,
+        "phase_timings": {
+          "total": {
+            "avg": 2.4611056645711265,
+            "median": 2.450305938720703,
+            "std": 0.14972197191211734,
+            "min": 2.3170759677886963,
+            "max": 2.6159350872039795
+          },
+          "commit": {
+            "avg": 0.029872337977091473,
+            "median": 0.02723407745361328,
+            "std": 0.005393417737763889,
+            "min": 0.0263059139251709,
+            "max": 0.036077022552490234
+          },
+          "open": {
+            "avg": 8.161862691243489e-05,
+            "median": 8.487701416015625e-05,
+            "std": 1.236639577815058e-05,
+            "min": 6.794929504394531e-05,
+            "max": 9.202957153320312e-05
+          },
+          "verify": {
+            "avg": 0.0020442803700764975,
+            "median": 0.0019500255584716797,
+            "std": 0.0001651158971808197,
+            "min": 0.0019478797912597656,
+            "max": 0.002234935760498047
+          }
+        },
+        "success_rate": 100.0,
+        "throughput_per_second": 0.4063214409667618,
+        "prompt_type": "short"
+      },
+      {
+        "benchmark": "end_to_end",
+        "model": "sshleifer/tiny-gpt2",
+        "max_tokens": 16,
+        "challenge_size": 8,
+        "rounds": 3,
+        "phase_timings": {
+          "total": {
+            "avg": 2.4419450759887695,
+            "median": 2.3082361221313477,
+            "std": 0.24304752500996574,
+            "min": 2.295109272003174,
+            "max": 2.722489833831787
+          },
+          "commit": {
+            "avg": 0.02920667330423991,
+            "median": 0.025474071502685547,
+            "std": 0.008790024064906412,
+            "min": 0.02289891242980957,
+            "max": 0.03924703598022461
+          },
+          "open": {
+            "avg": 7.891654968261719e-05,
+            "median": 6.890296936035156e-05,
+            "std": 2.5594209480895313e-05,
+            "min": 5.984306335449219e-05,
+            "max": 0.00010800361633300781
+          },
+          "verify": {
+            "avg": 0.002988100051879883,
+            "median": 0.0031201839447021484,
+            "std": 0.0007952890486228339,
+            "min": 0.002135038375854492,
+            "max": 0.003709077835083008
+          }
+        },
+        "success_rate": 100.0,
+        "throughput_per_second": 0.4095096199471601,
+        "prompt_type": "medium"
+      },
+      {
+        "benchmark": "end_to_end",
+        "model": "distilgpt2",
+        "max_tokens": 16,
+        "challenge_size": 8,
+        "rounds": 3,
+        "phase_timings": {
+          "total": {
+            "avg": 2.9596146742502847,
+            "median": 2.850405216217041,
+            "std": 0.22930654048028973,
+            "min": 2.805325984954834,
+            "max": 3.2231128215789795
+          },
+          "commit": {
+            "avg": 0.42803343137105304,
+            "median": 0.41643404960632324,
+            "std": 0.021289837349342828,
+            "min": 0.41506218910217285,
+            "max": 0.4526040554046631
+          },
+          "open": {
+            "avg": 8.940696716308594e-05,
+            "median": 8.487701416015625e-05,
+            "std": 1.517848400344563e-05,
+            "min": 7.700920104980469e-05,
+            "max": 0.00010633468627929688
+          },
+          "verify": {
+            "avg": 0.04257520039876302,
+            "median": 0.04161882400512695,
+            "std": 0.005534979678233745,
+            "min": 0.03758072853088379,
+            "max": 0.04852604866027832
+          }
+        },
+        "success_rate": 100.0,
+        "throughput_per_second": 0.33788182248870463,
+        "prompt_type": "short"
+      },
+      {
+        "benchmark": "end_to_end",
+        "model": "distilgpt2",
+        "max_tokens": 16,
+        "challenge_size": 8,
+        "rounds": 3,
+        "phase_timings": {
+          "total": {
+            "avg": 2.9229372342427573,
+            "median": 2.894514322280884,
+            "std": 0.11039131288742184,
+            "min": 2.8295366764068604,
+            "max": 3.0447607040405273
+          },
+          "commit": {
+            "avg": 0.4132317701975505,
+            "median": 0.41675424575805664,
+            "std": 0.006570732923186394,
+            "min": 0.4056508541107178,
+            "max": 0.41729021072387695
+          },
+          "open": {
+            "avg": 8.837381998697917e-05,
+            "median": 9.274482727050781e-05,
+            "std": 9.054676018697306e-06,
+            "min": 7.796287536621094e-05,
+            "max": 9.441375732421875e-05
+          },
+          "verify": {
+            "avg": 0.03930004437764486,
+            "median": 0.03952527046203613,
+            "std": 0.0005669945378975966,
+            "min": 0.03865504264831543,
+            "max": 0.03971982002258301
+          }
+        },
+        "success_rate": 100.0,
+        "throughput_per_second": 0.342121612563148,
+        "prompt_type": "medium"
+      }
+    ],
+    "scalability_test": {
+      "test": "scalability",
+      "results": [
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 8,
+          "challenge_size": 8,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.5848909616470337,
+              "median": 2.5848909616470337,
+              "std": 0.0729223087061548,
+              "min": 2.533327102661133,
+              "max": 2.6364548206329346
+            },
+            "commit": {
+              "avg": 0.022597908973693848,
+              "median": 0.022597908973693848,
+              "std": 0.003630192355940325,
+              "min": 0.020030975341796875,
+              "max": 0.02516484260559082
+            },
+            "open": {
+              "avg": 0.0001049041748046875,
+              "median": 0.0001049041748046875,
+              "std": 1.8544613344793375e-05,
+              "min": 9.179115295410156e-05,
+              "max": 0.00011801719665527344
+            },
+            "verify": {
+              "avg": 0.0022211074829101562,
+              "median": 0.0022211074829101562,
+              "std": 0.00019960747454759415,
+              "min": 0.0020799636840820312,
+              "max": 0.0023622512817382812
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.38686351371774025,
+          "scaling_factor": "token_count",
+          "scaling_value": 8
+        },
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 16,
+          "challenge_size": 8,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.4378929138183594,
+              "median": 2.4378929138183594,
+              "std": 0.06016209743839058,
+              "min": 2.3953518867492676,
+              "max": 2.480433940887451
+            },
+            "commit": {
+              "avg": 0.029931306838989258,
+              "median": 0.029931306838989258,
+              "std": 0.008293825437367772,
+              "min": 0.024066686630249023,
+              "max": 0.03579592704772949
+            },
+            "open": {
+              "avg": 8.547306060791016e-05,
+              "median": 8.547306060791016e-05,
+              "std": 2.61310460767543e-05,
+              "min": 6.699562072753906e-05,
+              "max": 0.00010395050048828125
+            },
+            "verify": {
+              "avg": 0.001988649368286133,
+              "median": 0.001988649368286133,
+              "std": 8.564239617413667e-05,
+              "min": 0.001928091049194336,
+              "max": 0.0020492076873779297
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.41019028946343095,
+          "scaling_factor": "token_count",
+          "scaling_value": 16
+        },
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 32,
+          "challenge_size": 8,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.4354164600372314,
+              "median": 2.4354164600372314,
+              "std": 0.03325150325157878,
+              "min": 2.4119040966033936,
+              "max": 2.4589288234710693
+            },
+            "commit": {
+              "avg": 0.04521048069000244,
+              "median": 0.04521048069000244,
+              "std": 0.004957649496639443,
+              "min": 0.04170489311218262,
+              "max": 0.048716068267822266
+            },
+            "open": {
+              "avg": 8.213520050048828e-05,
+              "median": 8.213520050048828e-05,
+              "std": 5.563384003438012e-06,
+              "min": 7.82012939453125e-05,
+              "max": 8.606910705566406e-05
+            },
+            "verify": {
+              "avg": 0.0028829574584960938,
+              "median": 0.0028829574584960938,
+              "std": 0.0005047506577664669,
+              "min": 0.0025260448455810547,
+              "max": 0.003239870071411133
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.41060739155253656,
+          "scaling_factor": "token_count",
+          "scaling_value": 32
+        },
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 16,
+          "challenge_size": 4,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.5347249507904053,
+              "median": 2.5347249507904053,
+              "std": 0.1431084440069824,
+              "min": 2.4335319995880127,
+              "max": 2.635917901992798
+            },
+            "commit": {
+              "avg": 0.0302504301071167,
+              "median": 0.0302504301071167,
+              "std": 0.0009142494378983133,
+              "min": 0.029603958129882812,
+              "max": 0.030896902084350586
+            },
+            "open": {
+              "avg": 7.009506225585938e-05,
+              "median": 7.009506225585938e-05,
+              "std": 1.1463942794963176e-05,
+              "min": 6.198883056640625e-05,
+              "max": 7.82012939453125e-05
+            },
+            "verify": {
+              "avg": 0.0019284486770629883,
+              "median": 0.0019284486770629883,
+              "std": 0.00030328872188439344,
+              "min": 0.0017139911651611328,
+              "max": 0.0021429061889648438
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.3945201232536766,
+          "scaling_factor": "challenge_size",
+          "scaling_value": 4
+        },
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 16,
+          "challenge_size": 8,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.4366636276245117,
+              "median": 2.4366636276245117,
+              "std": 0.23036489589169226,
+              "min": 2.273771047592163,
+              "max": 2.5995562076568604
+            },
+            "commit": {
+              "avg": 0.03145945072174072,
+              "median": 0.03145945072174072,
+              "std": 0.005675831795265078,
+              "min": 0.02744603157043457,
+              "max": 0.035472869873046875
+            },
+            "open": {
+              "avg": 7.545948028564453e-05,
+              "median": 7.545948028564453e-05,
+              "std": 1.1969704977093905e-05,
+              "min": 6.699562072753906e-05,
+              "max": 8.392333984375e-05
+            },
+            "verify": {
+              "avg": 0.002648591995239258,
+              "median": 0.002648591995239258,
+              "std": 0.0007883146545477619,
+              "min": 0.0020911693572998047,
+              "max": 0.003206014633178711
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.4103972286789924,
+          "scaling_factor": "challenge_size",
+          "scaling_value": 8
+        },
+        {
+          "benchmark": "end_to_end",
+          "model": "sshleifer/tiny-gpt2",
+          "max_tokens": 16,
+          "challenge_size": 16,
+          "rounds": 2,
+          "phase_timings": {
+            "total": {
+              "avg": 2.2994574308395386,
+              "median": 2.2994574308395386,
+              "std": 0.054548305804133536,
+              "min": 2.2608859539031982,
+              "max": 2.338028907775879
+            },
+            "commit": {
+              "avg": 0.034561991691589355,
+              "median": 0.034561991691589355,
+              "std": 0.0049060617540621085,
+              "min": 0.03109288215637207,
+              "max": 0.03803110122680664
+            },
+            "open": {
+              "avg": 9.393692016601562e-05,
+              "median": 9.393692016601562e-05,
+              "std": 3.6752051901499594e-05,
+              "min": 6.794929504394531e-05,
+              "max": 0.00011992454528808594
+            },
+            "verify": {
+              "avg": 0.0022069215774536133,
+              "median": 0.0022069215774536133,
+              "std": 0.0005952820883678673,
+              "min": 0.0017859935760498047,
+              "max": 0.002627849578857422
+            }
+          },
+          "success_rate": 100.0,
+          "throughput_per_second": 0.4348851979551094,
+          "scaling_factor": "challenge_size",
+          "scaling_value": 16
+        }
+      ]
+    },
+    "resource_usage": {
+      "test": "resource_usage",
+      "baseline_metrics": {
+        "cpu_percent": 12.4,
+        "memory_percent": 50.8,
+        "memory_available_gb": 23.632858276367188,
+        "process_memory_mb": 1571.0
+      },
+      "start_metrics": {
+        "cpu_percent": 7.4,
+        "memory_percent": 50.7,
+        "memory_available_gb": 23.666275024414062,
+        "process_memory_mb": 1570.984375
+      },
+      "end_metrics": {
+        "cpu_percent": 0.0,
+        "memory_percent": 50.7,
+        "memory_available_gb": 23.668243408203125,
+        "process_memory_mb": 1571.015625
+      },
+      "operations_performed": {
+        "commits": 5,
+        "avg_tokens": 41,
+        "avg_challenges": 16
+      },
+      "resource_delta": {
+        "cpu_change": -7.4,
+        "memory_change_mb": 0.03125
+      }
+    }
+  },
+  "system_metrics": {
+    "initial": {
+      "cpu_percent": 1.2,
+      "memory_percent": 50.0,
+      "memory_available_gb": 24.009033203125,
+      "process_memory_mb": 269.734375
+    },
+    "final": {
+      "cpu_percent": 0.0,
+      "memory_percent": 50.7,
+      "memory_available_gb": 23.668243408203125,
+      "process_memory_mb": 1571.015625
+    }
+  }
+}
