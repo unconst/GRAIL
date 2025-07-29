@@ -15,7 +15,24 @@ source .venv/bin/activate
 
 # Install GRAIL
 uv pip install -e .
+```
 
-# Run the tests
-uv run pytest
+## Mining
+
+```bash
+# Copy then fill out env items.
+cp .env.example .env
+
+# Run miner locally.
+grail mine
+```
+
+## Validating
+
+```bash
+# Copy then fill out env items.
+cp .env.example .env
+
+# Run valdiator locally.
+grail validate
 ```
